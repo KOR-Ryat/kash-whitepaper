@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkkash_whitepaper=self.webpackChunkkash_whitepaper||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/kash-whitepaper/blog","blogTitle":"Blog","authorsListPath":"/kash-whitepaper/blog/authors"}')}}]);
