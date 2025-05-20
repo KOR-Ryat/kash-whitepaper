@@ -1,0 +1,45 @@
+/* src/pages/styles.module.css */
+.heroSection {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
+  z-index: 10; /* Ensure it's on top of the canvas */
+  color: white; /* Or your desired text color */
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.8); /* Optional: slight dark background for readability */
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #f0f0f0; /* Gold color for title */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.heroCatchphrase {
+  font-size: 1.5rem;
+  margin-bottom: 1.5em;
+  color: #f0f0f0;
+}
+
+.heroButton {
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #FFD700; /* Gold */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.heroButton:hover {
+  background-color: #ffc400; /* Slightly darker gold */
+  transform: translateY(-2px);
+}

@@ -1,0 +1,10 @@
+.fallingCoinsCanvas {
+  display: block; /* Removes extra space below canvas */
+  width: 100%;
+  height: 100%;
+  position: fixed; /* For fullscreen background effect */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place it behind other content if necessary */
+  background-color: #0a000f; /* A dark background similar to original, can be overridden */
+}

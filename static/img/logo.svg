@@ -1,0 +1,53 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="backgroundGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#4F4F4F; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2C2C2C; stop-opacity:1" />
+    </radialGradient>
+
+    <linearGradient id="goldIngotShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF5C3;" /> <!-- 매우 밝은 하이라이트 -->
+      <stop offset="20%" style="stop-color:#FFD700;" /> <!-- 주 금색 -->
+      <stop offset="80%" style="stop-color:#F0B90B;" />
+      <stop offset="100%" style="stop-color:#B8860B;" /> <!-- 어두운 부분 -->
+    </linearGradient>
+     <linearGradient id="goldIngotTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8DC;"/> <!-- Cornsilk -->
+      <stop offset="100%" style="stop-color:#FFEFAD;"/>
+    </linearGradient>
+    <filter id="kDropShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
+      <feOffset dx="1" dy="2" result="offsetBlur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.3"/>
+      <feComposite in2="offsetBlur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 배경 (옵션) -->
+  <rect width="100" height="100" fill="url(#backgroundGlow)"/>
+
+  <!-- 금괴 스택 (비스듬히) -->
+  <g transform="rotate(-5 50 68)">
+    <rect x="18" y="60" width="64" height="16" rx="2" ry="2" fill="url(#goldIngotShine)" stroke="#8A6500" stroke-width="1"/>
+    <path d="M18 60 L20 56 L79.5 56 L82 60 Z" fill="url(#goldIngotTop)" stroke="#8A6500" stroke-width="0.5"/>
+  </g>
+  <g transform="rotate(3 50 52)">
+    <rect x="23" y="44" width="54" height="16" rx="2" ry="2" fill="url(#goldIngotShine)" stroke="#8A6500" stroke-width="1"/>
+    <path d="M23 44 L25 40 L75.5 40 L77 44 Z" fill="url(#goldIngotTop)" stroke="#8A6500" stroke-width="0.5"/>
+  </g>
+  <g transform="rotate(-2 50 36)">
+    <rect x="28" y="28" width="44" height="16" rx="2" ry="2" fill="url(#goldIngotShine)" stroke="#8A6500" stroke-width="1"/>
+    <path d="M28 28 L30 24 L70.5 24 L72 28 Z" fill="url(#goldIngotTop)" stroke="#8A6500" stroke-width="0.5"/>
+  </g>
+
+  <!-- K 이니셜 (양각으로 굵게) -->
+  <text x="50" y="37" dominant-baseline="middle" text-anchor="middle"
+        font-family="'Montserrat', sans-serif" font-weight="800" font-size="22" fill="#FFEB99"
+        stroke="#B8860B" stroke-width="1.5" filter="url(#kDropShadow)">
+    K
+  </text>
+</svg>
