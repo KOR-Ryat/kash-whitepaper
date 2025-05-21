@@ -1,0 +1,9 @@
+{
+  "label": "💰 KASH 리저브 토큰",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "KASH 리저브 토큰 구조",
+    "description": "KASH는 KASH 프로젝트의 핵심 통화이며, 실물 자산 기반 RWA(vRWA 또는 RWA(Gold))를 담보로 발행되는 리저브 토큰입니다." 
+  }
+}

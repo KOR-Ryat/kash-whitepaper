@@ -1,0 +1,9 @@
+{
+  "label": "🪙 RWA 토큰",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "vRWA 및 금 RWA 구조",
+    "description": "KASH 프로젝트의 핵심 담보 구조인 vRWA(Gold) 및 RWA(Gold)의 설계 철학과 구현 방식, 청산 안정 메커니즘을 요약합니다." 
+  }
+}
