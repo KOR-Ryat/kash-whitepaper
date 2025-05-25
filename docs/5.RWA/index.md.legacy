@@ -1,0 +1,26 @@
+---
+id: index
+title: RWA 토큰 설계 – vRWA 및 금 RWA 구조
+description: KASH 프로젝트의 핵심 담보 구조인 vRWA(Gold) 및 RWA(Gold)의 설계 철학과 구현 방식, 청산 안정 메커니즘을 요약합니다.
+slug: /
+sidebar_position: 3
+---
+
+## ✨ 이 섹션에서 다루는 주요 내용
+
+KASH 프로젝트는 실물 자산 기반의 **담보 구조**를 핵심으로 하며, 이를 온체인에서 구현하기 위한 **토큰화된 자산(RWA, Real World Asset Token)**을 중심으로 설계되어 있습니다.
+
+본 장에서는 프로젝트 전반에서 사용되는 두 가지 RWA 형태인 **vRWA(Voucher RWA)**와 **RWA(Gold)**의 구조 및 차이점, 그리고 이를 **KASH 리저브풀**과 연계하는 방식에 대해 설명합니다.
+
+## 📚 하위 문서 링크
+
+- [1 - vRWA 구조와 보험 메커니즘](./1.vrwa-structure)
+- [2 - RWA(Gold)의 정의 및 구조](./2.rwa-gold)
+- [3 - vRWA와 RWA 비교](./3.vrwa-vs-rwa)
+- [4 - 기술 사양 및 투명성 확보](./4.technical-structure)
+- [5 - 확장성 및 전략적 의의](./5.strategic-significance)
+- [6 - 요약](./6.summary)
+
+---
+
+이 구조는 **KASH 리저브풀과 스테이킹 구조의 이해를 위한 핵심 기반**으로 작용합니다.
