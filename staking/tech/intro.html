@@ -10,7 +10,7 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.8b9d024f.css">
-<script src="/assets/js/runtime~main.ecad5584.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.9c3ec1fb.js" defer="defer"></script>
 <script src="/assets/js/main.179dee9f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -24,39 +24,46 @@
 <p>이 섹션에서는 KASH에서 이러한 조건을 만족하는 스테이킹 컨트랙트를 구현한 방법을 설명합니다.</p>
 <hr>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="contract-architecture">Contract Architecture<a href="#contract-architecture" class="hash-link" aria-label="Direct link to Contract Architecture" title="Direct link to Contract Architecture">​</a></h3>
-<p>KASH 스테이킹을 구성하는 요소는 다음과 같습니다.</p>
+<p>KASH 스테이킹을 구성하는 요소는 다음과 같습니다. 특별히 명시되지 않은 컨트랙은 UUPS Upgradable 형태를 취합니다.</p>
 <ul>
-<li>Market (Token Sales)<!-- -->
+<li>Sales Market<!-- -->
 <ul>
-<li>토큰 판매를 담당합니다.</li>
-<li>마켓별로 별도 컨트랙트로 배포됩니다.</li>
-<li>마켓별로 설정된 식에 따라 발급할 DCR을 계산합니다.</li>
+<li>마켓별 별도의 컨트랙으로 배포됩니다.<!-- -->
+<ul>
+<li>초기/추가 세일즈는 총 10m의 판매량이 설정된 통합된 하나의 마켓</li>
+<li>추후 Bond Market 추가 등 성격이 다른 마켓은 별도 컨트랙으로 배포</li>
+</ul>
+</li>
+<li>지정된 ERC20 및 KAIA를 수취하고 KASH 토큰을 고정 가격에 판매합니다.</li>
+<li>산식에 따라 발급할 DCR 수량을 계산하여 발급 요청을 수행합니다.</li>
 </ul>
 </li>
 <li>DCR Manager<!-- -->
 <ul>
-<li>발급된 DCR 및 관련 정보를 통합 관리합니다.</li>
 <li>단일 컨트랙입니다.</li>
+<li>마켓의 요청에 따라 DCR을 발급, 관련 정보를 통합 관리합니다.</li>
+<li>스테이킹 풀에서 참조할 수 있도록 정보를 제공합니다.</li>
 </ul>
 </li>
 <li>Staking Pool<!-- -->
 <ul>
-<li>실제 예치를 받고 지분을 발급하는 주체입니다.</li>
 <li>스테이킹 풀마다 별도의 컨트랙으로 배포됩니다.</li>
+<li>실제 예치를 받고 지분을 발급하는 주체입니다.</li>
 </ul>
 </li>
 <li>Reservation Pool<!-- -->
 <ul>
-<li>예약을 위해 예치받는 컨트랙입니다.</li>
 <li>단일 컨트랙입니다.</li>
+<li>예약을 관리하고 예치를 수행하는 컨트랙입니다.</li>
+<li>스테이킹 풀마다 우선순위 대기열 (있는 경우), 일반 대기열이 존재합니다.</li>
 </ul>
 </li>
 <li>Reward Vault<!-- -->
 <ul>
-<li>스테이킹에 할당된 KASH가 보관되는 장소입니다.</li>
 <li>단일 컨트랙입니다.</li>
-<li>내부 회계상 Pool별로 KASH를 할당하여 잔액을 추척합니다.</li>
-<li>Keeper에 의해 스테이킹 풀로 KASH를 보내면서 epochUpdate를 호출 할 수 있습니다.</li>
+<li>스테이킹에 할당된 KASH가 보관되는 장소입니다.</li>
+<li>스테이킹 풀별로 내부 회계상 KASH를 할당하고 잔액을 관리합니다.</li>
+<li>Keeper에 의해 스테이킹 풀로 보상(KASH)을 보낼 수 있습니다.</li>
 </ul>
 </li>
 </ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/kor-ryat/kash-whitepaper/tree/main/docs/12.staking/3.tech/0.intro.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/category/technical-details"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Technical Details</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/staking/tech/vault"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Reward Vault</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#contract-architecture" class="table-of-contents__link toc-highlight">Contract Architecture</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/intro">Tutorial</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/kor-ryat/kash-whitepaper" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 KASH Foundation. Built with Docusaurus.</div></div></div></footer></div>
