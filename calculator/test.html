@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KASH 스테이킹 최소 예상 수익 계산기</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .input-group input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .results, .assumptions {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .assumptions ul {
+            padding-left: 20px;
+        }
+        .assumptions li {
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: right;
+        }
+        th {
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 15px;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>KASH 스테이킹 최소 예상 수익 계산기</h1>
+
+        <div class="assumptions">
+            <h2>📝 계산기 주요 가정 및 참고사항</h2>
+            <ul>
+                <li>이 계산기는 KASH 스테이킹 풀이 최대 용량 (3,500만 Weighted Share)으로 완전히 채워졌을 때를 가정한 <strong>최소 보장 수익</strong>을 보여줍니다. 실제 풀 상황에 따라 수익은 이보다 높을 수 있습니다.</li>
+                <li>EPB(초기 참여 보너스 배율) 계산은 KASH 누적 판매량 500만 개까지의 특정 수식을 따르며, 사용자의 전체 구매가 이 범위 내에서 이루어진다고 가정합니다. <strong>구매 시점 + 구매 수량이 500만 KASH를 초과하는 경우, 초과분에 대한 EPB는 현재 계산기에 반영되지 않아 DCR이 낮게 계산될 수 있습니다.</strong></li>
+                <li>계산된 보상은 KASH 토큰 수량 기준이며, KASH 토큰의 시장 가격 변동은 고려되지 않았습니다.</li>
+                <li>모든 보상은 해당 에포크가 종료되는 시점에 분배되는 것으로 가정합니다. 1 에포크는 약 1개월이며, 총 36 에포크(3년) 간의 보상을 계산합니다.</li>
+                <li>에포크별 보상 성장률(g)은 5% (0.05)로 고정됩니다.</li>
+                <li>사용자가 구매한 KASH는 전량 즉시 스테이킹하고, 획득한 DCR을 모두 행사하는 것으로 가정합니다.</li>
+                <li><strong>원금 회수:</strong> 18 에포크(1년 6개월) 경과 후 원금을 회수할 수 있으며, 이후에도 잔여 에포크에 대한 이자는 계속 지급됩니다. 이 계산기는 18 에포크 이후 "원금 포함 총 자산"에서 원금을 제외하여 순수 누적 이자만 표시합니다.</li>
+            </ul>
+        </div>
+
+        <div class="input-group">
+            <label for="purchaseTiming">KASH 구매 시점의 누적 판매량 (KASH 단위):</label>
+            <input type="number" id="purchaseTiming" value="0" min="0" max="4999999">
+            <small>예: 10만개 판매된 시점에 구매한다면 100000 입력. (최대 4,999,999까지)</small>
+        </div>
+
+        <div class="input-group">
+            <label for="purchaseAmount">이번에 구매(하고 스테이킹할) KASH 수량:</label>
+            <input type="number" id="purchaseAmount" value="1000" min="1">
+        </div>
+
+        <button onclick="calculateRewards()">예상 수익 계산하기</button>
+        <div id="errorMessage" class="error-message"></div>
+
+        <div id="resultsSummary" class="results" style="display:none;">
+            <h2>📊 계산 결과 요약</h2>
+            <p>평균 EPB (원금 대비 보너스 배율): <strong id="avgEpb"></strong> 배</p>
+            <p>획득 DCR (보너스 가상 예치액): <strong id="dcrEarned"></strong> KASH</p>
+            <p>총 유효 예치액 (구매 KASH + DCR): <strong id="totalEffectiveDeposit"></strong> KASH</p>
+            <p>예상 지분율 (풀 최대 용량 기준): <strong id="sharePercentage"></strong> %</p>
+            <p>36 에포크 (3년) 후 총 누적 예상 이자: <strong id="totalCumulativeReward36Epochs" class="highlight"></strong> KASH</p>
+             <p>36 에포크 (3년) 후 원금 포함 총 예상 자산 (원금은 18에포크 후 회수 가정): <strong id="totalAsset36EpochsWithPrincipal" class="highlight"></strong> KASH</p>
+        </div>
+
+        <div id="resultsTableContainer" style="display:none; margin-top: 20px;">
+            <h2>🗓️ 에포크별 상세 예상 수익</h2>
+            <table id="rewardsTable">
+                <thead>
+                    <tr>
+                        <th>에포크</th>
+                        <th>해당 에포크 총 보상 (풀 전체)</th>
+                        <th>나의 예상 보상 (이번 에포크)</th>
+                        <th>나의 누적 이자</th>
+                        <th>원금 포함 총 자산<br>(18 에포크 후 원금 회수 반영)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 데이터가 여기에 채워집니다 -->
+                </tbody>
+            </table>
+            <p class="note">* "원금 포함 총 자산"은 18 에포크 이후에는 누적 이자만 표시됩니다 (원금은 회수된 것으로 가정).</p>
+        </div>
+    </div>
+
+    <script>
+        // --- 시스템 고정 값 ---
+        const EPB_A = 6.160392620707085906;
+        const EPB_k_denom = 0.540906246443305252;
+        const EPB_C_add = 3.944556263515440025;
+
+        const TOTAL_EPOCHS = 36;
+        // const EPOCHS_PER_YEAR = 12; // 참고용
+        const SALES_LIMIT_FOR_EPB_FORMULA = 5000000;
+        const TOTAL_POOL_REWARD_KASH = 35000000;
+        const EPOCH_REWARD_GROWTH_RATE_G = 0.05;
+        const POOL_WEIGHTED_SHARE_CAP = 35000000;
+
+        // EPB 계산 함수
+        function calculateEpbValue(x) {
+            if (x < 0) return EPB_C_add; // x가 0보다 작으면 첫 값으로 처리 (혹은 에러)
+            if (x > SALES_LIMIT_FOR_EPB_FORMULA) x = SALES_LIMIT_FOR_EPB_FORMULA; // 상한 제한
+            return (EPB_A / Math.pow((x + EPB_k_denom), 2)) + EPB_C_add;
+        }
+
+        // EPB 부정적분 함수 (상수항 제외)
+        function calculateEpbIntegral(x) {
+            if (x < 0) return EPB_C_add * x; // x가 0보다 작으면 선형으로 근사 (혹은 에러)
+            if (x > SALES_LIMIT_FOR_EPB_FORMULA) x = SALES_LIMIT_FOR_EPB_FORMULA; // 상한 제한
+            return (-EPB_A / (x + EPB_k_denom)) + (EPB_C_add * x);
+        }
+
+        function calculateRewards() {
+            document.getElementById('errorMessage').textContent = ''; // Clear previous errors
+            const purchaseTimingInput = document.getElementById('purchaseTiming');
+            const purchaseAmountInput = document.getElementById('purchaseAmount');
+
+            let q_b = parseFloat(purchaseTimingInput.value);
+            let user_purchase_kash_amount = parseFloat(purchaseAmountInput.value);
+
+            // 입력값 유효성 검사
+            if (isNaN(q_b) || q_b < 0) {
+                document.getElementById('errorMessage').textContent = "구매 시점 누적 판매량을 올바르게 입력해주세요 (0 이상).";
+                return;
+            }
+            if (isNaN(user_purchase_kash_amount) || user_purchase_kash_amount <= 0) {
+                document.getElementById('errorMessage').textContent = "구매 KASH 수량을 올바르게 입력해주세요 (0보다 커야 함).";
+                return;
+            }
+
+            if (q_b >= SALES_LIMIT_FOR_EPB_FORMULA) {
+                 document.getElementById('errorMessage').textContent = `경고: 구매 시점(${q_b.toLocaleString()} KASH)이 EPB 수식 적용 한도(${SALES_LIMIT_FOR_EPB_FORMULA.toLocaleString()} KASH)를 이미 초과했습니다. 이 경우 DCR은 0으로 계산됩니다.`;
+                q_b = SALES_LIMIT_FOR_EPB_FORMULA; // 한도 초과시 DCR 0 유도
+            }
+            
+            let q_a = q_b + user_purchase_kash_amount;
+            let dcr_note = "";
+
+            if (q_a > SALES_LIMIT_FOR_EPB_FORMULA) {
+                dcr_note = ` (참고: 구매 후 누적 판매량(${q_a.toLocaleString()} KASH)이 EPB 수식 한도를 초과하여, ${SALES_LIMIT_FOR_EPB_FORMULA.toLocaleString()} KASH까지만 DCR이 계산되었습니다.)`;
+                q_a = SALES_LIMIT_FOR_EPB_FORMULA;
+            }
+            
+            // 1. 사용자 DCR 계산
+            let user_dcr_earned = 0;
+            if (q_a > q_b) { // 구매량이 있어야 DCR 발생
+                 user_dcr_earned = calculateEpbIntegral(q_a) - calculateEpbIntegral(q_b);
+            }
+             if (user_dcr_earned < 0) user_dcr_earned = 0; // 혹시 모를 음수 방지
+
+            // 2. 사용자 평균 EPB
+            const user_average_epb = user_purchase_kash_amount > 0 ? (user_dcr_earned / user_purchase_kash_amount) : 0;
+
+            // 3. 사용자 총 유효 예치액
+            const user_total_effective_deposit = user_purchase_kash_amount + user_dcr_earned;
+
+            // 4. 사용자 지분율
+            const user_share_percentage = user_total_effective_deposit / POOL_WEIGHTED_SHARE_CAP;
+
+            // 5. 에포크별 총 보상량 계산
+            let reward_base_for_epoch;
+            if (EPOCH_REWARD_GROWTH_RATE_G === 0) {
+                reward_base_for_epoch = TOTAL_POOL_REWARD_KASH / TOTAL_EPOCHS;
+            } else {
+                reward_base_for_epoch = (TOTAL_POOL_REWARD_KASH * EPOCH_REWARD_GROWTH_RATE_G) / (Math.pow(1 + EPOCH_REWARD_GROWTH_RATE_G, TOTAL_EPOCHS) - 1);
+            }
+
+            const epoch_total_rewards_array = [];
+            for (let k = 1; k <= TOTAL_EPOCHS; k++) {
+                epoch_total_rewards_array.push(reward_base_for_epoch * Math.pow(1 + EPOCH_REWARD_GROWTH_RATE_G, k - 1));
+            }
+
+            // --- 결과 표시 ---
+            document.getElementById('resultsSummary').style.display = 'block';
+            document.getElementById('avgEpb').textContent = user_average_epb.toFixed(4);
+            document.getElementById('dcrEarned').textContent = user_dcr_earned.toLocaleString(undefined, {maximumFractionDigits: 2}) + dcr_note;
+            document.getElementById('totalEffectiveDeposit').textContent = user_total_effective_deposit.toLocaleString(undefined, {maximumFractionDigits: 2});
+            document.getElementById('sharePercentage').textContent = (user_share_percentage * 100).toFixed(6);
+
+            // 에포크별 테이블 생성
+            const tableBody = document.getElementById('rewardsTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = ''; // 기존 내용 삭제
+
+            let user_cumulative_reward = 0;
+            let user_total_asset_with_principal = user_purchase_kash_amount;
+
+            // Epoch 0 (시작 시점)
+            let row = tableBody.insertRow();
+            row.insertCell().textContent = 0;
+            row.insertCell().textContent = (0).toLocaleString(undefined, {maximumFractionDigits: 2});
+            row.insertCell().textContent = (0).toLocaleString(undefined, {maximumFractionDigits: 2});
+            row.insertCell().textContent = (0).toLocaleString(undefined, {maximumFractionDigits: 2});
+            row.insertCell().textContent = user_total_asset_with_principal.toLocaleString(undefined, {maximumFractionDigits: 2});
+
+            let principal_recovered = false;
+
+            for (let k = 1; k <= TOTAL_EPOCHS; k++) {
+                const current_epoch_total_reward_for_pool = epoch_total_rewards_array[k-1];
+                const user_reward_this_epoch = user_share_percentage * current_epoch_total_reward_for_pool;
+                user_cumulative_reward += user_reward_this_epoch;
+
+                if (k > 18 && !principal_recovered) {
+                    // 18 에포크 *이후* (즉, 19 에포크부터) 원금 회수를 반영
+                    // user_total_asset_with_principal -= user_purchase_kash_amount; // 이 계산 방식보다는 아래 방식이 더 명확
+                    principal_recovered = true;
+                }
+                
+                if (principal_recovered) {
+                    user_total_asset_with_principal = user_cumulative_reward; // 원금 회수 후에는 누적 이자만 자산
+                } else {
+                    user_total_asset_with_principal = user_purchase_kash_amount + user_cumulative_reward;
+                }
+
+
+                row = tableBody.insertRow();
+                row.insertCell().textContent = k;
+                row.insertCell().textContent = current_epoch_total_reward_for_pool.toLocaleString(undefined, {maximumFractionDigits: 2});
+                row.insertCell().textContent = user_reward_this_epoch.toLocaleString(undefined, {maximumFractionDigits: 4});
+                row.insertCell().textContent = user_cumulative_reward.toLocaleString(undefined, {maximumFractionDigits: 2});
+                row.insertCell().textContent = user_total_asset_with_principal.toLocaleString(undefined, {maximumFractionDigits: 2});
+
+                if (k === 18 && !principal_recovered) { // 18 에포크 종료 시점에 원금회수 표시
+                     let noteCell = row.insertCell();
+                     noteCell.textContent = " (원금 회수 시점)";
+                     noteCell.colSpan = 1; // A bit of a hack, but for display purpose
+                     noteCell.style.fontWeight = "bold";
+                     noteCell.style.color = "green";
+                }
+            }
+            
+            document.getElementById('totalCumulativeReward36Epochs').textContent = user_cumulative_reward.toLocaleString(undefined, {maximumFractionDigits: 2});
+             // 36 에포크 후 총 자산은 이미 원금 회수가 반영된 누적 이자와 동일 (principal_recovered가 true일 것이므로)
+            document.getElementById('totalAsset36EpochsWithPrincipal').textContent = user_total_asset_with_principal.toLocaleString(undefined, {maximumFractionDigits: 2});
+
+
+            document.getElementById('resultsTableContainer').style.display = 'block';
+        }
+
+        // 페이지 로드 시 초기 계산 (옵션)
+        // window.onload = calculateRewards;
+    </script>
+</body>
+</html>
