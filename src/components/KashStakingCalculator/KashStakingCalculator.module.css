@@ -1,0 +1,329 @@
+/* src/components/KashStakingCalculator.module.css */
+
+.calculatorContainer {
+    /* 전체 계산기 컴포넌트를 감싸는 최상위 div에 대한 스타일 (필요시 추가) */
+    /* 예: max-width: 900px; margin: auto; */
+}
+
+.assumptions {
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 8px;
+    background-color: var(--ifm-background-surface-color);
+}
+.assumptions h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em; /* 약간 작게 조정 */
+    color: var(--ifm-font-color-secondary);
+}
+.assumptions ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-size: 0.9em;
+}
+.assumptions li {
+    margin-bottom: 5px;
+}
+
+.inputSection {
+    background-color: var(--ifm-background-surface-color);
+    padding: 20px 25px; /* 내부 여백 약간 늘림 */
+    border: 1px solid var(--ifm-color-emphasis-200);
+    border-radius: 8px;
+    margin-bottom: 30px; /* 섹션 간 간격 */
+}
+
+.sectionTitle {
+    margin-top: 0;
+    margin-bottom: 25px; /* 제목 아래 여백 늘림 */
+    font-size: 1.25em; /* 제목 폰트 약간 키움 */
+    color: var(--ifm-color-primary);
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+    padding-bottom: 10px;
+}
+
+.inputGroup {
+    margin-bottom: 25px; /* 그룹 간 여백 늘림 */
+}
+.inputGroup:last-child {
+    margin-bottom: 10px; 
+}
+
+.labelFullWidth {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px; /* 레이블과 입력 요소 간 간격 */
+    color: var(--ifm-font-color-secondary);
+}
+
+.labelWithVal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 8px; /* 슬라이더/입력창과의 간격 */
+    color: var(--ifm-font-color-secondary);
+}
+.valueDisplay {
+    font-weight: normal;
+    font-size: 1em; /* 기본 폰트 크기로 */
+    color: var(--ifm-font-color-base);
+    background-color: var(--ifm-hover-overlay);
+    padding: 4px 10px; /* 패딩 조정 */
+    border-radius: 4px;
+}
+
+.sliderInputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.slider {
+    flex-grow: 1;
+    margin: 0;
+    /* 브라우저 기본 슬라이더 스타일 개선 (선택적) */
+    accent-color: var(--ifm-color-primary); 
+}
+.numberInputCompact {
+    width: 130px; /* 폭 약간 늘림 */
+    padding: 10px; /* 다른 numberInput과 통일 */
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: right;
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+}
+
+.inputDescription {
+    font-size: 0.85em;
+    color: var(--ifm-color-secondary-darkest);
+    display: block;
+    margin-top: 8px; /* 설명문 위 간격 */
+}
+
+.inputGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px 30px;
+}
+
+.fiatRateWrapper {
+    font-size: 0.95em; /* 약간 키움 */
+    margin-bottom: 12px;
+    color: var(--ifm-font-color-secondary);
+    display: flex; /* 수직 정렬 위해 */
+    align-items: center; /* 수직 정렬 */
+}
+.inlineNumberInputShort { /* 환율 입력창 */
+    width: 80px; /* 폭 약간 늘림 */
+    padding: 6px 8px;
+    margin: 0 5px; /* 좌우 간격 */
+    text-align: right;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+}
+
+.fiatInputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 간격 약간 늘림 */
+}
+.numberInputFiat {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+}
+.fiatCurrencySelect {
+    padding: 10px; /* 패딩 통일 */
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+    height: auto; /* 내용에 맞게 자동 높이 */
+    box-sizing: border-box;
+}
+
+.selectInput { /* 풀 선택 드롭다운 */
+    width: 100%;
+    padding: 12px 10px; /* 패딩 늘려서 클릭 영역 확보 */
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+    font-size: 1em; /* 폰트 크기 명시 */
+}
+
+.buttonContainer {
+    margin-top: 30px; /* 간격 늘림 */
+    margin-bottom: 25px; /* 간격 늘림 */
+    text-align: center;
+}
+.calculateButton {
+    padding: 14px 30px; /* 패딩 늘림 */
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border: none;
+    border-radius: 30px; /* 더 둥글게 */
+    cursor: pointer;
+    font-size: 1.15em; /* 폰트 약간 키움 */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.6); /* 그림자 약간 연하게 */
+    transition: all 0.3s ease;
+    outline: none;
+}
+.calculateButton:hover {
+    background-image: linear-gradient(to right, #2575fc 0%, #6a11cb 100%);
+    box-shadow: 0 6px 20px 0 rgba(49, 196, 190, 0.8);
+    transform: translateY(-2px); /* 효과 약간 더 크게 */
+}
+.calculateButton:active {
+    transform: translateY(0px); /* 클릭 시 원래 위치로 */
+    box-shadow: 0 2px 10px 0 rgba(49, 196, 190, 0.6);
+}
+.disabledButton {
+    background-image: none;
+    background-color: var(--ifm-color-emphasis-300);
+    color: var(--ifm-font-color-disabled); /* 비활성 텍스트 색상 */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.disabledButton:hover, .disabledButton:active {
+    background-image: none;
+    background-color: var(--ifm-color-emphasis-300);
+    box-shadow: none;
+    transform: none;
+}
+
+.errorMessage {
+    color: var(--ifm-color-danger);
+    font-weight: bold;
+    margin: 20px 0; /* 상하 여백 */
+    padding: 12px 15px; /* 패딩 조정 */
+    border: 1px solid var(--ifm-color-danger-dark);
+    background-color: var(--ifm-color-danger-contrast-background);
+    border-radius: 6px; /* 약간 둥글게 */
+    text-align: center;
+}
+
+.resultsSection {
+    margin-top: 30px;
+}
+
+.summaryAndPoolInfo {
+    margin-bottom: 30px;
+    padding: 20px 25px; /* 패딩 조정 */
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 8px;
+    background-color: var(--ifm-background-surface-color);
+}
+.poolInfoText {
+    font-size: 0.9em;
+    color: var(--ifm-color-secondary-darkest);
+    text-align: center;
+    margin-bottom: 20px; /* 테이블과의 간격 */
+    padding-bottom: 15px; /* 밑줄과의 간격 */
+    border-bottom: 1px dashed var(--ifm-color-emphasis-200);
+}
+
+.summaryTable {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 10px; 제거 (poolInfoText에서 이미 간격 확보) */
+    border-bottom: 1px solid var(--ifm-color-gray-300);
+}
+.summaryTable td {
+    padding: 12px 8px; /* 패딩 늘림 */
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    vertical-align: middle;
+}
+.summaryTable tr:last-child td {
+    border-bottom: none;
+}
+.summaryTable td:first-child {
+    font-weight: 600;
+    color: var(--ifm-font-color-secondary);
+    width: 30%;
+    text-align: left;
+}
+.summaryTable td:nth-child(2) {
+    width: 40%;
+    text-align: right;
+    font-size: 1.1em;
+}
+.summaryTable td:nth-child(3) {
+    width: 30%;
+    text-align: right;
+    font-size: 1.0em;
+    color: var(--ifm-font-color-secondary);
+}
+.summaryTable td:nth-child(3) strong {
+    color: var(--ifm-color-primary);
+    font-size: 1.1em;
+}
+.summaryTable strong { /* DCR, 유효지분 KASH 값 등 */
+    color: var(--ifm-font-color-base); 
+}
+
+.chartContainer {
+    height: 400px; 
+    margin-bottom: 30px; 
+    padding: 20px; /* 패딩 늘림 */
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 8px;
+    background-color: var(--ifm-background-surface-color);
+}
+
+.resultsTableContainer {
+    margin-top: 0;
+    padding: 20px 25px; /* 패딩 조정 */
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 8px;
+    background-color: var(--ifm-background-surface-color);
+}
+.resultsTableContainer h2 {
+    margin-top: 0;
+    font-size: 1.25em; /* 제목 폰트 약간 키움 */
+    color: var(--ifm-color-primary);
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.infoText {
+    text-align: center;
+    padding: 20px;
+    color: var(--ifm-font-color-secondary);
+    font-size: 0.95em;
+}
+
+.note {
+    font-size: 0.85em;
+    color: var(--ifm-color-secondary-darkest);
+    margin-top: 20px; /* 테이블과의 간격 */
+    line-height: 1.5;
+}
+
+.warningText {
+    color: var(--ifm-color-warning-dark);
+    font-size: 0.85em;
+    display: block;
+    margin-top: 8px; /* 입력창과의 간격 */
+}
+
+/* 테이블 컬럼 너비 (이전과 동일) */
+table th:nth-child(1) { width: 10%; } 
+table th:nth-child(2) { width: 30%; } 
+table th:nth-child(3) { width: 30%; } 
+table th:nth-child(4) { width: 20%; } 
+table th:nth-child(5) { width: 10%; }
