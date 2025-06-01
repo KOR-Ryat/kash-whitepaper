@@ -13,6 +13,8 @@ import {
     Tooltip,
     Legend,
     Filler,
+    LineController,
+    BarController,  
 } from 'chart.js';
 
 ChartJS.register(
@@ -24,7 +26,9 @@ ChartJS.register(
     Title,
     Tooltip,
     Legend,
-    Filler
+    Filler,
+    LineController,
+    BarController  
 );
 
 const EPB_A = 6.160392620707085906;
