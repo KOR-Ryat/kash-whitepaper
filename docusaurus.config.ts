@@ -82,16 +82,17 @@ const config: Config = {
     navbar: {
       title: 'KASH',
       logo: {
+        href: "/intro",
         alt: 'KASH Logo',
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Whitepaper',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'tutorialSidebar',
+        //   position: 'left',
+        //   label: 'Whitepaper',
+        // },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/kor-ryat/kash-whitepaper',
