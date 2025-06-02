@@ -1,5 +1,5 @@
 ---
-id: 1-kash-tokenomics
+id: tokenomics
 title: 1. KASH 토크노믹스
 description: KASH/RWA 발행량 및 분배구조 요약
 sidebar_position: 1
