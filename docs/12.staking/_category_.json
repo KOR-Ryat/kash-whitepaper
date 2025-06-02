@@ -2,6 +2,7 @@
   "label": "🥩 Staking",
   "position": 12,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug" : "/staking"
   }
 }
