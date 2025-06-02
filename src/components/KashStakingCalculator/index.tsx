@@ -28,12 +28,9 @@ ChartJS.register(
     Legend,
     Filler,
     LineController,
-    BarController  
+    BarController
 );
 
-const EPB_A = 6.160392620707085906;
-const EPB_k_denom = 0.540906246443305252;
-const EPB_C_add = 3.944556263515440025;
 const TOTAL_EPOCHS = 36;
 const EPOCH_REWARD_GROWTH_RATE_G = 0.05;
 const KASH_PRICE_USD = 1;
@@ -44,37 +41,48 @@ const POOL_CONFIG = {
         salesMinKash: 0,
         salesMaxKash: 5000000,
         dcrCalculationFunction: 'early',
-        totalPoolRewardKash: 35000000,
-        poolWeightedShareCapKash: 35000000,
+        totalPoolRewardKash: 30000000,
+        poolWeightedShareCapKash: 30000000,
+        k : 0.540906246443305252,
+        A : 6.160392620707085906,
+        C : 3.944556263515440025
     },
     pool2: {
         label: '풀 2: 추가 세일즈 (5M 초과 ~ 10M KASH)',
         salesMinKash: 5000000,
         salesMaxKash: 10000000,
         dcrCalculationFunction: 'additional',
-        epbForAdditional: 2,
-        totalPoolRewardKash: 15000000,
-        poolWeightedShareCapKash: 15000000,
+        // epbForAdditional: 2,
+        totalPoolRewardKash: 20000000,
+        poolWeightedShareCapKash: 20000000,
+        k : 0.540906246443305252,
+        A : 6.160392620707085906,
+        C : 3.944556263515440025
     }
 };
 
-function calculateEpbIntegralForInitialSalesMillionUnit(x_million) {
+function calculateEpbIntegralForInitialSalesMillionUnit(pool, x_million) {
     const INITIAL_SALES_LIMIT_MILLION = POOL_CONFIG.pool1.salesMaxKash / 1000000;
     if (x_million > INITIAL_SALES_LIMIT_MILLION) x_million = INITIAL_SALES_LIMIT_MILLION;
     if (x_million < 0) x_million = 0;
-    return (-EPB_A / (x_million + EPB_k_denom)) + (EPB_C_add * x_million);
+    return (-POOL_CONFIG[`pool${pool}`].A / (x_million + POOL_CONFIG[`pool${pool}`].k)) + (POOL_CONFIG[`pool${pool}`].C * x_million);
 }
 function calculateDcrForPool1(q_b_kash, q_a_kash) {
     const x_b_million = q_b_kash / 1000000;
     const x_a_million = q_a_kash / 1000000;
-    const dcr_raw = calculateEpbIntegralForInitialSalesMillionUnit(x_a_million) - calculateEpbIntegralForInitialSalesMillionUnit(x_b_million);
+    const dcr_raw = calculateEpbIntegralForInitialSalesMillionUnit(1, x_a_million) - calculateEpbIntegralForInitialSalesMillionUnit(1, x_b_million) - (q_a_kash - q_b_kash) / 1000000;
     let dcr = dcr_raw * 1000000;
     return dcr < 0 ? 0 : dcr;
 }
-function calculateDcrForPool2(q_b_kash, q_a_kash, epbValue) {
-    const purchase_in_this_stage = q_a_kash - q_b_kash;
-    if (purchase_in_this_stage <= 0) return 0;
-    return purchase_in_this_stage * epbValue;
+function calculateDcrForPool2(q_b_kash, q_a_kash) { // , epbValue
+    const x_b_million = q_b_kash / 1000000;
+    const x_a_million = q_a_kash / 1000000;
+    const dcr_raw = calculateEpbIntegralForInitialSalesMillionUnit(2, x_a_million) - calculateEpbIntegralForInitialSalesMillionUnit(2, x_b_million) - (q_a_kash - q_b_kash) / 1000000;
+    let dcr = dcr_raw * 1000000 * 2 / 3;
+    return dcr < 0 ? 0 : dcr;
+    // const purchase_in_this_stage = q_a_kash - q_b_kash;
+    // if (purchase_in_this_stage <= 0) return 0;
+    // return purchase_in_this_stage * epbValue;
 }
 
 export default function KashStakingCalculator() {
@@ -181,11 +189,12 @@ export default function KashStakingCalculator() {
         if (currentPoolConfig.dcrCalculationFunction === 'early') {
             user_dcr_earned_kash = calculateDcrForPool1(q_b_kash_input, q_a_kash_input);
         } else if (currentPoolConfig.dcrCalculationFunction === 'additional') {
-            user_dcr_earned_kash = calculateDcrForPool2(q_b_kash_input, q_a_kash_input, currentPoolConfig.epbForAdditional);
+            user_dcr_earned_kash = calculateDcrForPool2(q_b_kash_input, q_a_kash_input);
+            // user_dcr_earned_kash = calculateDcrForPool2(q_b_kash_input, q_a_kash_input, currentPoolConfig.epbForAdditional);
         }
         user_dcr_earned_kash = Math.max(0, user_dcr_earned_kash);
 
-        const user_average_epb = user_purchase_amount_kash_input > 0 ? (user_dcr_earned_kash / user_purchase_amount_kash_input) : 0;
+        const user_average_epb = user_purchase_amount_kash_input > 0 ? (user_dcr_earned_kash / user_purchase_amount_kash_input + 1) : 0;
         const user_total_effective_deposit_kash = user_purchase_amount_kash_input + user_dcr_earned_kash;
         const user_share_percentage_raw = user_total_effective_deposit_kash / currentPoolConfig.poolWeightedShareCapKash;
 
@@ -274,7 +283,7 @@ export default function KashStakingCalculator() {
                     <label htmlFor="poolSelect" className={styles.labelFullWidth}>스테이킹 풀 선택:</label>
                     <select id="poolSelect" value={selectedPoolKey} onChange={handlePoolChange} className={styles.selectInput}>
                         <option value="pool1">{POOL_CONFIG.pool1.label}</option>
-                        <option value="pool2">{POOL_CONFIG.pool2.label}</option>
+                        {/* <option value="pool2">{POOL_CONFIG.pool2.label}</option> */}
                     </select>
                 </div>
 
@@ -382,17 +391,17 @@ export default function KashStakingCalculator() {
                                 <table className={styles.summaryTable}>
                                     <tbody>
                                         <tr>
-                                            <td>DCR / EPB</td>
+                                            <td>DCR 및 평균 EPB</td>
                                             <td><strong>{results.user_dcr_earned_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong> KASH</td>
                                             <td>* <strong>{results.user_average_epb.toFixed(2)}</strong> 배</td>
                                         </tr>
                                         <tr>
-                                            <td>유효 지분</td>
-                                            <td><strong>{results.user_total_effective_deposit_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong> KASH</td>
-                                            <td>Share of Cap: <strong>{results.user_share_percentage.toFixed(4)}</strong> %</td>
+                                            <td>가중 지분 및 풀 내 지분율</td>
+                                            <td><strong>{results.user_total_effective_deposit_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong> Share</td>
+                                            <td>of Cap: <strong>{results.user_share_percentage.toFixed(4)}</strong> %</td>
                                         </tr>
                                         <tr>
-                                            <td>총 누적 이자</td>
+                                            <td>총 누적 이자 및 수익률</td>
                                             <td><strong>{results.total_cumulative_interest_36_epochs_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong> KASH</td>
                                             <td>+<strong>{results.final_roi_percentage.toFixed(2)}</strong> %</td>
                                         </tr>
