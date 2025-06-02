@@ -1,5 +1,5 @@
 ---
-id: 2-etc
+id: distribution
 title: 2. KASH 분배 구조
 description: KASH 분배 구조 상세 내용
 sidebar_position: 2
