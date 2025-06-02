@@ -28,7 +28,7 @@ ChartJS.register(
     Legend,
     Filler,
     LineController,
-    BarController  
+    BarController
 );
 
 const TOTAL_EPOCHS = 36;
@@ -397,8 +397,8 @@ export default function KashStakingCalculator() {
                                         </tr>
                                         <tr>
                                             <td>가중 지분 및 풀 내 지분율</td>
-                                            <td><strong>{results.user_total_effective_deposit_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong> KASH</td>
-                                            <td>Share of Cap: <strong>{results.user_share_percentage.toFixed(4)}</strong> %</td>
+                                            <td><strong>{results.user_total_effective_deposit_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong> Share</td>
+                                            <td>of Cap: <strong>{results.user_share_percentage.toFixed(4)}</strong> %</td>
                                         </tr>
                                         <tr>
                                             <td>총 누적 이자 및 수익률</td>
