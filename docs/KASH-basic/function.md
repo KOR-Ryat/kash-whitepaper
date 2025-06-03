@@ -1,5 +1,5 @@
 ---
-id: 3-kash-function
+id: kash-function
 title: 3. 기능적 역할
 description: KASH 기능적 역할 및 진화 가능성
 sidebar_position: 3
@@ -10,7 +10,7 @@ sidebar_position: 3
 KASH는 프로젝트 내에서 다음과 같은 구조적 역할을 수행합니다:
 
 | **기능** | **설명** |
-| --- | --- |
+| :---: | :--- |
 | 🛠 담보 기반 발행 | vRWA(Gold) 또는 RWA(Gold)를 리저브로 예치 시 발행 |
 | 💵 자금 조달 수단 | 1기 투자자 판매를 통한 광산 개발 펀딩 |
 | 📈 보상 연계 자산 | 스테이킹 이자 제공 (리스크 보상, 보유 기간 인센티브) |
