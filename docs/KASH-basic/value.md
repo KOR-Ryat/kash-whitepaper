@@ -1,5 +1,5 @@
 ---
-id: 2-kash-value
+id: kash-value
 title: 2. KASH 내재 가치
 description: KASH 가치 산정 메커니즘 및 변화 예측
 sidebar_position: 2

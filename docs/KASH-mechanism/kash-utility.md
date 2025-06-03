@@ -1,5 +1,5 @@
 ---
-id: 5-kash-utility
+id: kash-utility
 title: 5. KASH의 역할
 description: KASH의 전략적 가치 및 효용성
 sidebar_position: 5

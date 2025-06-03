@@ -1,5 +1,5 @@
 ---
-id: 1-kash-structure
+id: kash-structure
 title: 1. KASH 리저브토큰 구조
 description: KASH 정의 및 구조
 sidebar_position: 1
