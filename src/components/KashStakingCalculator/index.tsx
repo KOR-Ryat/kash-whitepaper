@@ -33,7 +33,7 @@ ChartJS.register(
 
 const TOTAL_EPOCHS = 36;
 const EPOCH_REWARD_GROWTH_RATE_G = 0.05;
-const KASH_PRICE_USD = 1;
+const KASH_PRICE_USD = 1; // 1 KASH = 1 USD
 
 const POOL_CONFIG = {
     pool1: {
@@ -52,7 +52,6 @@ const POOL_CONFIG = {
         salesMinKash: 5000000,
         salesMaxKash: 10000000,
         dcrCalculationFunction: 'additional',
-        // epbForAdditional: 2,
         totalPoolRewardKash: 20000000,
         poolWeightedShareCapKash: 20000000,
         k : 0.540906246443305252,
@@ -74,15 +73,12 @@ function calculateDcrForPool1(q_b_kash, q_a_kash) {
     let dcr = dcr_raw * 1000000;
     return dcr < 0 ? 0 : dcr;
 }
-function calculateDcrForPool2(q_b_kash, q_a_kash) { // , epbValue
+function calculateDcrForPool2(q_b_kash, q_a_kash) {
     const x_b_million = q_b_kash / 1000000;
     const x_a_million = q_a_kash / 1000000;
     const dcr_raw = calculateEpbIntegralForInitialSalesMillionUnit(2, x_a_million) - calculateEpbIntegralForInitialSalesMillionUnit(2, x_b_million) - (q_a_kash - q_b_kash) / 1000000;
     let dcr = dcr_raw * 1000000 * 2 / 3;
     return dcr < 0 ? 0 : dcr;
-    // const purchase_in_this_stage = q_a_kash - q_b_kash;
-    // if (purchase_in_this_stage <= 0) return 0;
-    // return purchase_in_this_stage * epbValue;
 }
 
 export default function KashStakingCalculator() {
@@ -94,7 +90,7 @@ export default function KashStakingCalculator() {
     const lastManuallySetPurchaseAmountRef = useRef(0);
     const [exchangeRate, setExchangeRate] = useState(1400);
     const [fiatCurrency, setFiatCurrency] = useState('KRW');
-    const [fiatAmount, setFiatAmount] = useState('');
+    const [fiatAmount, setFiatAmount] = useState(''); // User's direct input for fiat
     const [chartData, setChartData] = useState(null);
 
     const currentPoolConfig = POOL_CONFIG[selectedPoolKey];
@@ -121,50 +117,78 @@ export default function KashStakingCalculator() {
         const newMaxPossibleInPool = Math.max(0, currentPoolConfig.salesMaxKash - newTiming);
         let newAmountToSet = (lastManuallySetPurchaseAmountRef.current <= newMaxPossibleInPool) ? lastManuallySetPurchaseAmountRef.current : newMaxPossibleInPool;
         setPurchaseAmountKash(newAmountToSet);
-        updateFiatAmountFromKash(newAmountToSet);
+        // When timing changes, KASH amount might change, so update FIAT accordingly
+        updateFiatAmountFromKash(newAmountToSet, fiatCurrency, exchangeRate);
     };
     
-    const handleAmountChange = (event) => {
+    const handleAmountChange = (event) => { // KASH amount input
         let newAmount = parseFloat(event.target.value);
         if (isNaN(newAmount)) newAmount = 0;
         newAmount = Math.max(0, Math.min(newAmount, maxPossiblePurchaseInPool));
         setPurchaseAmountKash(newAmount);
         lastManuallySetPurchaseAmountRef.current = newAmount;
-        updateFiatAmountFromKash(newAmount);
+        // Update FIAT display when KASH amount is manually changed
+        updateFiatAmountFromKash(newAmount, fiatCurrency, exchangeRate);
     };
 
-    const handleFiatAmountChange = (event) => {
-        const newFiat = event.target.value;
-        setFiatAmount(newFiat);
-        if (newFiat === '' || isNaN(parseFloat(newFiat))) return;
+    const handleFiatAmountChange = (event) => { // FIAT amount input
+        const newFiatInput = event.target.value;
+        setFiatAmount(newFiatInput); // Store user's raw input
+
+        if (newFiatInput === '' || isNaN(parseFloat(newFiatInput))) {
+            // If fiat input is cleared or invalid, reflect this by potentially setting KASH to 0
+            // Or, you might want to leave KASH as is, and only update if fiat is valid.
+            // For now, let's clear KASH if FIAT is cleared, to maintain some consistency.
+            // But if it's just invalid (e.g. "abc"), KASH won't change until a valid number is put.
+            if (newFiatInput === '') {
+                setPurchaseAmountKash(0);
+                lastManuallySetPurchaseAmountRef.current = 0;
+            }
+            return;
+        }
         
-        let kashAmountCalculated = 0;
-        const numericFiat = parseFloat(newFiat);
-        kashAmountCalculated = (fiatCurrency === 'USD') ? (numericFiat / KASH_PRICE_USD) : ((numericFiat / parseFloat(exchangeRate)) / KASH_PRICE_USD);
+        const numericFiat = parseFloat(newFiatInput);
+        let kashAmountCalculated = (fiatCurrency === 'USD') 
+            ? (numericFiat / KASH_PRICE_USD) 
+            : ((numericFiat / parseFloat(exchangeRate)) / KASH_PRICE_USD);
+        
         kashAmountCalculated = Math.floor(kashAmountCalculated);
         kashAmountCalculated = Math.max(0, Math.min(kashAmountCalculated, maxPossiblePurchaseInPool));
+        
         setPurchaseAmountKash(kashAmountCalculated);
         lastManuallySetPurchaseAmountRef.current = kashAmountCalculated;
+        // DO NOT call updateFiatAmountFromKash here to prevent overwriting user's direct FIAT input
     };
     
-    const updateFiatAmountFromKash = (kashValue) => {
+    // This function now takes currency and rate as params to avoid stale closure issues in some contexts
+    const updateFiatAmountFromKash = (kashValue, currentFiatCurrency, currentExchangeRate) => {
         if (isNaN(kashValue) || kashValue === null || kashValue === 0) {
-             setFiatAmount('');
+             setFiatAmount(''); // Clear fiat display if KASH is 0
              return;
         }
-        let newFiatValue = (fiatCurrency === 'USD') ? (kashValue * KASH_PRICE_USD) : (kashValue * KASH_PRICE_USD * parseFloat(exchangeRate));
-        setFiatAmount(newFiatValue.toFixed(fiatCurrency === 'KRW' ? 0 : 2));
+        let newFiatValue = (currentFiatCurrency === 'USD') 
+            ? (kashValue * KASH_PRICE_USD) 
+            : (kashValue * KASH_PRICE_USD * parseFloat(currentExchangeRate));
+        setFiatAmount(newFiatValue.toFixed(currentFiatCurrency === 'KRW' ? 0 : 2));
     };
 
+    // Effect for when exchangeRate or fiatCurrency changes
     useEffect(() => {
-        updateFiatAmountFromKash(parseFloat(purchaseAmountKash));
-    }, [exchangeRate, fiatCurrency]);
+        // Update FIAT display based on current KASH amount when rate or currency changes
+        updateFiatAmountFromKash(parseFloat(purchaseAmountKash), fiatCurrency, exchangeRate);
+    }, [exchangeRate, fiatCurrency]); // Removed purchaseAmountKash from here
 
     const calculateAllRewards = () => {
         if (parseFloat(purchaseAmountKash) <= 0) {
             setErrorMessage("구매 KASH 수량은 0보다 커야 계산이 가능합니다.");
-            setChartData(null); // 구매량 0이면 차트도 지움
-            // 이전 results는 유지
+            setChartData(null); 
+             if (results) {
+                setResults(prevResults => ({
+                    ...prevResults,
+                    user_purchase_kash_amount_at_calc: 0, 
+                    epochDetails: [], 
+                }));
+            }
             return;
         }
         setErrorMessage('');
@@ -190,7 +214,6 @@ export default function KashStakingCalculator() {
             user_dcr_earned_kash = calculateDcrForPool1(q_b_kash_input, q_a_kash_input);
         } else if (currentPoolConfig.dcrCalculationFunction === 'additional') {
             user_dcr_earned_kash = calculateDcrForPool2(q_b_kash_input, q_a_kash_input);
-            // user_dcr_earned_kash = calculateDcrForPool2(q_b_kash_input, q_a_kash_input, currentPoolConfig.epbForAdditional);
         }
         user_dcr_earned_kash = Math.max(0, user_dcr_earned_kash);
 
@@ -227,13 +250,32 @@ export default function KashStakingCalculator() {
         }
         
         const final_roi_percentage = user_purchase_amount_kash_input > 0 ? (current_my_cumulative_interest_kash / user_purchase_amount_kash_input) * 100 : 0;
+        const final_total_asset_kash = user_purchase_amount_kash_input + current_my_cumulative_interest_kash;
+        
+        // Use the current state values for fiat currency and exchange rate at the moment of calculation
+        const kash_price_usd_at_calc = KASH_PRICE_USD;
+        const exchange_rate_at_calc = parseFloat(exchangeRate); 
+        const fiat_currency_at_calc = fiatCurrency;
+
+        let final_total_asset_fiat_value;
+        const usd_value_of_final_asset = final_total_asset_kash * kash_price_usd_at_calc;
+        if (fiat_currency_at_calc === 'USD') {
+            final_total_asset_fiat_value = usd_value_of_final_asset;
+        } else { 
+            final_total_asset_fiat_value = usd_value_of_final_asset * exchange_rate_at_calc;
+        }
 
         setResults({
             user_average_epb, user_dcr_earned_kash, user_total_effective_deposit_kash,
             user_share_percentage: user_share_percentage_raw * 100,
             epochDetails, total_cumulative_interest_36_epochs_kash: current_my_cumulative_interest_kash,
             final_roi_percentage, selected_pool_key: selectedPoolKey,
-            user_purchase_kash_amount_at_calc: user_purchase_amount_kash_input
+            user_purchase_kash_amount_at_calc: user_purchase_amount_kash_input,
+            final_total_asset_kash,
+            final_total_asset_fiat_value,
+            fiat_currency_at_calc,
+            exchange_rate_at_calc, 
+            kash_price_usd_at_calc
         });
 
         setChartData({
@@ -344,6 +386,7 @@ export default function KashStakingCalculator() {
                              1 USD = <input 
                                     type="number" 
                                     value={exchangeRate} 
+                                    // 이전의 최소한의 유효성 검사 유지 (0 이하 또는 NaN 방지)
                                     onChange={(e) => setExchangeRate(parseFloat(e.target.value) || 1)} 
                                     className={styles.inlineNumberInputShort} /> KRW
                         </div>
@@ -351,10 +394,11 @@ export default function KashStakingCalculator() {
                             <input 
                                 type="number" 
                                 id="fiatAmountInput" 
-                                value={fiatAmount} 
+                                value={fiatAmount} // Controlled by fiatAmount state
                                 onChange={handleFiatAmountChange} 
                                 className={styles.numberInputFiat} 
                                 placeholder="금액 입력"
+                                min="0"
                             />
                             <select value={fiatCurrency} onChange={(e) => setFiatCurrency(e.target.value)} className={styles.fiatCurrencySelect}>
                                 <option value="KRW">KRW</option>
@@ -385,7 +429,13 @@ export default function KashStakingCalculator() {
                                 선택 풀: {POOL_CONFIG[results.selected_pool_key]?.label || 'N/A'}
                                  |  총 {TOTAL_EPOCHS} 에포크
                                  |  풀 보상 총액: {POOL_CONFIG[results.selected_pool_key]?.totalPoolRewardKash.toLocaleString()} KASH
-                                 |  풀 Share Cap: {POOL_CONFIG[results.selected_pool_key]?.poolWeightedShareCapKash.toLocaleString()}
+                                 |  풀 Share Cap: {POOL_CONFIG[results.selected_pool_key]?.poolWeightedShareCapKash.toLocaleString()} KASH
+                                {results.fiat_currency_at_calc && typeof results.user_purchase_kash_amount_at_calc !== 'undefined' && results.user_purchase_kash_amount_at_calc > 0 && ( // 계산 결과가 있을 때만 환율 정보 표시
+                                    <>
+                                         |  계산 시점: 1 KASH = {results.kash_price_usd_at_calc.toLocaleString()} USD
+                                        {results.fiat_currency_at_calc === 'KRW' && ` (1 USD = ${results.exchange_rate_at_calc.toLocaleString()} KRW)`}
+                                    </>
+                                )}
                             </p>
                             {typeof results.user_purchase_kash_amount_at_calc !== 'undefined' && results.user_purchase_kash_amount_at_calc > 0 && (
                                 <table className={styles.summaryTable}>
@@ -405,10 +455,22 @@ export default function KashStakingCalculator() {
                                             <td><strong>{results.total_cumulative_interest_36_epochs_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong> KASH</td>
                                             <td>+<strong>{results.final_roi_percentage.toFixed(2)}</strong> %</td>
                                         </tr>
+                                        <tr>
+                                            <td>최종 자산</td>
+                                            <td><strong>{results.final_total_asset_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</strong> KASH</td>
+                                            <td>
+                                                <strong>
+                                                    {results.final_total_asset_fiat_value.toLocaleString(undefined, { 
+                                                        minimumFractionDigits: results.fiat_currency_at_calc === 'KRW' ? 0 : 2,
+                                                        maximumFractionDigits: results.fiat_currency_at_calc === 'KRW' ? 0 : 2,
+                                                    })}
+                                                </strong> {results.fiat_currency_at_calc}
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             )}
-                            {typeof results.user_purchase_kash_amount_at_calc !== 'undefined' && results.user_purchase_kash_amount_at_calc <= 0 && results.epochDetails && results.epochDetails.length > 0 && (
+                            {typeof results.user_purchase_kash_amount_at_calc !== 'undefined' && results.user_purchase_kash_amount_at_calc <= 0 && (!results.epochDetails || results.epochDetails.length === 0) && (
                                 <p className={styles.infoText}>구매 수량이 0입니다. 구매 수량을 입력 후 다시 계산해주세요.</p>
                             )}
                         </div>
@@ -419,7 +481,7 @@ export default function KashStakingCalculator() {
                             </div>
                         )}
 
-                        {typeof results.user_purchase_kash_amount_at_calc !== 'undefined' && results.user_purchase_kash_amount_at_calc > 0 && results.epochDetails && (
+                        {typeof results.user_purchase_kash_amount_at_calc !== 'undefined' && results.user_purchase_kash_amount_at_calc > 0 && results.epochDetails && results.epochDetails.length > 1 && (
                             <div className={styles.resultsTableContainer}>
                                 <h2>🗓️ 에포크별 상세 예상 수익</h2>
                                 <table>
@@ -435,7 +497,7 @@ export default function KashStakingCalculator() {
                                     <tbody>
                                         {results.epochDetails.map((epoch) => (
                                             <tr key={epoch.epoch_number}>
-                                                <td>{epoch.epoch_number}</td>
+                                                <td>{epoch.epoch_number === 0 ? '시작' : epoch.epoch_number}</td>
                                                 <td>{epoch.pool_total_reward_this_epoch_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
                                                 <td>{epoch.my_reward_this_epoch_kash.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                                                 <td>{epoch.my_net_asset_kash.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
