@@ -1,5 +1,5 @@
 ---
-id: 4-kash-liquidity
+id: kash-liquidity
 title: 4. 유동성과 가격 조절
 description: 유동성 및 가격 안정화 알고리즘
 sidebar_position: 4
