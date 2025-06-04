@@ -24,12 +24,33 @@ if output_file_absolute not in excluded_files_absolute:
 print(f"결합된 파일을 저장할 경로: {output_file_absolute}")
 print(f"제외할 파일 목록 (절대 경로 기준): {excluded_files_absolute}")
 
+# define custom order @logan
+custom_order = [
+    "introduction",
+    "market_problem",
+    "KASH-basic",
+    "gold_mining",
+    "RWA",
+    "KASH-mechanism",
+    "tokenomics",
+    "12.staking",
+    "13.rbs"
+]
+
+def custom_sort_key(name):
+    try:
+        return custom_order.index(name)
+    except ValueError:
+        return len(custom_order) + ord(name[0])
+
 
 with open(output_file, 'w', encoding='utf-8') as outfile:
     for root, dirs, files in os.walk(docs_path):
         # 제외할 디렉토리 (선택 사항, 필요시 추가)
         # dirs[:] = [d for d in dirs if os.path.join(root, d) not in excluded_directories]
-        dirs.sort()
+        # dirs.sort()
+        # 파일을 사용자 정의 순서로 정렬 @logan
+        dirs.sort(key=lambda d: custom_sort_key(os.path.basename(d)))
         files.sort()
         for file in files:
             if file.endswith(file_extensions):
