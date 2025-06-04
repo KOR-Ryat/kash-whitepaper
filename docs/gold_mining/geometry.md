@@ -1,5 +1,5 @@
 ---
-id: 2-geometry
+id: geometry
 title: 2. 지질 특성과 매장량 개요
 description: 부루 광산의 금광 잠재력
 sidebar_position: 2

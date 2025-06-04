@@ -1,5 +1,5 @@
 ---
-id: 3-minig-economyu
+id: minig-economyu
 title: 3. 경제성 조건 - 품위, 규모, 수익성
 description: 부루 광산 경제성을 기반으로 한 KASH 프로젝트 사업성
 sidebar_position: 3

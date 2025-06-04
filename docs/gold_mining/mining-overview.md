@@ -1,5 +1,5 @@
 ---
-id: 1-mining-overview
+id: mining-overview
 title: 1. 광산 사업 개요와 KASH 재단과의 관계
 description: 부루 광산 위치, 행정 인허가 상태 및 KASH 재단의 역할
 sidebar_position: 1
