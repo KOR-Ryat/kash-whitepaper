@@ -1,4 +1,5 @@
 ---
+id: core
 sidebar_position: 1
 ---
 

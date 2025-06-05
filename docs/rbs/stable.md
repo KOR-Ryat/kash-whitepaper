@@ -1,4 +1,5 @@
 ---
+id: stabilization
 sidebar_position: 2
 ---
 
