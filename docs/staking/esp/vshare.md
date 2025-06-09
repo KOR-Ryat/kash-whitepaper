@@ -1,6 +1,6 @@
 ---
 id : vshare
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Virtual Share
@@ -11,7 +11,7 @@ EPB에 의해 발급된 DCR이 실제 보상에 영향을 주는 것은 가상 �
 
 ### Virtual Share
 
-사용자는 예치시 DCR을 소모하여 1 DCR당 1 KASH 가치로 환산하여 가상 지분을 발급 받을 수 있습니다. 사용한 DCR 가치 만큼의 부채가 동시에 발생하여, 추후 지분을 청산할 때에 다시 상환해야 합니다. 
+사용자는 예치시 DCR을 소모하여 1 DCR당 1 KASH 가치로 환산한 만큼 가상 지분을 발급 받을 수 있습니다. 사용한 DCR 가치 만큼의 부채가 동시에 발생하여, 추후 지분을 청산할 때에 다시 상환해야 합니다. 
 
 + Virtual Share : DCR에 의해 추가로 발행된 가상 지분입니다. 
     $$
@@ -35,9 +35,9 @@ EPB에 의해 발급된 DCR이 실제 보상에 영향을 주는 것은 가상 �
 
 발급 받은 DCR을 제한 없이 모두 행사할 수 있는 것은 아닙니다. 구매 수량과 발급받은 DCR 개수에 비례하여 최대 부채율(레버리지)가 제한되어 있습니다. 이는 아주 소량의 KASH만 예치하고 DCR만 행사하여 불공정한 형태로 보상을 받는 행위를 방지하기 위한 장치입니다. 
 
-+ User Current Leverage : 특정 유저의 순지분에 비해 총 지분(예치액 규모)이 얼마나 많은가
++ User Leverage : 특정 유저의 순지분에 비해 총 지분(예치액 규모)이 얼마나 많은가
     $$
-    CurrentLeverage_{user} = \frac{Share_{weighed}}{Share_{principle}}
+    Leverage_{user} = \frac{Share_{weighed}}{Share_{principle}}
     $$
 
 + User Max Leverage : 유저가 DCR을 통해 가질 수 있는 최대 레버리지
@@ -52,7 +52,7 @@ EPB에 의해 발급된 DCR이 실제 보상에 영향을 주는 것은 가상 �
     Share_{virtual, limit} = (MaxLeverage_{user} - 1) \times (Share_{principle} + \frac{Amount_{deposit}}{Price_{share}})
     $$
     + $Amonut_{deposit}$ : (선택 사항) DCR 행사시 함께 예치할 금액
-    + $Share_{virtual, limit}$ : 현재 순지분에 대한 가상 지분의 한도
+    + $Share_{virtual, limit}$ : 순지분과 최대 레버리지에 비례한 가상 지분의 한도
     $$
     DCR_{exercisable} = 
     \begin{cases}
@@ -61,7 +61,7 @@ EPB에 의해 발급된 DCR이 실제 보상에 영향을 주는 것은 가상 �
     \end{cases}
     $$
 
-일반적으로는 이러한 수식을 모두 이해할 필요 없이, 세일즈로 구매한 토큰 전부를 예치하면 해당 구매로 발급받은 DCR을 모두 행사 가능합니다.
+일반적으로는 이러한 수식을 모두 이해할 필요 없이, 세일즈로 구매한 토큰을 전부 예치하면 해당 구매로 발급받은 DCR을 모두 행사 가능합니다.
 
 ---
 
@@ -87,7 +87,7 @@ Early Staking Pool에서는 이 가상 지분 개념을 도입함으로써 다�
     + $\sum Reward_{\text{All epochs}}$ : 스테이킹 풀에 실현된 보상 총량입니다.
     + $\sum\limits_{user \in U_{pool}} Shares_{weighted, user}$ : 스테이킹한 유저들의 가중 지분 총량입니다.
 
-+ Withdrawable Balance : 출금시에는 지분을 소각하고 KASH로 변환합니다. 그 중에서 부채를 제외한 만큼이 인출 가능 금액이 됩니다.
++ Withdrawable Balance : 출금시에는 지분을 소각하고 KASH로 변환합니다. 그 중에서 부채를 제외한 만큼이 인출 가능 총액이 됩니다.
     $$
     Amount_{Withdrawable} = Share_{weighted} \times Price_{share} - Debt
     $$

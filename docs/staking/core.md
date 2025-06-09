@@ -25,9 +25,9 @@ KASH 1차 생태계에서, 스테이킹 보상을 위해 할당된 KASH는 스�
 KASH의 스테이킹 보상은 실시간, 연속적으로 발생하는 것이 아니라 에포크(Epoch) 라고 하는 미리 정의된 시간 주기에 따라 분배됩니다. 각 에포크가 종료되는 시점에, 해당 에포크 동안 발생한 총 보상이 계산되어 스테이킹 참여자들에게 할당됩니다.
 
 + Genesis Timestamp
-    + 스테이킹 풀이 생성되는 즉시 보상 분배가 시작되는 것은 아닙니다. 제한된 예치량의 일부를 선점하는 등 스테이킹 시점에 따른 이점을 확보하기 위해 미리 스테이킹 할 수 있지만, 실제 보상이 분배되는 Epoch는 그 이후에 시작할 수 있습니다.
-    + $T_{open}$ (`STAKING_POOL_OPEN`) : 해당 스테이킹 풀이 오픈되어 예치 가능해지는 시점 [^1]*(STAKING_POOL_OPEN)*
-    + $T_{start}$ : 보상 분배가 시작되는 첫 Epoch의 시작 시점 ($T_{open} \le T_{start}$) [^2]
+    + 스테이킹 풀이 생성되는 즉시 보상 분배가 시작되는 것은 아닙니다. 제한된 예치량에 대한 선점 등 스테이킹의 시점에 따른 이점을 확보하기 위해서 미리 스테이킹 할 수는 있지만, 실제 보상이 분배되는 Epoch는 그 이후에 시작할 수 있습니다.
+    + $T_{open}$[^STAKING_POOL_OPEN] : 해당 스테이킹 풀이 오픈되어 예치 가능해지는 시점
+    + $T_{start}$[^STAKING_EPOCH_START] : 해당 스테이킹 풀의 보상 분배가 시작되는 첫 Epoch 시작 시점 ($T_{open} \le T_{start}$)
 
 + Epoch Reward
     + 각 에포크에 분배될 보상액은 에포크마다 성장률($g$)을 적용하여 점진적으로 증가하도록 설계되었습니다. 이는 초기 생태계를 보다 안정화하고 장기적인 참여를 독려하기 위함입니다. 
@@ -36,10 +36,10 @@ KASH의 스테이킹 보상은 실시간, 연속적으로 발생하는 것이 �
         $$
         N_{epochs} = \frac{Duration_{pool}}{Duration_{epoch}}
         $$
-        + $Duration_{pool}$: 해당 풀의 전체 스테이킹 기간. (상수: #STAKING_TOTAL_DURATION)
-        + $Duration_{epoch}$: 에포크 주기. (상수: #STAKING_EPOCH_DURATION)
+        + $Duration_{pool}$[^STAKING_TOTAL_DURATION]: 해당 풀의 전체 스테이킹 기간.
+        + $Duration_{epoch}$[^STAKING_EPOCH_DURATION]: 해당 풀의 에포크 주기.
 
-    + $Reward_{base}$ : 풀의 보상 총액과 성장률로부터 첫 번째 에포크에 분배될 기준 보상액을 결정합니다.
+    + $Reward_{base}$[^STAKING_REWARD_BASE] : 풀의 보상 총액과 성장률로부터 첫 번째 에포크에 분배될 기준 보상액을 결정합니다.
         $$
         Reward_{base} = 
         \begin{cases}
@@ -47,8 +47,8 @@ KASH의 스테이킹 보상은 실시간, 연속적으로 발생하는 것이 �
             Reward_{Total} / N_{epochs}  & (g = 0)
         \end{cases}
         $$
-        + $Reward_{Total}$: 해당 스테이킹 풀에 분배된 토큰의 총량.
-        + $g$: 에포크별 보상 성장률. 이 값은 상수 `STAKING_REWARD_GROWTH_RATE`로 정의됩니다. (Appendix A 참조)
+        + $Reward_{Total}$[^STAKING_REWARD_TOTAL]: 해당 스테이킹 풀에 분배된 토큰의 총량.
+        + $g$[^STAKING_REWARD_GROWTH]: 에포크별 보상 성장률.
 
     + $Reward_{Epoch}$: $k$번째 에포크에 분배될 총 보상은 다음과 같습니다.
         $$
@@ -59,13 +59,11 @@ KASH의 스테이킹 보상은 실시간, 연속적으로 발생하는 것이 �
 
 ### Epoch Reward Graph
 
-g값에 따른 각 epoch별 보상량의 그래프는 다음과 같습니다.
+현재 Early Staking Pool에 사용되는 g=0.05일 때 각 epoch별 보상량 및 수익률의 그래프는 다음과 같습니다.
 
-(Epoch별 보상 그래프)
+![KASH Epoch Reward Graph](/img/kash_epoch_rewards.png)
 
-+ 12 epoch = 1 year, total 36 epoch를 기준으로 하였습니다.
-+ total reward = 100으로 설정하였습니다.
-+ 현재 Early Staking Pool의 경우 g=xxx를 사용합니다.
++ total 36 epoch, total reward = 1로 설정 하였습니다.
 
 ---
 
@@ -105,5 +103,11 @@ g값에 따른 각 epoch별 보상량의 그래프는 다음과 같습니다.
 
 ---
 
-[^1]: STAKING_POOL_OPEN
-[^2]: STAKING_EPOCH_START
+[^STAKING_POOL_OPEN]: 각 Staking Pool 컨트랙트 상의 변수명 STAKING_POOL_OPEN. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
+[^STAKING_EPOCH_START]: 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_EPOCH_START. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
+[^STAKING_TOTAL_DURATION]: 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_TOTAL_DURATION. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
+[^STAKING_EPOCH_DURATION]: 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_EPOCH_DURATION. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
+<!-- [^STAKING_REWARD_GROWTH]: 스마트 컨트랙트 상의 변수명 STAKING_REWARD_GROWTH. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능 -->
+[^STAKING_REWARD_BASE]: 실제로는 풀 생성 시점에 g값에 따라 미리 계산되어 할당됩니다. 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_REWARD_BASE. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
+[^STAKING_REWARD_TOTAL]: Reward Distributor 컨트랙트 상의 변수명 STAKING_REWARD_TOTAL. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
+[^STAKING_REWARD_GROWTH]: 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_REWARD_GROWTH. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
