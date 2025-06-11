@@ -41,6 +41,10 @@ PT. JH ENERGY는 관련 부처 및 지방정부와의 협의를 통해 인허가
 
 ### KASH 재단과의 관계 및 vRWA 연동 구조
 
+:::info
+KASH 재단은 AMC 계약을 통해 JH ENERGY가 생산한 금의 35%를 우선적으로 vRWA 청산에 사용합니다.
+:::
+
 - **KASH 재단**은 PT. JH ENERGY 가 생산한 금에 대한 운영과 KASH 프로젝트의 디지털 자산화를 담당하며,
     PT. JH ENERGY로부터 확정된 금 생산 일정과 분량을 기준으로 vRWA(Gold) 청산을 진행합니다.
     
