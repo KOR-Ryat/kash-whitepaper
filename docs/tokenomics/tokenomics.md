@@ -20,7 +20,7 @@ KASH는 vRWA(Gold) 또는 RWA(Gold)를 리저브풀에 담보로 예치함으로
 | **기준 금 가격** | 3,200 USD/oz (발행 기준가) |
 | **KASH 발행 환산가** | 1 KASH = 1 USD |
 | **vRWA(Gold) : RWA(Gold) 발행 비율** | 1 vRWA(Gold) = 1 RWA(Gold) = 1 oz 금 |
-| **vRWA(Gold) : KASH 발행 비율** | **1 vRWA(Gold) =** **1 oz 금 = 100 KASH** |
+| **vRWA(Gold) : KASH 발행 비율** | **1 vRWA(Gold) =** **1 oz 금 = 3,125 KASH** |
 | **총 vRWA 발행량** | **32,000 vRWA(Gold)** (기초 금 1 ton 기준) |
 | **총 KASH 발행량** | **100,000,000 KASH** |
 
