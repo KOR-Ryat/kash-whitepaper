@@ -1,0 +1,16 @@
+---
+id: intro
+sidebar_position: 0
+draft: true
+---
+
+# Technical Details
+
+KASH는 다음과 같은 요구사항을 만족할 수 있도록 시스템을 디자인했습니다.
+
++ Trustless Staking : Keeper 등에 의한 epoch 업데이트 및 보상 분배 등 권한의 중앙화와 로직의 오프체인화는 가능한 피한다.
++ Pull-based Model : 각 사용자의 정보는 인출 등 각자의 트랜젝션이 발생되는 행동 시점에 실제로 계산되어 업데이트 된다.
++ Effortless Compounding : 이 외에 사용자가 복리 효과를 위해 직,간접적으로 자신의 정보를 업데이트 할 필요가 없어야 한다.
++ Flawless Compounding : 동시에 각 사용자가 매번 발생한 이자를 즉시 재예치 한 것과 완전히 동일한 복리 효과를 가져야 한다.
+
+이 섹션에서는 KASH에서 이러한 조건을 만족하는 스테이킹 컨트랙트를 구현한 방법을 설명합니다.

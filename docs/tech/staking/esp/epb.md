@@ -27,13 +27,13 @@ Early Staking Pool은 이 중 더 불확실성이 높고, 프로젝트에 보다
     EPB_{q} = A / (q + k)^2 + C
     $$
     + $q$ : 세일즈의 진행 상황 (판매량, KASH)
-    + $k, A, C$ : 아래 조건을 달성하는 EPB 곡선을 구성하는 상수, 각 스테이킹 풀 별로 상이
+    + $k$[^DCR_k], $A$[^DCR_A], $C$[^DCR_C] : 아래 조건을 달성하는 EPB 곡선을 구성하는 상수
         + 단조 감소 : $q_1<q_2 \implies EPB_{q1} \ge EPB_{q2}$
         + 목표 배율 : $EPB_0 = a$, $EPB_{5m} = b + \epsilon$
-            + $a$ : 세일즈 초기의 최대 배율
-            + $b$ : 세일즈 후기의 최소 배율
+            + $a$ : 세일즈 초기의 최대 배율, Early Staking Pool의 경우 25
+            + $b$ : 세일즈 후기의 최소 배율, Early Staking Pool의 경우 4
         + 정적분 : $\int_{0}^{5m} EPB_q \, dq = c - \epsilon$
-            + $c$ : 세일즈를 통해 발행할 지분 총량
+            + $c$ : 세일즈를 통해 발행할 지분 총량, Early Staking Pool의 경우 25m
         + 소수점 오차 : $0< \epsilon ≪ 1$
     
 + $E(EPB)$ : 참여시기와 구매량을 고려한 실질적인 사용자의 최종 EPB.
@@ -60,7 +60,7 @@ Early Staking Pool은 이 중 더 불확실성이 높고, 프로젝트에 보다
     $$
     DCR_{earn} = \int_{q_b}^{q_a} (EPB_q - 1) \, dq = (E(EPB) - 1) \times Amount_{buy}
     $$
-    + $Amount_{buy}$ = q_a - q_b$ : 세일즈 참여자가 구매한 토큰 수량
+    + $Amount_{buy}$ = $q_a - q_b$ : 세일즈 참여자가 구매한 토큰 수량
     + $DCR_{earn}$ : 세일즈 참여자가 토큰 구매로 받는 DCR 수량
 
 <!-- 📌 추가 세일즈 참여자의 경우 현재의 Early Staking Pool에서 DCR을 행사할 기회가 없을 수 있습니다. 아래 Priority Reservation 파트를 반드시 참고하세요. -->
@@ -74,3 +74,9 @@ Early Staking Pool은 이 중 더 불확실성이 높고, 프로젝트에 보다
 ![KASH EPB Graph](/img/kash_staking_epb.png)
 
 + q는 1,000,000 KASH 단위입니다.
+
+---
+
+[^DCR_k]: 각 DCR Stragegy 컨트랙트 상의 변수명 DCR_k. [Appendix](/appendix/constants)에서 값 확인 가능
+[^DCR_A]: 각 DCR Stragegy 컨트랙트 상의 변수명 DCR_A. [Appendix](/appendix/constants)에서 값 확인 가능
+[^DCR_C]: 각 DCR Stragegy 컨트랙트 상의 변수명 DCR_C. [Appendix](/appendix/constants)에서 값 확인 가능
