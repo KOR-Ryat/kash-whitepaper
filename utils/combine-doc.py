@@ -8,7 +8,7 @@ file_extensions = ('.md', '.mdx')
 # 예시: excluded_files = ['./docs/some_folder/exclude_this.md', './docs/another_folder/do_not_include_this.mdx']
 # os.path.normpath를 사용하여 경로 구분자를 OS에 맞게 정규화합니다.
 excluded_files = [
-    os.path.normpath('./docs/91.appendix/99.example.mdx'),
+    os.path.normpath('./docs/appendix/99.example.mdx'),
     # 여기에 제외하고 싶은 파일 경로를 추가하세요.
 ]
 # --------------------------------------------------------------
@@ -33,8 +33,8 @@ custom_order = [
     "RWA",
     "KASH-mechanism",
     "tokenomics",
-    "12.staking",
-    "13.rbs"
+    "staking",
+    "rbs"
 ]
 
 def custom_sort_key(name):

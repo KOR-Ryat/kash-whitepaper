@@ -1,5 +1,5 @@
 ---
-id: 3-staking-&-reward
+id: staking-&-reward
 title: 3. 초기 투자자 보상
 description: 초기 리스크에 대한 KASH 스테이킹과 보상
 sidebar_position: 3
@@ -55,7 +55,7 @@ sidebar_position: 3
     + 스테이킹 풀의 예치 규모가 제한되어 있어 재예치가 어려울 수 있습니다. 
 
 :::info
-참여 시점에 따른 예상 수익 그래프는 아래 [EPB/DCR 그래프](./3-staking-&-reward#epb--dcr-그래프-해석)를 참고할 수 있으며, 정확한 보상의 시뮬레이션은 [보상 계산기](/staking/calculator)를 이용할 수 있습니다.
+참여 시점에 따른 예상 수익 그래프는 아래 [EPB/DCR 그래프](./staking-&-reward#epb--dcr-그래프-해석)를 참고할 수 있으며, 정확한 보상의 시뮬레이션은 [보상 계산기](/staking/calculator)를 이용할 수 있습니다.
 :::
 
 아래 문서의 나머지 부분에서 이 핵심들에 대해 조금 더 상세히 풀어서 설명하였습니다.
