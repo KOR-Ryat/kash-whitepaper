@@ -61,7 +61,7 @@ KASH 금광 개발사인 JH Energy는 2012년 광석을 직접 채취하여 한�
 | 중국 산동성 제6지질광산탐사원 | 114.65g/ton | 6.17g/ton |
 
 <!-- #### KASH Reserve Token Structure -->
-<img src="/img/gold_pre_study.png" alt="Brue Gold Pre Study" width="1000"/>
+<img src="/img/gold_pre_study.jpg" alt="Brue Gold Pre Study" width="1000"/>
 
 ### 부루 금광의 경제성
 
