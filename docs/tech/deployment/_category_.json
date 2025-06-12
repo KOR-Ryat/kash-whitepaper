@@ -1,0 +1,8 @@
+{
+  "label": "📦 Deployments",
+  "position": 31,
+  "link": {
+    "type": "generated-index",
+    "slug" : "/deployment"
+  }
+}
