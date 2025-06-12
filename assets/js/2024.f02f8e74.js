@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkash_whitepaper=self.webpackChunkkash_whitepaper||[]).push([[2024],{2024:(e,a,h)=>{h.d(a,{createArchitectureServices:()=>r.S});var r=h(8815);h(3579)}}]);
