@@ -103,11 +103,11 @@ KASH의 스테이킹 보상은 실시간, 연속적으로 발생하는 것이 �
 
 ---
 
-[^STAKING_POOL_OPEN]: 각 Staking Pool 컨트랙트 상의 변수명 STAKING_POOL_OPEN. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
-[^STAKING_EPOCH_START]: 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_EPOCH_START. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
-[^STAKING_TOTAL_DURATION]: 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_TOTAL_DURATION. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
-[^STAKING_EPOCH_DURATION]: 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_EPOCH_DURATION. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
-<!-- [^STAKING_REWARD_GROWTH]: 스마트 컨트랙트 상의 변수명 STAKING_REWARD_GROWTH. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능 -->
-[^STAKING_REWARD_BASE]: 실제로는 풀 생성 시점에 g값에 따라 미리 계산되어 할당됩니다. 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_REWARD_BASE. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
-[^STAKING_REWARD_TOTAL]: Reward Distributor 컨트랙트 상의 변수명 STAKING_REWARD_TOTAL. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
-[^STAKING_REWARD_GROWTH]: 각 Reward Strategy 컨트랙트 상의 변수명 STAKING_REWARD_GROWTH. [Appendix](/appendix/constants)에서 각 스테이킹 풀의 값 확인 가능
+[^STAKING_POOL_OPEN]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) STAKING_POOL_OPEN에 해당합니다.
+[^STAKING_EPOCH_START]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) STAKING_EPOCH_START에 해당합니다.
+[^STAKING_TOTAL_DURATION]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) STAKING_TOTAL_DURATION에 해당합니다.
+[^STAKING_EPOCH_DURATION]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) STAKING_EPOCH_DURATION에 해당합니다.
+<!-- [^STAKING_REWARD_GROWTH]: 스마트 컨트랙트 상의 변수명 . [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) STAKING_REWARD_GROWTH에 해당합니다. -->
+[^STAKING_REWARD_BASE]: 풀 생성 시점에 g값에 따라 미리 계산되어 할당됩니다. [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) STAKING_REWARD_BASE에 해당합니다. 
+[^STAKING_REWARD_TOTAL]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) STAKING_REWARD_TOTAL에 해당합니다.
+[^STAKING_REWARD_GROWTH]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) STAKING_REWARD_GROWTH에 해당합니다.
