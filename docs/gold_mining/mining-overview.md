@@ -12,7 +12,7 @@ KASH 프로젝트의 1기 vRWA(Gold)는 인도네시아 말루쿠주 부루섬(B
 해당 광산은 총 **약 1,770ha** 규모의 채굴 권역(Exploration Permit)을 보유하고 있으며,
 법적/행정적 절차를 마친 인도네시아 현지 법인 **PT. JH ENERGY**가 탐사권(IUP Eksplorasi)을 보유하고 생산허가권(Producsi) 취득 절자 진행 중에 있습니다.
 
-- 위치: Buru Island, Maluku Province, Indonesia
+- 위치: Gunung Botak, Buru Island, Maluku Province, Indonesia
 - 채굴권 보유사: PT. JH ENERGY (인도네시아 법인)
 - 채굴 면적: 약 150 ha 시험 생산 후 1,770 ha 본 생산
 - 보유권한: 탐사 라이선스 (IUP Eksplorasi), 채굴 전환 계획 포함
