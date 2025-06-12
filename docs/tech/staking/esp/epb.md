@@ -77,6 +77,6 @@ Early Staking Pool은 이 중 더 불확실성이 높고, 프로젝트에 보다
 
 ---
 
-[^DCR_k]: 각 DCR Stragegy 컨트랙트 상의 변수명 DCR_k. [Appendix](/appendix/constants)에서 값 확인 가능
-[^DCR_A]: 각 DCR Stragegy 컨트랙트 상의 변수명 DCR_A. [Appendix](/appendix/constants)에서 값 확인 가능
-[^DCR_C]: 각 DCR Stragegy 컨트랙트 상의 변수명 DCR_C. [Appendix](/appendix/constants)에서 값 확인 가능
+[^DCR_k]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) DCR_k에 해당합니다.
+[^DCR_A]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) DCR_A에 해당합니다.
+[^DCR_C]: [스마트 컨트랙트 상의 파라미터](/tech/deployment/config-initial) DCR_C에 해당합니다.
