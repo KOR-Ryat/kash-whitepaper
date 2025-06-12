@@ -1,11 +1,11 @@
 ---
+id: config-initial
 sidebar_position: 1
-id: constants
 ---
 
-# Smart Contract Contants
+# Initial Configuration
 
-여기서는 스마트 컨트랙트별 사용되고 있는 각 설정값 목록을 제공합니다.
+프로젝트 초기에 설정될 예정인 파라미터를 사용되는 컨트랙트별로 안내합니다.
 
 + 변수명
     + 스마트 컨트랙트에 각 값이 저장된 변수명입니다.
