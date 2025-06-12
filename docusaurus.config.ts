@@ -99,11 +99,11 @@ const config: Config = {
           label: 'Website',
           position: 'right',
         },
-        {
-          href: 'https://github.com/kor-ryat/kash-whitepaper',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://github.com/kor-ryat/kash-whitepaper',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
         // {
         //   type: 'localeDropdown',
         //   position: 'right',
