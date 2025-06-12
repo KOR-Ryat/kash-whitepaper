@@ -20,7 +20,7 @@ KASH는 vRWA(Gold) 또는 RWA(Gold)를 리저브풀에 담보로 예치함으로
 | **기준 금 가격** | 3,200 USD/oz (발행 기준가) |
 | **KASH 발행 환산가** | 1 KASH = 1 USD |
 | **vRWA(Gold) : RWA(Gold) 발행 비율** | 1 vRWA(Gold) = 1 RWA(Gold) = 1 oz 금 |
-| **vRWA(Gold) : KASH 발행 비율** | **1 vRWA(Gold) =** **1 oz 금 = 100 KASH** |
+| **vRWA(Gold) : KASH 발행 비율** | **1 vRWA(Gold) =** **1 oz 금 = 3,125 KASH** |
 | **총 vRWA 발행량** | **32,000 vRWA(Gold)** (기초 금 1 ton 기준) |
 | **총 KASH 발행량** | **100,000,000 KASH** |
 
@@ -36,6 +36,16 @@ KASH는 vRWA(Gold) 또는 RWA(Gold)를 리저브풀에 담보로 예치함으로
 | 보험 (청산보증) | 10% | 10,000,000 | 일정 지연 시 vRWA 대체청산 |
 | 팀 및 기여자 | 10% | 10,000,000 | 조건부 락업 및 소각 구조 |
 | 파트너/마케팅 | 10% | 10,000,000 | 생태계 확장 |
+
+~~~mermaid
+pie title KASH Tokenomics
+    "Funding" : 10
+    "Reward" : 50
+    "Liquidity" : 10
+    "Insurance" : 10
+    "Team" : 10
+    "Others" : 10
+~~~
 
 > KASH는 단순한 리저브 토큰이 아닌, **실물 기반 신뢰자산**,
 > **투명한 위험 보상 메커니즘**, **상·하단 가격 안정화 전략**,
