@@ -19,4 +19,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/utils/combined_docs.md
+/utils/combined_docs*
