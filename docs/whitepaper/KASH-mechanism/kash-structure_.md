@@ -1,6 +1,6 @@
 ---
 id: kash-structure_
-title: 1. 담보부 발행과 KASH 가치
+title: 1. 담보부 발행과 KASH의 가치
 description: 리저브 토큰 발행구조 및 리저브 풀
 sidebar_position: 0
 draft: true
