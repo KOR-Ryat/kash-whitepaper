@@ -4,6 +4,7 @@ id: kash-structure
 title: 1. 발행 구조 및 담보 모델
 description: 리저브토큰 발행구조 및 리저브풀
 sidebar_position: 1
+draft: true
 ---
 
 KASH는 KASH 프로젝트의 핵심 통화이며, **실물 자산 기반 RWA(vRWA(Gold) 또는 RWA(Gold))를 담보로 발행되는 리저브 토큰**입니다.

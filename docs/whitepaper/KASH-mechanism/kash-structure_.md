@@ -3,7 +3,6 @@ id: kash-structure_
 title: 1. 담보부 발행과 KASH의 가치
 description: 리저브 토큰 발행구조 및 리저브 풀
 sidebar_position: 0
-draft: true
 ---
 
 여기에서는 KASH 프로젝트의 핵심 통화인 KASH 토큰이 어떤 구조로 발행되며, 어떻게 가치를 가지게 되는지를 설명합니다.
