@@ -5,34 +5,34 @@ sidebar_position: 0
 
 # Introduction of Staking
 
-KASH 1기 생태계의 핵심 구성 요소인 스테이킹(Staking)은 초기 참여자와 장기 기여자의 공헌을 인정하고 추가적인 인센티브를 제공하면서도 단기 차익 실현보다는 지속 가능한 생태계 참여를 장려하는 요소입니다.
+As a core component of the KASH Phase 1 ecosystem, Staking is designed to recognize the contributions of early participants and long-term contributors. It provides additional incentives while encouraging sustainable ecosystem participation over short-term profit-taking.
 
 :::info
-이는 수식 등에 기반한 기술 백서 수준의 문서로, DeFi나 금융 투자에 익숙한 사용자 혹은 개발자가 보다 구체적인 내용을 파악할 수 있도록 작성되었습니다. 비교적 친절하게 작성된 투자자용 문서 [초기 투자자 보상](/whitepaper/KASH-mechanism/staking-&-reward) 내용을 먼저 확인하면, 내용 파악이 보다 용이할 수 있습니다. 
+This document is a technical whitepaper based on formulas and other specifications, intended for users and developers familiar with DeFi or financial investments to understand the specific details. We recommend first reviewing the more accessible investor-focused document, [Initial Investor Rewards](/whitepaper/KASH-mechanism/staking-&-reward), for a better overall understanding.
 :::
 
 ---
 
 ### Purpose
 
-KASH 스테이킹은 다음 두가지의 뚜렷한 목표하에 설계 되었습니다.
-1. 세일즈 참여자들에게 구체적이면서 충분한 수준의 보상 환원
-2. 이를 달성하는 과정에서, 참여자들의 투자 유연성과 생태계의 안정 사이 합리적인 수준의 절충
+KASH Staking is designed with two distinct objectives:
+1. To provide concrete and substantial rewards to sales participants.
+2. To strike a reasonable balance between participants' investment flexibility and the ecosystem's stability in the process.
 
 ---
 
 ### Feature
 
-KASH 스테이킹은 다음과 같은 특징을 갖습니다.
+KASH Staking has the following features:
 
-+ Perpetual Staking : KASH 스테이킹은 별도의 기간 약정 없이 전체 혹은 일부를 자유롭게 종료할 수 있는 유연한 구조를 제공합니다. 스테이킹의 보상은 일정 주기마다 참여자들에게 각자의 기여도(예치액의 지분율)에 비례해 분배됩니다.
++ **Perpetual Staking**: KASH Staking offers a flexible structure that allows users to freely unstake all or a portion of their funds without a separate lock-up period. Staking rewards are distributed periodically to participants in proportion to their contribution (share of the total staked amount).
 
-+ Effortless Compounding : KASH 스테이킹은 사용자에게 수익 극대화와 편의성을 동시에 제공하도록 설계되었습니다. 풀에 대한 지분 기반의 보상 분배로, 별도의 추가 조치 없이도 이자가 자동으로 재투자되는 것과 동일한 복리 효과를 제공합니다.
++ **Effortless Compounding**: KASH Staking is designed to offer users both profit maximization and convenience. Through a share-based reward distribution system, it provides an automatic compounding effect, equivalent to interest being reinvested without any additional user action.
 
-+ Expectable Profit : 하나의 스테이킹 풀에서 최대로 발행 가능한 지분을 제한하여 각 지분 가치의 희석을 방지합니다. 풀에 분배될 보상 주기와 총량이 역시 미리 결정되어 있어, 스테이킹 시점에 기대할 수 있는 보상 총량을 미리 예측 가능합니다.
++ **Expectable Profit**: By limiting the maximum issuable shares in a single staking pool, the dilution of each share's value is prevented. The reward distribution schedule and total amount for the pool are also predetermined, allowing participants to predict the total expected rewards at the time of staking.
 
-+ Early Participant Bonus : 초기 세일즈 참여자에게는 해당 풀 내에서 반영구적으로 지속되는 보너스를 부여하고, 이를 통해 더 많은 예치금을 스테이킹 한 것처럼 추가적인 보상을 받을 수 있습니다.
++ **Early Participant Bonus**: Early sales participants are granted a semi-permanent bonus within the pool. This allows them to receive additional rewards as if they had staked a larger amount.
 
 ---
 
-이어지는 섹션에서는 KASH 스테이킹 메커니즘의 구체적인 설계를 설명합니다.
+The following sections will detail the specific design of the KASH staking mechanism.

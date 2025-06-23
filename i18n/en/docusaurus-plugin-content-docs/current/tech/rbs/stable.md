@@ -5,91 +5,91 @@ sidebar_position: 2
 
 # Stabilization Mechanism
 
-RBS는 정의된 가치 지표들을 기준으로 KASH 토큰의 시장 가격이 비정상적으로 괴리되는 것을 완화하고, 장기적으로는 토큰 가격을 내재가치에 부합하는 범위 내로 유도하기 위한 시장 개입 메커니즘입니다.
+The RBS is a market intervention mechanism designed to mitigate abnormal deviations of the KASH token's market price from its defined value metrics and, in the long term, to guide the token price into a range that aligns with its intrinsic value.
 
 ---
 
 ### Conservative Approach
 
-1기 생태계 초반에는 스테이킹 보상으로 인한 공급량, 볼트에 예치된 vRWA의 미실현 가치 등으로 인해 토큰의 시장 변동성을 예측하기가 특히 어렵습니다. 프로토콜은 이러한 상황에서 KASH의 실질적인 가치를 지지하기 위해 프로젝트를 성공적으로 진행하여 vRWA를 약속대로 청산하고 실물 가치를 볼트에 확보하는 것을 최우선 과제로 인식합니다. 따라서 RBS는 초기 단계에서 시장 상황을 보수적으로 해석하며, 프로토콜이 장기적으로 볼트의 가치를 방어하고 성장시킬 수 있는 범위 내에서 제한적으로 개입하는 것을 원칙으로 합니다.
+In the early stages of the Phase 1 ecosystem, predicting the token's market volatility is particularly difficult due to factors like the supply increase from staking rewards and the unrealized value of vRWA in the vault. The protocol recognizes that its top priority in this situation is to support the tangible value of KASH by successfully advancing the project, liquidating vRWA as promised, and securing real value in the vault. Therefore, the RBS operates on the principle of interpreting the market conservatively in the initial stages, intervening in a limited capacity within a range that allows the protocol to defend and grow the vault's value over the long term.
 
 ---
 
 ### Assessing Market Price
 
-KASH 프로토콜은 시장에서 형성되는 KASH 토큰의 가격($P_{market}$)을 앞서 정의된 핵심 가치 지표들—액면가(FV), 내재가치(IV), 할인 액면가(DFV), 할인 내재가치(DIV)—과 비교하여 현재 시장 상황을 다음과 같이 평가합니다. 이 평가는 RBS 메커니즘의 개입 여부 및 방식을 결정하는 기초가 됩니다.
+The KASH protocol assesses the current market situation by comparing the market price of the KASH token ($P_{market}$) with the previously defined key value metrics—Face Value (FV), Intrinsic Value (IV), Discounted Face Value (DFV), and Discounted Intrinsic Value (DIV). This assessment forms the basis for determining whether and how the RBS mechanism should intervene.
 
-1.  $P_{market} > IV_t$ : 시장 과열 (Significantly Overvalued)
-    *   해석: 시장 가격이 토큰의 미래 기대 스테이킹 수익까지 모두 반영한 내재가치(IV)를 초과한 상태입니다. 이는 단기적인 투기적 수요나 비이성적 과열로 인해 발생할 수 있으며, 지속 가능성이 낮다고 판단합니다.
-    *   RBS 대응 방향: 적극적인 가격 안정화 조치로 PoL을 확보하고 볼트 가치를 비축합니다.
+1.  **$P_{market} > IV_t$ : Significantly Overvalued**
+    *   **Interpretation**: The market price has exceeded the intrinsic value (IV), which accounts for all future expected staking rewards. This could be due to short-term speculative demand or irrational exuberance and is considered unsustainable.
+    *   **RBS Response**: Implement active price stabilization measures to secure Protocol-Owned Liquidity (PoL) and accumulate vault value.
 
-2.  $IV_t \ge P_{market} > \max(DIV_t, FV_t)$ : 프리미엄 (Premium Zone)
-    *   해석: 시장 가격이 미래 기대 수익을 반영한 내재가치(IV)에는 미치지 못하지만, 현재 시점에서 위험과 시간을 할인하여 평가한 가치(DIV 또는 FV 중 높은 값)보다는 높은 상태입니다. 이는 시장이 프로젝트의 미래 성장 잠재력과 스테이킹 수익에 대해 긍정적으로 평가하고 있으며, 어느 정도의 프리미엄이 형성된 것으로 볼 수 있습니다.
-    *   RBS 대응 방향: 시장 상황을 주시하며, 과도한 변동성 발생 시 완충 작용을 고려할 수 있습니다.
+2.  **$IV_t \ge P_{market} > \max(DIV_t, FV_t)$ : Premium Zone**
+    *   **Interpretation**: The market price is below the intrinsic value (IV) reflecting future expected rewards, but higher than the value assessed at the present time after discounting for risk and time (the higher of DIV or FV). This indicates that the market is positively assessing the project's future growth potential and staking rewards, forming a certain level of premium.
+    *   **RBS Response**: Monitor market conditions and consider buffering actions if excessive volatility occurs.
 
-3.  $\max(DIV_t, FV_t) \ge P_{market} \ge \min(DIV_t, FV_t)$ : 균형 (Equilibrium Zone)
-    *   해석: 시장 가격이 현재 시점에서 합리적으로 평가된 가치 범위 내에서 움직이는 상태입니다.
-        *   만약 $DIV_t \ge FV_t$ 라면, 이 구간은 $DIV_t \ge P_{market} \ge FV_t$ 로 해석될 수 있습니다. 시장이 스테이킹 수익의 현재 가치를 반영하여 기본적인 담보 가치(FV) 이상에서 거래되는 안정적인 상태로 봅니다.
-        *   만약 $FV_t > DIV_t$ 라면, 이 구간은 $FV_t \ge P_{market} \ge DIV_t$ 로 해석될 수 있습니다. 프로젝트 초기 등 할인율이 스테이킹 보상의 기대치보다 높을 때에 해당합니다.
-    *   RBS 대응 방향: 특별한 개입 없이 시장 자율에 맡기는 것을 기본으로 합니다.
+3.  **$\max(DIV_t, FV_t) \ge P_{market} \ge \min(DIV_t, FV_t)$ : Equilibrium Zone**
+    *   **Interpretation**: The market price is moving within a reasonably assessed value range for the current time.
+        *   If $DIV_t \ge FV_t$, this range can be interpreted as $DIV_t \ge P_{market} \ge FV_t$. This is seen as a stable state where the market reflects the present value of staking rewards, trading above the basic collateral value (FV).
+        *   If $FV_t > DIV_t$, this range can be interpreted as $FV_t \ge P_{market} \ge DIV_t$. This occurs when the discount rate is higher than the expected staking rewards, such as in the project's early stages.
+    *   **RBS Response**: The default is to leave it to market autonomy without special intervention.
 
-4.  $\min(DIV_t, DFV_t) > P_{market} \ge DFV_t$ : 저평가 우려 (Slightly Undervalued)
-    *   해석: 시장 가격이 기본적인 할인 액면가(DFV)보다는 높지만, 미래 수익 가치까지 고려한 할인 내재가치(DIV) 또는 단순 액면가(FV)보다 낮은 수준으로 하락한 상태입니다. 이는 시장 참여자들이 프로젝트의 미래 성장성이나 수익성에 대해 다소 보수적으로 평가하거나, 일시적인 매도 압력에 직면한 상황일 수 있습니다.
-    *   RBS 대응 방향: 시장 상황을 면밀히 관찰하며, 추가 하락 시 방어 조치를 준비합니다.
+4.  **$\min(DIV_t, FV_t) > P_{market} \ge DFV_t$ : Slightly Undervalued**
+    *   **Interpretation**: The market price is higher than the basic Discounted Face Value (DFV) but has fallen below the Discounted Intrinsic Value (DIV) which considers future reward value, or the simple Face Value (FV). This might suggest that market participants are somewhat conservative about the project's future growth or profitability, or are facing temporary selling pressure.
+    *   **RBS Response**: Closely monitor market conditions and prepare defensive measures in case of a further decline.
 
-5.  $DFV_t > P_{market}$ : 시장 침체 (Significantly Undervalued)
-    *   해석: 시장 가격이 현재 시점에서 가장 보수적으로 평가된 할인 액면가(DFV)마저 하회하는 상태입니다. 이는 프로젝트의 펀더멘털 가치보다 현저히 낮은 가격으로 거래되는 것으로, 과도한 비관론이나 외부 시장 충격에 의한 투매 현상일 수 있습니다.
-    *   RBS 대응 방향: 적극적인 가격 지지 조치를 통해 토큰 가치를 방어하고 시장 신뢰를 회복하는 것을 목표로 합니다.
+5.  **$DFV_t > P_{market}$ : Significantly Undervalued**
+    *   **Interpretation**: The market price has fallen below even the most conservatively assessed Discounted Face Value (DFV). This means the token is trading at a price significantly lower than its fundamental value, possibly due to excessive pessimism or a sell-off caused by external market shocks.
+    *   **RBS Response**: Aim to defend the token's value and restore market confidence through active price support measures.
 
 :::note
-제시된 시장 평가는 프로젝트의 초기 설계로 실제 프로젝트가 진행되면서 프로토콜은 각 가치 지표 간의 상대적 중요도와 시장 상황, 프로토콜 성숙도 등을 종합적으로 고려, 개입 강도와 방식을 유연하게 조절하여 최적화 해나가며 최종적인 시스템을 결정할 예정입니다.
+The presented market assessment is based on the project's initial design. As the project progresses, the protocol will flexibly adjust and optimize the intervention intensity and methods by comprehensively considering the relative importance of each value metric, market conditions, and protocol maturity to finalize the system.
 :::
 
 ---
 
 ### Wall and Cushion Price
 
-RBS는 KASH 토큰 가격의 과도한 변동성을 완화하고 점진적으로 내재가치에 수렴시키기 위해, 사전에 정의된 가치 지표들을 기준으로 가격 방어선(Wall)과 완충 지대(Cushion)를 설정합니다. 이러한 가격 수준은 시장 상황에 따라 RBS의 개입 강도와 방식을 결정하는 임계값으로 작용합니다.
+To mitigate excessive volatility in the KASH token price and gradually guide it toward its intrinsic value, the RBS sets up price "Walls" and "Cushions" based on the predefined value metrics. These price levels act as thresholds that determine the intensity and method of RBS intervention according to market conditions.
 
-Wall 가격은 주요 가치 지표(DFV, IV)에 고정된 비율을 적용하여 설정됩니다. 반면, Cushion 가격의 경계는 프로젝트의 신뢰도 수준($DF_{R,t}$)을 반영하여 동적으로 조정됩니다. 프로젝트 초기에는 신뢰도가 낮아 Cushion이 Wall 가격에 가깝게 설정되어 시장 변동에 민감하게 대응하지만, 프로젝트가 진행되고 신뢰도가 상승함에 따라 Cushion은 다른 주요 가치 지표(예: 하방 쿠션의 경우 FV 또는 DIV, 상방 쿠션의 경우 FV 또는 DIV) 를 향해 확장되어 작동 반경을 넓힙니다. 따라서 차츰 시장의 자율적인 가격 결정 범위인 변동성을 좁혀 액면가에 수렴하게 만듭니다.
+The Wall prices are set by applying a fixed percentage to key value metrics (DFV, IV). In contrast, the boundaries of the Cushion price are dynamically adjusted to reflect the project's credibility level ($DF_{R,t}$). In the early stages of the project, when credibility is low, the Cushion is set close to the Wall price to respond sensitively to market fluctuations. However, as the project progresses and credibility increases, the Cushion expands towards other key value metrics (e.g., FV or DIV for the lower cushion, and FV or DIV for the upper cushion), widening its operational range. This gradually narrows the range of autonomous price determination, causing it to converge towards the face value.
 
-1.  하방 가격 방어선 (Lower Wall Price, $Price_{LW}$): KASH 가격이 이 수준 이하로 하락하는 것을 방지하기 위한 강력한 지지선입니다.
+1.  **Lower Wall Price ($Price_{LW}$)**: A strong support line to prevent the KASH price from falling below this level.
         $$
         Price_{LW} = DFV_t \times (1 - \text{Margin}_{LW})
         $$
-        *   $DFV_t$: 해당 시점의 할인 액면가
-        *   $\text{Margin}_{LW}$: 하방 가격 방어선 설정 마진율
+        *   $DFV_t$: Discounted Face Value at the given time.
+        *   $\text{Margin}_{LW}$: Margin rate for setting the lower wall price.
 
-2.  하방 완충 지대 시작가 (Lower Cushion Price, $Price_{LC}$): 하락 압력을 점진적으로 완화하기 시작하는 가격대입니다. 신뢰도가 낮을 때는 방어선에 가깝지만, 신뢰도가 높아짐에 따라 $FV_t$ 또는 $DIV_t$ 수준의 목표 가치를 향해 상향 조정됩니다.
+2.  **Lower Cushion Price ($Price_{LC}$)**: The price level at which the protocol begins to gradually mitigate downward pressure. It is close to the Wall when credibility is low but is adjusted upward towards a target value of $FV_t$ or $DIV_t$ as credibility increases.
         $$
         Price_{LC} = Price_{LW} + ( (\min(FV_t, DIV_t) - Price_{LW}) \times DF_{R,t}^{q_{LC}} )
         $$
-        *   $DF_{R,t}$: 해당 시점의 위험 할인 계수
-        *   $q_{LC}$: 신뢰도 변화에 따른 하방 쿠션 범위 조정 민감도 계수
-    *   설명: $DF_{R,t}$가 낮을 때는 $Price_{LC} \approx Price_{LW}$ 입니다 (좁은 쿠션). $DF_{R,t}$가 1에 가까워짐에 따라 $Price_{LC}$는 $\min(FV_t, DIV_t)$에 근접하게 됩니다 (넓은 쿠션). 이는 신뢰도가 높을수록 KASH 가격이 $FV_t$나 $DIV_t$ 수준까지만 하락해도 프로토콜이 소극적인 개입을 개시함을 의미합니다.
+        *   $DF_{R,t}$: Risk Discount Factor at the given time.
+        *   $q_{LC}$: Sensitivity coefficient for adjusting the lower cushion range based on credibility changes.
+    *   **Explanation**: When $DF_{R,t}$ is low, $Price_{LC} \approx Price_{LW}$ (narrow cushion). As $DF_{R,t}$ approaches 1, $Price_{LC}$ gets closer to $\min(FV_t, DIV_t)$ (wide cushion). This means that as credibility gets higher, the protocol will initiate passive intervention even if the KASH price only drops to the level of $FV_t$ or $DIV_t$.
 
-3.  상방 가격 방어선 (Upper Wall Price, $Price_{UW}$): KASH 가격이 이 수준 이상으로 과도하게 상승하는 것을 억제하기 위한 강력한 저항선입니다.
+3.  **Upper Wall Price ($Price_{UW}$)**: A strong resistance line to curb excessive increases in the KASH price beyond this level.
         $$
         Price_{UW} = IV_t \times (1 + \text{Margin}_{UW})
         $$
-        *   $IV_t$: 해당 시점에 평가한 내재가치
-        *   $\text{Margin}_{UW}$: 상방 가격 방어선 설정 마진율.
+        *   $IV_t$: Intrinsic Value assessed at the given time.
+        *   $\text{Margin}_{UW}$: Margin rate for setting the upper wall price.
 
-4.  상방 완충 지대 시작가 (Upper Cushion Price, $Price_{UC}$): 상승 압력을 점진적으로 완화하기 시작하는 가격대입니다. 신뢰도가 낮을 때는 빙어선에 가깝지만, 신뢰도가 높아짐에 따라 $FV_t$ 또는 $DIV_t$ 수준의 목표 가치를 향해 하향 조정됩니다.
+4.  **Upper Cushion Price ($Price_{UC}$)**: The price level at which the protocol begins to gradually mitigate upward pressure. It is close to the Wall when credibility is low but is adjusted downward towards a target value of $FV_t$ or $DIV_t$ as credibility increases.
         $$
         Price_{UC} = Price_{UW} - ( (Price_{UW} - \max(FV_t, DIV_t)) \times DF_{R,t}^{q_{UC}} )
         $$
-        *   $q_{UC}$: 신뢰도 변화에 따른 상방 쿠션 범위 조정 민감도 계수
-    *   설명: $DF_{R,t}$가 낮을 때는 $Price_{UC} \approx Price_{UW}$ 입니다 (좁은 쿠션). $DF_{R,t}$가 1에 가까워짐에 따라 $Price_{UC}$는 $\max(FV_t, DIV_t)$에 근접하게 됩니다 (넓은 쿠션). 이는 신뢰도가 높을수록 KASH 가격이 $FV_t$나 $DIV_t$ 수준까지만 상승해도 프로토콜이 소극적인 개입을 개시함을 의미합니다.
+        *   $q_{UC}$: Sensitivity coefficient for adjusting the upper cushion range based on credibility changes.
+    *   **Explanation**: When $DF_{R,t}$ is low, $Price_{UC} \approx Price_{UW}$ (narrow cushion). As $DF_{R,t}$ approaches 1, $Price_{UC}$ gets closer to $\max(FV_t, DIV_t)$ (wide cushion). This means that as credibility gets higher, the protocol will initiate passive intervention even if the KASH price only rises to the level of $FV_t$ or $DIV_t$.
 
-모든 $\text{Margin}$ 계수 및 $q$ 계수는 프로토콜 거버넌스를 통해 시장 상황과 프로젝트 성숙도에 따라 조정될 수 있습니다.
+All $\text{Margin}$ and $q$ coefficients can be adjusted through protocol governance according to market conditions and project maturity.
 
 ---
 
 ### Example Graph
 
-앞선 Valuation 그래프에, 현재 설정상 RBS의 동작 범위를 표시한 예시 그래프입니다.
+The following is an example graph showing the operational range of the RBS under the current settings, overlaid on the previous Valuation graph.
 
 ![KASH RBS Graph](/img/kash_valuation_main_with_rbs.png)
 
-+ $Margin_{LW}$ : 5%, $Margin_{UW}$ : 5%, $q_{LC}, q_{UC}$ : 1.0 를 기준으로 하였습니다.
++ This is based on the following parameters: $Margin_{LW}$ : 5%, $Margin_{UW}$ : 5%, $q_{LC}, q_{UC}$ : 1.0.

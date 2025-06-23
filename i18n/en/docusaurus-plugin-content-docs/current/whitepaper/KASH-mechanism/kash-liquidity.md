@@ -1,198 +1,198 @@
 ---
 id: kash-liquidity
-title: 4. 유동성과 가격 조절
-description: 유동성 및 가격 안정화 알고리즘
+title: 4. Liquidity and Price Regulation
+description: Liquidity and Price Stabilization Algorithm
 sidebar_position: 4
 ---
 
-여기에서는 어떻게 KASH를 사고팔 수 있는지, KASH의 가격을 안정적으로 조절하기 위해 어떤 장치가 사용되고 있는지 설명합니다.
+This document explains how you can buy and sell KASH, and what mechanisms are used to regulate the price of KASH stably.
 
 ---
 
-### 요약
+### Summary
 
-아래 설명할 내용에 대해 먼저 결론을 정리하면 다음과 같습니다.
+Here is a summary of the topics that will be explained below:
 
-+ **KASH는 DEX라는 블록체인 상의 자동화된 거래소에서 거래**할 수 있습니다. 
-+ DEX 거래는 호가창 기반의 시스템을 사용하는 중앙화 거래소에서, **시장가 매매**를 수행하는 방식과 유사합니다.
-+ **웹사이트에서 제공하는 앱**을 통해 보다 쉽게 **가격 조회 및 거래 결과 예상, 교환 수행** 등을 할 수 있습니다. 
-+ KASH를 보다 **적절한 가격**에 사고 팔 수 있게 하기 위해서 **PoL(프로토콜 소유 유동성)과 RBS(가격 안정화 시스템)를 운영**합니다.
-+ PoL은 거래시 가격 변화를 줄여 **보다 좋은 가격에 거래가 가능**하도록 도와주는, 유동성을 프로토콜이 확보하는 전략입니다.
-+ RBS는 가치 지표에 기반한 KASH의 **적정가 범위를 정해서, 이 구간 내에서 가격을 유지**하도록 돕는 장치입니다.
-+ 초반에는 RBS가 보수적으로 동작하여 KASH 가격 변동성이 높지만, 최종적으로 **담보에 따른 가치(1$+)에 수렴**하게 됩니다.
++ **KASH can be traded on an automated exchange on the blockchain called a DEX.** 
++ Trading on a DEX is similar to executing a **market order** on a centralized exchange that uses an order book system.
++ You can more easily **check prices, predict trade outcomes, and execute swaps** through the **app provided on our website.** 
++ To help you buy and sell KASH at a **more appropriate price**, we operate **PoL (Protocol Owned Liquidity) and RBS (Price Stabilization System).**
++ PoL is a strategy where the protocol secures liquidity to reduce price impact during trades, helping to **enable trading at a better price.**
++ RBS is a mechanism that **sets an appropriate price range** for KASH based on value metrics and **helps maintain the price within this range.**
++ Initially, the RBS operates conservatively, leading to higher KASH price volatility, but it is designed to eventually **converge to its value based on collateral (\$1+).**
 
 ---
 
-### DEX와 유동성
+### DEX and Liquidity
 
-블록체인 상에서는 토큰을 DEX(탈중앙화 거래소, Decentralized Exchange)라는 형태의 거래소를 통해 다른 디지털 자산과 교환합니다. 이는 비교적 친숙한 중앙화된 거래소 서비스에 비해 다소 낯설 수 있지만, DEX는 블록체인 상에서 투명하게 운영되며 비싼 상장 비용 없이도 다양한 자산(토큰)을 거래할 수 있다는 장점이 있습니다.
+On the blockchain, tokens are exchanged with other digital assets through a type of exchange called a DEX (Decentralized Exchange). This may be less familiar than the more common centralized exchange services, but DEXs have the advantage of operating transparently on the blockchain and allowing various assets (tokens) to be traded without expensive listing fees.
 
 :::note
-지금부터 설명할 DEX는 유니스왑과 같이 가장 보편적인 CPMM 방식을 가정합니다. DEX는 탈중앙화라는 특성만 공유할 뿐 다양한 형태가 존재할 수 있지만, 지금 설명하려는 유동성과 RBS의 원리를 이해하는 데는 특정 형태를 아는 것이 중요하지는 않습니다.
+The following explanation assumes the most common CPMM model, like Uniswap's. While various forms of DEXs exist, all sharing the characteristic of decentralization, knowing the specific type is not crucial to understanding the principles of liquidity and RBS explained here.
 :::
 
-어떤 자산을 다른 자산으로 바꾸려면, **내가 원하는 가격에 충분한 물량을 가진 거래 상대**가 필요합니다. 이를 **유동성**(Liquidity)이라 부릅니다. 만약 내가 팔려는 자산의 유동성이 부족하다면, 소수의 구매자에게만 의존해야 하므로 점점 더 불리한 가격에 팔아야 하거나, 어쩌면 원하는 만큼 다 팔지 못하는 상황이 생길 수 있습니다.
+To swap one asset for another, you need a **trading counterparty who has a sufficient amount of the asset at the price you want**. This is called **Liquidity**. If the asset you want to sell has low liquidity, you have to rely on a few buyers, which may force you to sell at increasingly unfavorable prices, or you might not even be able to sell the full amount you want.
 
-DEX에는 중앙화 거래소와 달리 기본적으로 호가라는 개념이 없습니다. 대신 시장가 매매처럼 **현재의 시장 가격에 즉시 교환**이 이루어지고, **교환할수록 교환비가 점차 나빠지면서 자연스럽게 적정 가격을 찾아가게 되는 원리**로 동작합니다. 이 때, 시장의 **유동성이 많을수록 이 가격의 변동 폭이 줄어들어 보다 좋은 가격에 거래가 가능**해집니다. 
+Unlike centralized exchanges, DEXs generally do not have an order book. Instead, they operate on a principle where **swaps happen instantly at the current market price**, similar to a market order, and the **exchange rate gradually worsens as you trade more, naturally finding an appropriate price**. In this system, the **more liquidity there is in the market, the smaller the price fluctuations, allowing for trades at better prices.** 
 
-KASH 역시 기본적으로 DEX를 통한 거래를 지향합니다. 따라서 공급되어 있는 유동성이 풍부할수록 KASH를 **현재 시장 가격에 가깝게** 혹은 **충분히 많은 수량을 합리적인 가격에** 거래가 가능하게 됩니다.
-
----
-
-### 프로토콜 소유 유동성
-
-전통적으로 많은 프로젝트는 초기 유동성을 외부 투자자나 커뮤니티에 의존하는 경향이 있습니다. 이 경우 유동성 제공자들이 갑자기 자금을 회수하면 유동성이 급격히 줄어들어 가격이 크게 흔들릴 수 있는 위험이 있습니다. KASH는 이러한 문제를 해결하고 장기적인 안정성을 확보하기 위해, **프로토콜이 직접 KASH 거래를 위한 유동성의 상당 부분을 소유하고 관리**하는 PoL (Protocol Owned Liquidity) 전략을 채택합니다.
-
-프로토콜은 안정적인 거래 환경을 만들기 위해 직접 유동성을 확보합니다. 그 방법 중 하나로 사용자들이 KASH와 다른 자산을 묶어 유동성(**LP토큰**)을 지불하면 프로토콜은 그 대가로 KASH를 보다 매력적인 가격에 구매할 기회를 제공합니다. 이렇게 모인 유동성은 프로토콜이 직접 소유, 관리하여 KASH 거래를 더 원활하게 만드는데 활용됩니다.
-
-+ PoL의 장점
-    + 지속 가능하고 안정적인 유동성 : 외부 요인에 의해 유동성이 갑자기 사라지는 위험을 크게 줄여, 사용자들이 언제든 KASH를 원활하게 거래할 수 있도록 신뢰할 수 있는 환경을 제공합니다.
-    + 프로토콜 수익원 창출 : 유동성 풀에서 발생하는 거래 수수료는 프로토콜의 추가적인 수익이 되어, 생태계 발전에 재투자될 수 있습니다.
-    + 효율적인 가격 안정화 지원 : 아래에서 설명할 RBS 메커니즘과 연계하여, 프로토콜이 직접 유동성을 보유함으로써 KASH 가격을 더욱 효과적으로 안정시킬 수 있습니다.
+KASH also primarily aims for trading through DEXs. Therefore, the more abundant the available liquidity, the more it becomes possible to trade KASH **close to the current market price** or to trade a **sufficiently large quantity at a reasonable price.**
 
 ---
 
-### KASH 가치 평가
+### Protocol Owned Liquidity
+
+Traditionally, many projects tend to rely on external investors or the community for initial liquidity. This carries the risk that liquidity can dry up and prices can fluctuate wildly if liquidity providers suddenly withdraw their funds. To solve this problem and ensure long-term stability, KASH adopts a PoL (Protocol Owned Liquidity) strategy, where **the protocol itself owns and manages a significant portion of the liquidity for KASH trading.**
+
+The protocol directly secures liquidity to create a stable trading environment. One method is to offer users the opportunity to purchase KASH at a more attractive price in exchange for them providing liquidity (**LP tokens**) by pairing KASH with other assets. The liquidity gathered this way is owned and managed by the protocol and used to make KASH trading smoother.
+
++ **Advantages of PoL**
+    + **Sustainable and Stable Liquidity:** Significantly reduces the risk of liquidity suddenly disappearing due to external factors, providing a reliable environment where users can trade KASH smoothly at any time.
+    + **Creates a Revenue Stream for the Protocol:** Trading fees generated from the liquidity pool become additional revenue for the protocol, which can be reinvested into the ecosystem's development.
+    + **Efficient Support for Price Stabilization:** In conjunction with the RBS mechanism described below, the protocol's direct ownership of liquidity allows it to stabilize the KASH price more effectively.
+
+---
+
+### KASH Value Assessment
 
 :::caution
-제시되는 가치 평가 및 RBS는 동작의 이해를 돕기 위해 프로젝트의 초기 단계인 현재 설계에 대해 설명하였습니다. 운영상 필요에 따라 최적화 해 나갈 예정으로, 현재 RBS의 정확한 동작 범위 및 활성화된 채권 시장은 웹사이트 앱을 통해 쉽게 확인할 수 있습니다.
+The value assessment and RBS presented here are based on the project's current design in its early stages to aid understanding. The system will be optimized as needed during operation. The exact operational range of the RBS and any active bond markets can be easily checked via the website app.
 :::
 
-프로토콜은 KASH 토큰의 현재 적정 가격이 어느 정도인지 판단하기 위해 다음과 같은 **핵심 지표들을 종합적으로 분석**하여 활용합니다. 이 지표들은 시장 상황과 프로젝트 진행 단계(금광 개발 진척도, vRWA 청산 상황 등)에 따라 계속해서 업데이트되며, 아래 **RBS가 시장에 개입할지를 결정하는 중요한 기준**이 됩니다.
+To determine the appropriate current price of the KASH token, the protocol **comprehensively analyzes and utilizes the following key metrics**. These metrics are continuously updated based on market conditions and project progress (such as gold mine development status, vRWA liquidation status, etc.) and serve as an **important standard for the RBS below to decide whether to intervene in the market**.
 
-+ 기본 가치 (담보 가치)
-    + 액면가 (FV, Face Value) : 미래에 모든 vRWA가 약속대로 청산되었을 때, **이론적으로 KASH 1개를 지지하게 될 자산의 크기**입니다.
-    + 할인 액면가 (DFV, Discounted Face Value) : 위 액면가를 현재 시점에서 평가한 가치입니다. 미래의 가치는 아직 실현되지 않았으므로, 불확실성(위험)과 이자를 고려하여 현재 가치로 할인해서 보다 낮게 평가합니다. **현재 시점에서 KASH 하나가 최소한 이 정도의 담보 가치는 가진다고 보수적으로 평가**하는 것입니다.
++ **Fundamental Value (Collateral Value)**
+    + **Face Value (FV):** The **theoretical size of the asset that will back 1 KASH** when all vRWA are liquidated as promised in the future.
+    + **Discounted Face Value (DFV):** The value of the above FV assessed at the present time. Since future value is not yet realized, it is discounted to a lower present value to account for uncertainty (risk) and interest. This is a **conservative assessment of the minimum collateral value that one KASH holds at the present time.**
 
-+ 내재 가치 (미래 수익 포함)
-    + 내재가치 (IV, Intrinsic Value) : 액면가에 **미래에 기대되는 추가 수익 가치(스테이킹 이자)를 포함한 것**입니다. 평균적으로 KASH 1개가 사용자에게 가져다줄 수 있는 총 예상 가치를 의미합니다.
-    + 할인 내재가치 (DIV, Discounted Intrinsic Value) : 위 내재가치를 현재 시점에서 평가한 가치입니다. 역시 미래의 불확실성과 시간 가치를 고려하여 할인합니다. **현재 시점에서 KASH가 가진 잠재력을 종합적으로 평가한 가치**라고 볼 수 있습니다.
++ **Intrinsic Value (Including Future Profits)**
+    + **Intrinsic Value (IV):** This is the FV **plus the value of expected future profits (staking interest).** It represents the total expected value that 1 KASH can bring to a user on average.
+    + **Discounted Intrinsic Value (DIV):** The value of the above IV assessed at the present time. It is also discounted to account for future uncertainty and the time value of money. This can be seen as a **comprehensive assessment of KASH's potential at the present time.**
 
 :::note
-내재 가치는 거시적 관점의, 토큰 가치 평가를 위한 지표로 실질적인 개인의 수익과는 연관이 없습니다.
+Intrinsic Value is a macro-level metric for token valuation and is not related to an individual's actual profit.
 :::
 
-RBS는 KASH의 시장 가격을 이 네 가지 주요 가치 지표(FV, IV, DFV, DIV)와 비교하여 현재 KASH 가격이 적정한지, 아니면 너무 높거나 낮은지를 판단합니다.
+The RBS compares KASH's market price with these four key value metrics (FV, IV, DFV, DIV) to determine whether the current KASH price is appropriate, too high, or too low.
 
 ---
 
-### 가치 지표 그래프 분석
+### Value Metric Graph Analysis
 
-아래는 RBS 문서에서 확인할 수 있는 네가지 가치 지표의 그래프입니다. 프로토콜에서 사용되는 수식 및 설정값에, 아래와 같이 예시 시나리오를 적용한 결과입니다.
+Below is the graph of the four value metrics that you can find in the RBS documentation. It is the result of applying the example scenario below to the formulas and settings used by the protocol.
 
 :::note
-+ 무위험 연이율은 3%로 설정했습니다.
-+ 금 가격은 최초 액면가를 1$로 만드는 3110.4 USD/ozt에서 시작하여 연 10% 상승한다고 가정했습니다.
-+ epoch 8에 즉시 완판되는 5m의 추가 세일즈와 함께 20m의 보상이 분배된 스테이킹 풀이 추가된다고 가정했습니다.
-+ epoch 18에 PCR 행사가 가능해지면 초기 세일즈 유저의 30%가 행사한다고 가정했습니다.
-+ vRWA의 실현은 epoch 12부터 시작하여, 제곱 그래프를 그리며 점차 많은 수량을 실현한다고 가정했습니다.
-+ 볼트 자산은 편의상 vRWA 실현에 의해서만 증가한다고 가정하였습니다.
++ The risk-free annual interest rate is set to 3%.
++ The gold price is assumed to start at \$3,110.4/ozt, which sets the initial FV to \$1, and is assumed to increase by 10% annually.
++ It is assumed that an additional sale of 5m KASH sells out immediately in epoch 8, along with the addition of a new staking pool with 20m in rewards.
++ It is assumed that when PCR becomes available in epoch 18, 30% of initial sales users will exercise it.
++ The realization of vRWA is assumed to begin at epoch 12, with the quantity gradually increasing following a quadratic curve.
++ For simplicity, the vault's assets are assumed to increase only through vRWA realization.
 :::
 
 ![KASH Valuation Graph](/img/kash_valuation_main_no_rbs.png)
 
-:::tip FV (액면가) 추이, 녹색 선
-+ 금의 가격이 상승하면서 vRWA를 통해 볼트에 축적되는 자산이 초기 예상보다 많아집니다.
-+ 처음 1 USD의 예상 가치에서 시작한 액면가는 금 가격 상승이 일정부분 반영되면서 최종 1.3 USD 정도가 됩니다.
-+ 1억개의 KASH가 유통되고 있는 경우, 가치 지지 볼트에 최종적으로 약 1.3억 달러의 자산이 모였음을 의미합니다.
+:::tip FV (Face Value) Trend, Green Line
++ As the price of gold rises, the assets accumulated in the vault through vRWA increase more than initially expected.
++ The FV, which starts at an expected value of \$1, eventually becomes about \$1.3 as the gold price increase is partially reflected.
++ With 100 million KASH in circulation, this means the value-backing vault ultimately accumulates about \$130 million in assets.
 :::
 
-:::tip IV (내재 가치) 추이, 붉은 선
-+ 초기에는 앞으로 배분할 보상이 많이 남아 액면가를 훌쩍 넘는 가치를 갖습니다.
-+ 이후 보상이 분배되면서 남은 보상량이 줄어들고 유통량은 늘어나면서 KASH 하나의 평균 내재 가치는 줄어듭니다.
-+ epoch 8에 추가 세일즈로 인한 유통량의 증가보다, 새로운 풀의 보상으로 인한 영향이 커 다시 증가합니다.
-+ epoch 18에 원금 회수로 인해 프로토콜에 회수된 KASH가 소각되면서 일시적으로 감소폭이 줄어듭니다.
-+ 현재(1기) 설계상, 스테이킹 보상 분배가 끝난 이후의 계획이 미확정이기 때문에 최종적으로 액면가에 수렴합니다. 
+:::tip IV (Intrinsic Value) Trend, Red Line
++ Initially, the value is well above FV because there are many rewards yet to be distributed.
++ Later, as rewards are distributed, the remaining reward amount decreases and the circulating supply increases, reducing the average intrinsic value per KASH.
++ At epoch 8, it increases again because the impact of the new pool's rewards is greater than the increase in circulating supply from the additional sale.
++ At epoch 18, the rate of decrease temporarily slows as KASH recovered by the protocol through principal recovery is burned.
++ Under the current (Phase 1) design, it eventually converges to FV because plans after the staking reward distribution ends are not yet finalized.
 :::
 
-:::tip DFV, DIV (할인 가치) 추이, 각각 푸른 선 및 보라색 선
-+ 프로젝트 초기 불확실성이 높고 가치 평가 기준이 되는 미래(3년)가 멀기 때문에 가치가 낮게 평가됩니다.
-+ epoch 6에 탐사가 완료되면 1차적으로 프로젝트의 신뢰 수준이 크게 올라 FV, IV에 다소 가까워집니다.
-+ epoch 12에 vRWA 청산이 시작되면서, 처음엔 미세하지만 차츰 신뢰 수준이 상승하기 시작합니다.
-+ epoch 18에 PCR 행사가 가능해지고, 일부가 행사를 하면서 KASH가 소각되어 다시 크게 상승합니다.
-+ 이후 vRWA가 본격적으로 청산되어 가면서 신뢰 수준이 최대치까지 오르고 최종적으로 FV, IV에 수렴합니다.
+:::tip DFV, DIV (Discounted Value) Trends, Blue and Purple Lines Respectively
++ In the early stages of the project, the value is assessed as low because uncertainty is high and the future (3 years) used for valuation is distant.
++ At epoch 6, when exploration is completed, the project's trust level increases significantly for the first time, bringing the values somewhat closer to FV and IV.
++ At epoch 12, when vRWA liquidation begins, the trust level starts to rise, albeit slightly at first.
++ At epoch 18, when PCR becomes available and some users exercise it, KASH is burned, causing another significant rise.
++ Afterwards, as vRWA is liquidated in earnest, the trust level reaches its maximum, and the values eventually converge to FV and IV.
 :::
 
 ---
 
-### 가격 안정화
+### Price Stabilization
 
-KASH 프로토콜은 토큰의 안정적인 가치 유지를 위해 **RBS**(Range Bound System, 가격 범위 유지 시스템)라는 메커니즘을 운영합니다. RBS의 주된 목표는 KASH 토큰의 **시장 가격이 그 내재 가치에서 크게 벗어나지 않도록 관리**하여, 과도한 변동성을 줄이고 장기적으로 안정적인 가치 성장을 지원하는 것입니다. 리저브 볼트와 KASH 시장 가격을 간접적으로 연결하여, **볼트 자산을 이용해 KASH의 실질 가격을 지지하는 교량** 역할을 합니다.
+The KASH protocol operates a mechanism called **RBS** (Range Bound System) to maintain the token's stable value. The main goal of the RBS is to **manage the KASH token's market price so that it does not deviate significantly from its intrinsic value**, thereby reducing excessive volatility and supporting stable long-term value growth. It indirectly links the Reserve Vault and the KASH market price, acting as a **bridge that uses vault assets to support the real price of KASH.**
 
 :::tip
-+ 가격이 프로토콜의 의도한 가격을 벗어나면 RBS가 **반대 방향의 압력을 만들어 안정화** 합니다.
-+ RBS의 동작 조건 및 개설되는 시장의 내용은 위에서 산정한 가치 지표를 기반으로 결정 됩니다.
-+ RBS는 **소극적 개입 구간(Cushion), 적극적 개입 임계점(Wall) 두단계로 나뉘어 작동**합니다.
-+ **프로젝트 초기에는 IV 이상으로 과도하게 가격이 오르거나 DFV 이하로 과도하게 가격이 내려갈 때만 작동**합니다.
-+ 프로젝트 후반으로 갈수록 작동 범위가 중앙(FV~DIV)에 가까워지도록 넓어져, 보다 정교하게 가격을 구축합니다.
-+ KASH의 가격 변동 가능 범위가 차츰 좁아지면서 **결과적으로 본질적인(담보) 가치인 액면가(FV)에 수렴**하게 됩니다.
++ If the price deviates from the protocol's intended range, the RBS **creates counter-pressure to stabilize it.**
++ The operating conditions of the RBS and the markets it opens are determined based on the value metrics calculated above.
++ The RBS **operates in two stages: a passive intervention zone (Cushion) and an active intervention threshold (Wall).**
++ **Initially, it only activates when the price rises excessively above IV or falls excessively below DFV.**
++ As the project progresses, its operational range widens towards the center (FV~DIV), building the price more precisely.
++ The potential range of KASH price fluctuation gradually narrows, **eventually converging to its fundamental (collateral) value, the Face Value (FV).**
 :::
 
-KASH의 시장 가격이 위에서 산출된 가치 지표들을 기준으로 설정된 특정 가격 범위를 벗어나려고 할 때, RBS는 단계적으로 시장에 개입하여 가격을 안정시킵니다. 이때 **가격 방어선**(Wall)과, 그에 도달하기 전에 작용하는 **완충 지대**(Cushion)라는 개념을 설정합니다.
+When the market price of KASH attempts to move outside a specific price range set by the value metrics calculated above, the RBS intervenes in the market in stages to stabilize the price. It establishes the concepts of a **price "Wall"** and a **"Cushion"** that acts before the price hits the wall.
 
-+ 가격 방어선 (Wall):
-    + 하방 방어선 ($Price_{LW}$): KASH 가격이 최소한 이 선 아래로는 떨어지지 않도록 지키고자 하는 강력한 지지선입니다. 가장 보수적으로 평가된 현재 가치인 $DFV$를 기준으로, 그보다 약간 낮은 가격에 설정됩니다. 시장 가격이 이 선을 뚫고 내려가려 하면, 프로토콜은 적극적으로 KASH를 사들여 가격 하락을 막습니다.
-    + 상방 방어선 ($Price_{UW}$): KASH 가격이 이 선 위로 너무 과도하게 오르지는 않도록 관리하겠다는 강력한 저항선입니다. 미래 성장성까지 모두 반영한 $IV$를 기준으로, 그보다 약간 높은 가격에 설정됩니다. 시장 가격이 이 선을 뚫고 올라가려 하면, 프로토콜은 KASH를 매도하는 시장을 개설하여 과열을 진정시킵니다.
++ **Price Wall:**
+    + **Lower Wall ($Price_{LW}$):** A strong support line intended to prevent the KASH price from falling below this level. It is set at a price slightly lower than the most conservatively assessed present value, the $DFV$. If the market price tries to break below this line, the protocol actively buys KASH to stop the decline.
+    + **Upper Wall ($Price_{UW}$):** A strong resistance line to manage and prevent the KASH price from rising too excessively above this level. It is set at a price slightly higher than the $IV$, which reflects all future growth potential. If the market price tries to break above this line, the protocol opens a market to sell KASH to cool down the overheating.
 
-+ 완충 지대 (Cushion):
-    + 시장 가격이 방어선에 직접 부딪히기 전에, 미리 부드럽게 시장의 힘을 흡수하고 점진적인 대응을 시작하는 예비 영역입니다. 이 완충 지대의 범위는 프로젝트에 대한 신뢰도에 따라 동적으로 변하는 특징을 가지고 있습니다.
-    + 신뢰도
-        + 앞선 DFV, DIV의 지표 산정시 위험 할인으로 사용된 값입니다. 초기에는 매우 낮게 설정되며 탐사 완료, vRWA 청산 (담보 확보) 등 프로젝트의 진행에 따라 차츰 증가합니다.
-        + 프로젝트 초기 (신뢰도가 아직 낮을 때): 완충 지대는 가장 보수적으로 책정된 각 가격 방어선(Wall)에 매우 가깝게 설정됩니다.
-        + 프로젝트 성숙 (신뢰도가 높아졌을 때): 완충 지대의 범위가 보다 본질적인 지표를 향해 점차 넓어집니다. 예를 들어, 하방 완충 지대의 위쪽 경계선은 $Price_{LW}$에서 시작하여 $FV$ 또는 $DIV$ 수준까지 확장될 수 있습니다. 이는 프로토콜이 가치 지표를 더 신뢰하고 더 넓은 범위의 가격 변동을 흡수 허용함을 의미합니다.
-    + 하방 완충 지대 시작가 ($Price_{LC}$): $Price_{LW}$와 $\min(FV, DIV)$ 사이에서 프로젝트 신뢰도에 따라 결정됩니다.
-    + 상방 완충 지대 시작가 ($Price_{UC}$): $Price_{UW}$와 $\max(FV, DIV)$ 사이에서 프로젝트 신뢰도에 따라 결정됩니다.
++ **Cushion Zone:**
+    + A preliminary area that gently absorbs market forces and begins a gradual response before the market price directly hits the wall. A key feature of this cushion zone is that its range changes dynamically based on the project's credibility level.
+    + **Credibility**
+        + This is the value used for the risk discount when calculating the DFV and DIV metrics. It is set very low initially and gradually increases with project progress, such as exploration completion and vRWA liquidation (securing collateral).
+        + **Early Project Stage (when credibility is still low):** The cushion zone is set very close to each price wall, which is determined most conservatively.
+        + **Project Maturity (when credibility is high):** The range of the cushion zone gradually widens towards more fundamental metrics. For example, the upper boundary of the lower cushion could expand from its starting point at $Price_{LW}$ up to the level of $FV$ or $DIV$. This signifies that the protocol has more confidence in its value metrics and allows for the absorption of a wider range of price fluctuations.
+    + **Lower Cushion Price ($Price_{LC}$):** Determined between $Price_{LW}$ and $\min(FV, DIV)$ based on project credibility.
+    + **Upper Cushion Price ($Price_{UC}$):** Determined between $Price_{UW}$ and $\max(FV, DIV)$ based on project credibility.
 
 ---
 
-### RBS 동작 범위 그래프
+### RBS Operational Range Graph
 
-앞선 가치 지표 예시 그래프에 RBS의 동작 범위를 씌운 그래프입니다.
+This is a graph showing the operational range of the RBS overlaid on the previous value metrics example graph.
 
 ![KASH RBS Graph](/img/kash_valuation_main_with_rbs.png)
 
-:::tip 그래프 해석
-+ 상단 붉은 범위가 상방 완충 지대 (Upper Cushion) 이며 끝의 갈색 선이 상방 방어선 (Upper Wall) 입니다.
-+ 하단 푸른 범위가 하방 완충 지대 (Lower Cushion) 이며 끝의 남색 선이 하방 방어선 (Lower Wall) 입니다.
-+ 시장 가격이 이 완충 범위에 진입하면 RBS가 소극적인 개입을 시작하며, 방어선을 넘어서면 적극적 개입이 이루어집니다.
-+ 양쪽 완충 지대 사이 흰색 빈 공간이, 시장의 판단에 따라 KASH 가격이 자유롭게 변동 가능한 범위입니다.
+:::tip Graph Interpretation
++ The upper red area is the Upper Cushion, and the brown line at its edge is the Upper Wall.
++ The lower blue area is the Lower Cushion, and the dark blue line at its edge is the Lower Wall.
++ When the market price enters this cushion range, the RBS begins passive intervention. If it crosses the wall, active intervention occurs.
++ The white empty space between the two cushion zones is the range where the KASH price can fluctuate freely based on market sentiment.
 :::
 
-:::tip 완충 지대의 변화
-+ 프로젝트 초기에는 신뢰도가 낮아 완충 지대가 방어선에 아주 가깝게 형성됩니다.
-+ 이로 인해 완충 지대의 사이, RBS가 동작하지 않는 빈 공간이 넓어 초기 KASH 가격은 상당히 변동성이 높습니다.
-+ 이후 탐사 완료, vRWA 청산 등이 이루어지며 차츰 완충 지대가 DIV, FV를 향해 넓어집니다.
-+ 최종적으로 DIV 역시 FV로 수렴하고, 거의 항상 RBS가 동작하면서 가격이 FV에 안정됩니다.
+:::tip Changes in the Cushion Zone
++ In the early stages of the project, credibility is low, so the cushion zone is formed very close to the walls.
++ This makes the empty space between the cushions, where the RBS is inactive, wide, leading to quite high volatility for the early KASH price.
++ Later, as exploration is completed and vRWA is liquidated, the cushion zone gradually widens towards DIV and FV.
++ Eventually, DIV also converges to FV, and the RBS is almost always active, stabilizing the price at FV.
 :::
 
 ---
 
-### 채권 시장
+### Bond Market
 
-RBS의 시장 개입은 KASH를 시장에서 직접 사고파는 방식보다는, **채권(Bond) 발행**이라는 보다 간접적이고 정교한 방식을 통해 이루어집니다. 또한 조건에 따라 **채권의 대금을 일정 기간에 걸쳐 나눠 지급(베스팅)**함으로써 단기적인 시세 차익만을 노리는 행동을 줄이고 장기적인 가격 안정에 기여합니다.
+RBS's market intervention is carried out through a more indirect and sophisticated method of **issuing bonds** rather than directly buying and selling KASH on the market. Also, depending on the conditions, the **payment for the bond is distributed over a period (vesting)**, which reduces short-term speculative behavior and contributes to long-term price stability.
 
-+ 동작 자금
-    + KASH 매수 채권 발행시 : **볼트 내 자금을 사용하며, 자금이 일정량 이하로 고갈시 작동을 멈춥니다**. 
-    + KASH 매도 채권 발행시 : 유동성 풀에 **초기 분배**된 KASH를 사용됩니다. 고갈시 작동을 멈춥니다.
++ **Operating Funds**
+    + **When issuing KASH purchase bonds:** Uses **funds from the vault and stops operating if funds fall below a certain level.** 
+    + **When issuing KASH sale bonds:** Uses KASH from an **initial distribution** to the liquidity pool. It stops operating when these are depleted.
 
 :::warning
-KASH 1기에서 매수 채권은 볼트에 충분한 유동성 자산이 있을 때만, 매도 채권은 초기 분배된 KASH가 남아 있을 때만 동작한다는 점을 유의해야 합니다. 특히 프로젝트 초기에는 금고 자산이 부족하기 때문에 매수 채권 시장 개설이 어려울 수 있습니다.
+It's important to note that in KASH Phase 1, purchase bonds only operate when there are sufficient liquid assets in the vault, and sale bonds only operate while the initially distributed KASH remains. Especially in the early stages of the project, it may be difficult to open a purchase bond market due to insufficient vault assets.
 :::
 
-+ KASH 가격이 너무 낮아지려 할 때 : 프로토콜은 "KASH 매수 채권" 시장을 개설합니다. 사용자가 KASH로 이를 구매하면 프로토콜이 유동성 자산으로 대금을 상환하는 채권입니다.
-    + 가격이 하방 완충 지대 안으로 (소극 개입): 가격이 충분히 매력적인 경우 판매 되도록, 하방 방어선 가격에서 시작하여 완충 지대 시작점까지 가격을 천천히 올리면서 KASH를 사들입니다. 대금은 일정 기간에 걸쳐 상환합니다. 점진적으로 매도 압력을 줄여 가격 하락을 상쇄하는 효과가 있습니다.
-    + 가격이 하방 방어선 아래로 (적극 개입): 하방 방어선 가격에 KASH를 사들이고 즉시 대금을 상환합니다. 이는 차익 거래를 허용하여 KASH의 매도 압력을 직접적으로 흡수하여 가격 하락을 방어하는 효과가 있습니다.
++ **When the KASH price tries to fall too low:** The protocol opens a "KASH Purchase Bond" market. These are bonds where if a user buys them with KASH, the protocol repays the principal with liquid assets.
+    + **Price within the lower cushion (Passive Intervention):** To be sold only if the price is attractive enough, the protocol starts buying KASH at the lower wall price and slowly raises the price towards the start of the cushion zone. The payment is made over a period. This has the effect of gradually reducing selling pressure and offsetting the price decline.
+    + **Price below the lower wall (Active Intervention):** The protocol buys KASH at the lower wall price and repays the principal immediately. This allows for arbitrage, directly absorbing selling pressure on KASH and defending against a price drop.
 
-+ KASH 가격이 너무 높아지려 할 때 : 프로토콜은 "KASH 매도 채권" 시장을 개설합니다. 사용자가 유동성 자산으로 이를 구매하면 프로토콜이 KASH로 대금을 상환하는 채권입니다.
-    + 가격이 상방 완충 지대 안으로 (소극 개입): 가격이 충분히 매력적인 경우 구매 하도록, 상방 방어선 가격에서 시작하여 완충 지대 시작점까지 가격을 천천히 내리면서 KASH를 판매합니다. 대금은 일정 기간에 걸쳐 상환합니다. 점진적으로 매수 압력을 줄여 가격 상승을 상쇄하는 효과가 있습니다.
-    + 가격이 상방 방어선 위로 (적극 개입): 상방 방어선 가격에 KASH를 판매하고 즉시 대금을 상환합니다. 이는 차익 거래를 허용하여 KASH의 매수 압력을 직접적으로 흡수하여 가격 상승을 방어하는 효과가 있습니다.
++ **When the KASH price tries to rise too high:** The protocol opens a "KASH Sale Bond" market. These are bonds where if a user buys them with liquid assets, the protocol repays the principal with KASH.
+    + **Price within the upper cushion (Passive Intervention):** To be bought only if the price is attractive enough, the protocol starts selling KASH at the upper wall price and slowly lowers the price towards the start of the cushion zone. The payment is made over a period. This has the effect of gradually reducing buying pressure and offsetting the price rise.
+    + **Price above the upper wall (Active Intervention):** The protocol sells KASH at the upper wall price and repays the principal immediately. This allows for arbitrage, directly absorbing buying pressure on KASH and defending against a price rise.
 
-이처럼 채권을 활용한 방식은 시장 참여자들에게는 합리적인 거래 기회를 제공하고, 프로토콜에게는 시장 안정화와 동시에 자산 축적을 통해 추후 더 안정적인 안정화가 가능한 기반을 마련 해 줍니다.
+This bond-based approach provides reasonable trading opportunities for market participants while allowing the protocol to stabilize the market and simultaneously accumulate assets, building a foundation for even more stable stabilization in the future.
 
 :::info
-가치 평가 및 RBS와 관련된 구체적인 동작 및 사용되는 수식은 [가치평가 모델 문서](/tech/rbs/valuation), [안정화 메커니즘 문서](/tech/rbs/stabilization) 및 [채권 시장 문서](/tech/rbs/bond)에서 더 자세히 알아볼 수 있습니다.
+You can learn more about the specific operations and formulas related to value assessment and the RBS in the [Valuation Model document](/tech/rbs/valuation), the [Stabilization Mechanism document](/tech/rbs/stabilization), and the [Bond Market document](/tech/rbs/bond).
 :::
 
 ---
 
-이러한 노력을 통해 KASH는 변동성이 큰 암호화폐 시장에서도 사용자들이 믿고 함께할 수 있는, **실질 가치에 기반한 안정적인 디지털 자산**으로 자리매김하는 것을 목표로 합니다.
+Through these efforts, KASH aims to establish itself as a **stable digital asset based on real value**, one that users can trust and partner with even in the volatile cryptocurrency market.

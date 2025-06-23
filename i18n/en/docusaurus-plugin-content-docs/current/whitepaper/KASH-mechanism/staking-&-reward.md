@@ -1,279 +1,277 @@
 ---
 id: staking-&-reward
-title: 3. 초기 투자자 보상
-description: 초기 리스크에 대한 KASH 스테이킹과 보상
+title: 3. Initial Investor Rewards
+description: KASH Staking and Rewards for Initial Risk
 sidebar_position: 3
 ---
 
-여기에서는 KASH가 초기 생태계의 리스크를 감수하고 참여(투자)하는 사용자들에 대한 보상을 어떻게 지급하여 수익을 환원하는지 설명합니다.
+This document explains how KASH returns profits by providing rewards to users who participate (invest) and take on the risks of the early ecosystem.
 
 ---
 
-### KASH 스테이킹 핵심
+### KASH Staking Core
 
-+ 요약
-    + 보상은 스테이킹 예치자에 한해 매달, 총 3년에 걸쳐 이자처럼 분배됩니다.
-    + 1 KASH를 3년간 예치시 총합 1 KASH 이상의 보상을 분배 받습니다.
-    + 세일즈 참여 시기에 따라 보너스를 지급하여, 총 4~25배의 순수익이 제공됩니다.
++ **Summary**
+    + Rewards are distributed like interest, monthly over a total of 3 years, exclusively to stakers.
+    + Staking 1 KASH for 3 years will yield a total reward of over 1 KASH.
+    + A bonus is provided based on the sales participation timing, offering a net profit of 4 to 25 times the initial investment.
 
-:::note 예시 시나리오
-1. 토큰 세일즈 초기, 100 USDT로 100 KASH를 구매
-1. 이때 20배의 목표 수익 배율(EPB)을 확보 했다고 가정. 이는 세일즈 참여 시기에 따라 결정
-1. 100 KASH 예치 시 목표 수익 배율에 따라 보너스 예치액 1900 KASH가 추가 예치된 것으로 간주
-1. 총 2000 KASH에 대해 평균 2% 가량의 보상(이자)이 매달 복리로 적립
-1. 1년 6개월 시점부터 스테이킹을 계속 유지하면서도 원금 100 USDT 회수 가능 (PCR)
-1. 3년이 되는 시점에, 쌓인 2000 KASH 이상 누적된 총 이자를 회수하고 스테이킹 종료
-1. 결과적으로 3년간 총 2000 KASH 수익이 발생하여 최종 자산은 2000 KASH + 출금했던 100 USDT
-1. KASH가 최소 1$ 이상의 가치를 유지했다면, 2000% 이상의 수익률
+:::note Example Scenario
+1. Purchase 100 KASH with 100 USDT during the initial token sale.
+2. Assume you secure a target profit multiplier (EPB) of 20x. This is determined by your participation timing in the sale.
+3. When staking 100 KASH, a bonus deposit of 1900 KASH is considered added, based on your target profit multiplier.
+4. A reward (interest) of approximately 2% on the total 2000 KASH is accrued monthly with compounding.
+5. After 1 year and 6 months, you can withdraw your principal of 100 USDT while continuing to stake (PCR).
+6. At the 3-year mark, you can withdraw the accumulated total interest of over 2000 KASH and end your staking.
+7. As a result, a total profit of 2000 KASH is generated over 3 years, making your final assets 2000 KASH + the 100 USDT you withdrew.
+8. If KASH maintains a value of at least \$1, this represents a return rate of over 2000%.
 :::
 
 
-+ KASH는 광산 개발을 통해 발생할 미래의 구체적인 수익에 대해 고정된 수량만큼 발행된 토큰입니다. 이 발행량중 일부(50%)가 스테이킹 보상을 위해 할당되어 있습니다.
++ KASH is a token issued in a fixed quantity corresponding to the future, specific profits that will be generated from mine development. A portion of this issuance (50%) is allocated for staking rewards.
 
-+ KASH를 스테이킹 풀에 예치하고 주기적으로 KASH를 보상으로 지급 받습니다. 이는 은행에 KRW 예금을 하고 KRW 이자를 받는 것과 유사한 개념입니다. 마찬가지로, **달러 등 다른 통화 기준으로 했을 때는 반드시 수익을 보장하지는 못합니다.**
++ You can stake KASH in a staking pool and periodically receive KASH as a reward. This concept is similar to depositing KRW in a bank and receiving KRW interest. Likewise, **this does not necessarily guarantee a profit when measured in other currencies like the US dollar.**
 
-+ 스테이킹 풀에 대해 모든 유저의 예치 총합을 제한함으로써, 예치액에 대한 이자가 무한정 희석되는 것을 막을 수 있습니다. 참여자들에게 막연한 고수익의 가능성을 제시하는 대신, 예치(구매) 시점에 구체적인 수익 최소치를 제공 가능합니다.
++ By limiting the total amount that all users can stake in a pool, the interest on staked assets is prevented from being infinitely diluted. Instead of offering a vague possibility of high returns, we can provide a concrete minimum return at the time of staking (or purchase).
 
-+ 1 KASH 예치에 대해 최종적으로 1 KASH의 총 이자를 보장합니다. 이는 **3년간 +100%이상의 수익률**을 의미하며, **APY로는 약 26%, 매월 단위로 환산시 2%에 가까운 복리 이자율**로 환산 가능합니다. 단, **매월 이자가 균등하게 들어오는 것이 아니라 초기에는 보상이 낮고 점점 커지는 형태**입니다.
++ For every 1 KASH staked, a total interest of 1 KASH is guaranteed over the full term. This translates to a **return of over +100% over 3 years**, which can be converted to an **APY of about 26%, or a compound interest rate of nearly 2% monthly**. However, **the monthly interest is not distributed evenly; rewards start low and gradually increase over time**.
 
-+ 세일즈 참여자들은 구매 시기에 따라 부여되는 목표 수익 배율(EPB) 및 구매액에 비례해 **보너스 예치액**(DCR)을 지급받습니다. 이는 직접적으로 지급받는 금액은 아니지만, 스테이킹 풀에 예치 시 이 **DCR에 해당하는 금액만큼 추가로 예치한 것처럼 취급하여 이자를 더 받을 수 있도록** 해줍니다. **결과적으로 EPB만큼의 수익**을 낼 수 있도록 하는 장치입니다.
++ Sales participants receive a **bonus deposit amount** (DCR) in proportion to their purchase timing (which determines their target profit multiplier, or EPB) and purchase amount. While this is not a directly withdrawable amount, when you stake, **this DCR is treated as if you had staked that much extra, allowing you to earn more interest**. It's a mechanism designed to help you **achieve a final return equivalent to your EPB**.
 
-+ **초기 세일즈** 참여자들의 목표 수익 배율(EPB)은 판매 진행도에 따라 투자금의 4배에서 최대 25배로 설정하였습니다. 즉 예치 원금을 포함한 최종 자산 기준으로, **세일즈 초기에 참여하는 경우 총 26배**에서 **후기 참여자들이라도 5배 이상**의 KASH 수량을 형성하도록, 3년에 걸쳐 환원하는 것을 목표로 합니다.
++ The target profit multiplier (EPB) for **initial sales** participants is set to range from 4x to a maximum of 25x of their investment, depending on sales progress. This means we aim to provide returns over 3 years so that, including the principal, **early participants can form a KASH quantity of up to 26x their initial amount**, while even **late participants can achieve over 5x**.
 
-+ **18개월**이 지나 프로젝트의 절반이 경과하는 시점부터는, 스테이킹을 중단하지 않고도 **구매 원금을 회수**할 수 있습니다. 세일즈에 참여한 자산을 돌려 받되 이 회수분을 **보너스(DCR)로 대체**하여 동일한 예치 규모를 유지함으로써, 남은 기간에 대해서도 **회수 전과 동일한 이자**를 계속 받을 수 있도록 합니다. 이 권리를 **PCR**이라 칭합니다.
++ After **18 months**, when the project is halfway through, you can **recover your initial investment principal** without having to stop staking. You get back the asset you used to participate in the sale, and this withdrawn amount is **replaced by a bonus (DCR)**, allowing you to maintain the same stake size and continue receiving the **same interest as before the recovery** for the remaining period. This right is called **PCR**.
 
-+ 그 전이라도 **예치 원금 및 현재까지 받은 이자 전액**은 **언제든 회수**하고 스테이킹을 종료 할 수 있습니다. 단, 이는 아래과 같이 세일즈 특권을 포함한 향후의 이익을 포기하는 것이므로 신중하게 결정해야 합니다.
-    + 인출하는 규모에 비례해 보너스 예치액이 함께 소각됩니다.
-    + 인출하는 규모에 비례해 이후의 보상(이자)이 줄어듭니다.
-    + 일부라도 인출하는 경우 구매 원금 회수 권리(PCR)가 소멸합니다.
-    + 스테이킹 풀의 예치 규모가 제한되어 있어 재예치가 어려울 수 있습니다. 
++ Even before that, you can **withdraw your entire principal and all accrued interest to date at any time** and exit staking. However, this decision should be made carefully as it means forfeiting future benefits, including sales privileges, as detailed below:
+    + The bonus deposit amount is burned in proportion to the withdrawn amount.
+    + Future rewards (interest) will decrease in proportion to the withdrawn amount.
+    *   Withdrawing even a partial amount will forfeit your right to principal recovery (PCR).
+    + As the staking pool's capacity is limited, re-staking may be difficult.
 
 
-문서의 나머지 부분에서 이 핵심들에 대해 조금 더 상세히 풀어서 설명하겠습니다.
+The rest of this document will explain these core concepts in more detail.
 
 :::info
-참여 시점에 따른 예상 수익 그래프는 아래 [EPB/DCR 그래프](./staking-&-reward#epb--dcr-그래프-해석)를 참고할 수 있으며, 정확한 보상의 시뮬레이션은 [보상 계산기](https://kash-rwa.io/calculator)를 이용할 수 있습니다.
+You can refer to the [EPB/DCR Graph Interpretation](./staking-&-reward#epb--dcr-graph-interpretation) section below for an estimated return graph based on participation timing. For a precise reward simulation, you can use the [Reward Calculator](https://kash-rwa.io/calculator).
 :::
 
 ---
 
-### 용어 정리
+### Terminology
 
-이 문서는 최대한 블록체인, DeFi나 금융 투자에 익숙하지 않은 사람들도 이해할 수 있는 것을 목표로 작성하였지만, 용어와 그에 내재된 의미를 매번 설명할 수 없어 불가피하게 사용되는 단어들을 다음과 같이 정리합니다.
+While this document aims to be understandable even for those unfamiliar with blockchain, DeFi, or financial investment, some terms are used for brevity. Here is a summary:
 
-**1. 디파이(DeFi) 및 블록체인 관련**
-*   **토큰 (Token) :** 블록체인 상에서 사용되는 디지털 자산 또는 권리를 나타내는 단위로, 코인과 유사한 개념입니다. KASH는 토큰의 일종입니다. 
-*   **스테이킹 (Staking) :** 가진 토큰 등의 자산을 네트워크에 맡겨두고, 그 대가로 토큰 등의 보상을 이자처럼 받는 행위 또는 그러한 시스템을 지칭합니다.
-*   **스테이킹 풀 (Staking Pool) :** 여러 사람이 스테이킹에 참여하고 발생한 보상을 지분에 따라 나눠 갖는 장 혹은 그러한 시스템을 지칭합니다.
-*   **토큰 세일즈 (Token Sales) :** 프로젝트가 초기 자금을 마련하거나 토큰을 분배하기 위해 토큰을 판매하는 과정입니다. 주식 시장의 공모주 청약과 유사합니다.
-*   **프로토콜 (Protocol) :** 프로젝트가 작동하는 규칙이나 약속의 집합 혹은 생태계 그 자체(시스템)를 의미합니다.
-*   **APY (Annual Percentage Yield, 연간 수익률) :** 1년 동안 자산을 스테이킹했을 때 예상되는 수익률입니다. 주로 이자(보상)가 자동으로 재투자되는 복리 효과까지 고려된 수익률을 의미할 때, APR(Annual Percentage Rate)과 구분하여 사용됩니다.
+**1. DeFi & Blockchain Related**
+*   **Token:** A unit representing a digital asset or right on a blockchain, similar to a coin. KASH is a type of token.
+*   **Staking:** The act or system of locking up assets like tokens in a network to receive rewards, similar to interest.
+*   **Staking Pool:** A place or system where multiple people participate in staking and share the rewards based on their stake.
+*   **Token Sales:** The process where a project sells its tokens to raise initial funds or distribute them. It's similar to an IPO in the stock market.
+*   **Protocol:** A set of rules or agreements that govern how a project works, or the ecosystem (system) itself.
+*   **APY (Annual Percentage Yield):** The expected rate of return from staking an asset for one year. It is often used to refer to a rate that includes the effect of compounding, where interest (rewards) is automatically reinvested, distinguishing it from APR (Annual Percentage Rate).
 
-**2. 투자 및 금융 관련**
+**2. Investment & Finance Related**
 
-*   **리스크 (Risk) :** 투자를 했을 때 예상했던 결과와 다른 결과(손실)가 나올 수 있는 불확실성입니다.
-*   **리스크 프리미엄 (Risk Premium) :** 높은 리스크를 감수하는 투자자에게 일반적인 투자보다 더 많은 수익을 기대할 수 있도록 추가로 제공되는 보상입니다.
-*   **수익률 (Return Rate, Yield) :** 내가 투자한 금액 대비 얼마나 많은 이익(수익)을 얻었는지를 비율(%)로 나타낸 것입니다.
+*   **Risk:** The uncertainty that an investment could result in an outcome (loss) different from what was expected.
+*   **Risk Premium:** An additional reward offered to investors who take on higher risk, allowing them to expect a higher return than a standard investment.
+*   **Return Rate, Yield:** The ratio (%) of how much profit (return) you earned relative to the amount you invested.
 
-**3. KASH 내에서 정의된 용어**
+**3. KASH-Defined Terms**
 
-*   **EPB (Early Participant Bonus, 초기 참여자 보너스) :** KASH 세일즈에 참여한 투자자에게 부여하는 '목표 (순)수익 배율'입니다. 프로토콜이 참여자에게 이만큼의 수익률을 보장하고자 한다는 의미입니다. 이는 예치 시점에 (EPB-1)에 구매액을 곱한 만큼의 보너스 예치액(DCR)을 추가로 부여하고, 예치액 1 KASH당 이자를 총 1 KASH 이상 지급함으로써 실현됩니다.
-*   **DCR (Debt Creation Right, 부채 생성 권리) :** 보너스 예치액, 보다 정확히는 '보너스 예치액을 받을 수 있는 권리'입니다. 실제로 출금할 수 있는 금액은 아니지만, 이자 계산시에 예치액으로 취급되어 추가 이자를 받을 수 있습니다. 그 설계적인 원리를 담고자 부채라는 표현이 사용되었지만, 원금 및 이자가 항상 증가하는 것이 보장되는 구조에서는 단순히 더 많은 이자를 얻을 수 있는 보너스, 혹은 그 획득 권리로 해석해도 무관합니다. 이 문서에서는 직관적인 이해를 위해 보너스 예치액으로 칭합니다.
-*   **PCR (Principal Conversion Right, 원금 전환 권리) :** 18개월이 경과한 후 최초 세일즈를 통해 구매하여 예치한 KASH를 보너스 예치액으로 전환하고, 예치한 KASH를 인출 후 최초 세일즈 했던 자산과 다시 맞바꿀 수 있습니다. 다시 말해 스테이킹의 규모(예치액)를 그대로 유지하여 남은 이자는 예정대로 받으면서도, 세일즈에 투자했던 금액은 그대로 다시 회수할 수 있는 권리입니다. 이 때 교환한 KASH는 그 (최초) 가치에 해당하는 담보를 다시 내어 준 것이므로 볼트에서 소각됩니다.
+*   **EPB (Early Participant Bonus):** A 'target (net) profit multiplier' given to investors who participate in the KASH sale. It signifies the rate of return the protocol aims to guarantee for that participant. This is realized by granting a bonus deposit amount (DCR) equal to (EPB-1) times the purchase amount at the time of staking, and by distributing a total interest of at least 1 KASH per 1 KASH staked.
+*   **DCR (Debt Creation Right):** The bonus deposit amount, or more accurately, the 'right to receive a bonus deposit amount.' While not a withdrawable sum, it is treated as part of your stake for interest calculation, allowing you to receive additional interest. The term "debt" is used to reflect its design principle, but in a structure where the principal and interest are guaranteed to always increase, it can be simply interpreted as a bonus or the right to earn more interest. For intuitive understanding, this document refers to it as the bonus deposit amount.
+*   **PCR (Principal Conversion Right):** After 18 months, you can convert the KASH you purchased in the initial sale and staked into a bonus deposit amount. You can then withdraw the staked KASH and exchange it back for the asset you originally used in the sale. In other words, it is the right to recover the amount you invested in the sale while maintaining the same stake size (deposit amount) and continuing to receive the same planned interest for the remaining period. The exchanged KASH is burned from the vault, as the collateral corresponding to its (initial) value has been returned.
 
 ---
 
-### KASH 단위의 논의 (중요)
+### Discussion in KASH Units (Important)
 
 :::info
-사용자의 최종적인 체감 수익에는 많은 요소가 영향을 줍니다. 그 주요한 요인중 하나는 KASH 자체의 가격 변동성일 것입니다. 이에 관해서는 이전의 [KASH 가치 구조에 관한 문서](./kash-structure) 및 이 다음의 [가격 조절(안정화) 관련 문서](./kash-liquidity)에서 보다 자세히 논하기로 하겠습니다. 
+A user's final perceived return is influenced by many factors. A major one is the price volatility of KASH itself. This will be discussed in more detail in the previous document on the [KASH Value Structure](./kash-structure) and the next document on [Price Regulation (Stabilization)](./kash-liquidity).
 :::
 
-지금은 보상 프로그램에 포커스를 두어 불확실한 요소들을 떼어놓고, 더 구체적이고 확실한 수치를 논하기 위해 **KASH 단위의 논의**를 하기로 합니다. 이는 단어의 의미를 아래와 같이 해석해야 한다는 뜻입니다.
-+ 여기서의 **"수익"은 KASH 단위의 수익, 즉 증가한 KASH 수량**입니다.
-+ **"원금"은 사용자가 구매하여 예치한 KASH 토큰의 최초 수량**이 됩니다. 
-    + 예외적으로 18개월 시점에 PCR을 통해 회수 가능한 원금에 한해서, "KASH 구매에 사용된 원금", 즉 USDT 등의 자산을 기준으로 한 원금을 뜻합니다.
+For now, to focus on the reward program and discuss more concrete and certain figures, we will conduct our **discussion in KASH units**, free from uncertain elements. This means the following terms should be interpreted as described below:
++ **"Profit"** here means **profit in KASH units, i.e., the increased quantity of KASH**.
++ **"Principal"** becomes the **initial quantity of KASH tokens a user purchased and staked**.
+    + As an exception, for the principal that can be recovered via PCR after 18 months, it refers to the "principal used to purchase KASH," i.e., the principal in terms of assets like USDT.
 
 :::caution
-사용자는 이 문서에서 나타나는 다른 표현, 예를 들어 "확정", "보장" 등에 대해서도 **KASH 등의 "가치 변동"은 논외**로 한다는 전제가 있음을 반드시 인지하고, 아래와 같은 상황들이 발생할 수 있음을 예상하여 혼동을 피해야합니다.
+Users must be aware that other expressions in this document, such as "guaranteed" or "assured," are based on the premise that the **"value fluctuation" of KASH is not considered**. You should anticipate the following situations to avoid confusion:
 
-+ 프로젝트 초기에 이탈 시, **스테이킹은 원금 이상의 KASH 수량을 반환**했지만, 그렇게 보장된 KASH 자체의 가치가 일시적으로 하락했을 수 있습니다. 이 경우 KASH 매도 후 환전 시 **법정 화폐(FIAT) 기준으로는 손실**이 발생할 수 있습니다.
-+ **스테이킹이 약속된 만큼의 KASH 수익을 반환하고, KASH 가치도 달러 기준 초기 가치 이상을 유지**(1$/KASH)했지만, 그동안 환율이 하락할 수 있습니다. 이 경우 KASH 매도 후 환전 시 **원화 기준으로는 예상 수익률보다 낮은 수익이 발생**할 수 있습니다.
++ If you exit the project early, **staking may return a KASH quantity greater than your principal**, but the value of that guaranteed KASH itself might have temporarily decreased. In this case, you could incur a **loss in fiat currency terms** after selling the KASH.
++ **Even if staking returns the promised KASH profit and the KASH value remains at or above its initial value in USD terms** (\$1/KASH), the exchange rate to your local currency might have dropped. In this case, your **return in your local currency terms could be lower than the expected rate**.
 :::
 
 ---
 
-### 초기 투자자에 대한 존중
+### Respect for Early Investors
 
-팀은 리스크를 감수하고 프로젝트의 도약에 크게 기여하는 초기 참여자들이, 최대한 합리적인 투자가 가능하도록 다음과 같은 장치를 마련하였습니다.
+The team has prepared the following mechanisms to ensure that early participants, who take on risk and contribute significantly to the project's launch, can make the most rational investment possible.
 
-:::note 1. 리스크에 대한 **높은 수익률**
+:::note 1. **High Rate of Return** for Risk
 
-총 세일즈 금액 대비 5배에 해당하는 보상을 환원합니다. 특히 불확실성이 높은 초기 세일즈는 판매량 대비 6배의 보상을 할당하여, **초기 참여자의 경우 최대 20배 이상**의 수익을 얻을 수 있습니다. 프로젝트 안정성이 상당 부분 확보된 이후에 참여하는 **후기 참여자라도 연 환산 52% 이상의 수익률**(추가 세일즈의 최저 EPB 1.5로 가정)을 제공합니다.
+We will return rewards equivalent to 5 times the total sales amount. In particular, the highly uncertain initial sale has 6 times the reward allocated relative to its sales volume, allowing **early participants to earn over 20x** their investment. Even **later participants**, who join after a significant degree of project stability is secured, will be offered a **return rate of over 52% APY** (assuming the lowest EPB of 1.5 for the additional sale).
 :::
 
-:::note 2. 약정 없는 **자율 참여**
+:::note 2. **Flexible Participation** with No Lock-up
 
-생태계를 보다 안정시키기 위해 스테이킹을 통한 보상 분배 형태를 취했지만, 사용자는 **의무 예치 기간 없이** 자신의 선택에 따라 언제든 원하는 만큼 스테이킹을 해지(지분 소각)하고 **원금과 그때까지 적립된 이자 전량**를 수령하며 스테이킹을 종료할 수 있습니다. 물론 인출액의 규모에 따라 이후의 스테이킹 보상은 줄어들거나 없어집니다.
+Although we have adopted a reward distribution model through staking to stabilize the ecosystem, users have **no mandatory deposit period**. They can choose to unstake (burn shares) as much as they want at any time, receive their **entire principal and all accrued interest to date**, and exit staking. Of course, future staking rewards will decrease or cease depending on the withdrawal amount.
 :::
 
-:::note 3. 프로젝트 중도 **원금 회수**
+:::note 3. **Principal Recovery** During the Project
 
-프로젝트 절반이 진행된, 예치 18개월이 되는 시점부터 **스테이킹의 종료 없이도 원금 전체를 회수**할 수 있습니다(PCR). 여기에는 지분 감소나 보너스 예치액 소각 등 **아무런 페널티가 없으며, 이후 남은 스테이킹 기간동안 회수 전과 동일하게 이자를 획득**할 수 있습니다. 이를 다른 곳에 활용, 원한다면 추가적인 KASH를 구매하여 더 많은 이자를 획득할 수도 있습니다.
+Starting from the 18-month mark, when the project is halfway through, you can **recover your entire principal without exiting staking** (PCR). There are **no penalties** like share reduction or burning of the bonus deposit amount, and you can **continue to earn the same interest as before the recovery** for the remaining staking period. You can use this recovered capital elsewhere, or even purchase more KASH to earn more interest if you wish.
 :::
 
 ---
 
-### 1기 한정 리스크 보상
+### Phase 1 Limited Risk Reward
 
-KASH 생태계 1기에서 사용되는 vRWA는 **실물 금 생산 이전에 발행되는 미래 가치형 자산**으로, 해당 구조를 기반으로 발행되는 KASH는 **불완전 담보 상태에서의 가치 형성**이라는 리스크를 내포하고 있습니다. 이러한 불완전 담보 상태에서의 위험을 감수하고 생태계 초기에 진입하는 투자자들을 위해, **높은 수익률**(APY)을 제공하는 **스테이킹 보상 프로그램**을 **1기에 한정하여 운영**합니다. 특히 초기에 참여하는 사용자일수록 **목표 수익률**(EPB)이 높게 책정되어 더 큰 보상을 받을 수 있습니다. 
+The vRWA used in KASH's Phase 1 are **future-value assets issued before physical gold production**, and KASH, being issued based on this structure, carries the risk of **value formation under incomplete collateralization**. To compensate investors who enter the ecosystem early and take on this risk, a **staking reward program** offering a **high APY** will be operated on a **limited basis for Phase 1**. In particular, users who participate earlier will be assigned a higher **target profit multiplier** (EPB) and receive greater rewards. 
 
-스테이킹 보상을 위해 분배된 KASH는 50m개 (총 발행량의 50%) 입니다. 이는 아래와 같이 두 개의 스테이킹 풀 보상에 전량 사용될 예정이며, 따라서 향후 이러한 고가치의 스테이킹 풀 운영은 계획되어 있지 않습니다.
+50 million KASH (50% of the total supply) have been allocated for staking rewards. These will be entirely used for the rewards of the two staking pools below, and therefore, there are no plans for such high-value staking pools in the future.
 
-| **스테이킹 풀** | **개시** | **참여한도** | **총보상** | **대상** |
+| **Staking Pool** | **Start** | **Participation Limit** | **Total Rewards** | **Target** |
 | --- | --- | --- | --- | --- |
-| Early Staking Pool | 1차 판매 완료 후| 초기 30m (초기 세일즈 5m + DCR 25m, 변동 가능) | 30m | 초기 투자자 |
-| Second Staking Pool | 2차 판매 시작과 함께 | 초기 20m (추가 세일즈 5m + DCR 15m, 변동 가능) | 20m | 후속 투자자 |
-| 합계 || 약 50m | **50m** | 1기 참여자 |
+| Early Staking Pool | After 1st Sale Completion | Initial 30m (Initial Sale 5m + DCR 25m, subject to change) | 30m | Initial Investors |
+| Second Staking Pool | With 2nd Sale Start | Initial 20m (Additional Sale 5m + DCR 15m, subject to change) | 20m | Subsequent Investors |
+| Total || Approx. 50m | **50m** | Phase 1 Participants |
 
 :::tip
-세일즈 물량 5m에 대한 총 보상이 30m이라는 것은, 산술적으로 모든 참여자들의 수익 **평균**이 6배가 됨을 의미합니다. 하지만 초기 참여자들에게 더 높은 EPB 및 DCR에 따른 더 많은 보상이 주어지기 때문에, 후기 참여자들은 이보다 적은 보상을 받게 됩니다. 따라서 보상 분배 방식, EPB, DCR 등 추가적인 내용을 인지하여 해석하는데 주의를 기울여야 합니다. 
+A total reward of 30m for a sales volume of 5m arithmetically means the **average** return for all participants is 6x. However, since early participants are given more rewards due to higher EPB and DCR, later participants will receive less than this. Therefore, care must be taken to interpret this by understanding additional details like the reward distribution method, EPB, and DCR. 
 :::
 
 ---
 
-### 보상 방식과 그 재원
+### Reward Method and Its Source
 
-초기 참여에 대한 보상 프로그램은 **스테이킹 형태**로 이루어집니다. 사용자가 **KASH를 예치**하면, 그 댓가로 **한달마다 이자격인 보상으로 KASH를 획득**할 수 있는 구조입니다. 이번 달에 분배할 보상의 총량이 결정되어 있고, 이를 각자가 예치한 금액에 비례하여 나눠가지게 됩니다.
+The reward program for early participation is structured in the **form of staking**. When a user **stakes KASH**, they can **earn KASH as interest-like rewards every month**. The total amount of rewards to be distributed in a given month is predetermined, and this amount is shared among participants in proportion to their staked amount.
 
-세일즈 참여자들은 **각자의 초기 목표 수익 배율(EPB)에 따라 보너스 예치액(DCR)을 지급** 받습니다. 이것이 각자가 나눠가질 보상을 계산하는 과정에서 효과를 발휘하여, **실제 예치액에 비해 n배 더 많은 이자**를 받을 수 있게 합니다.
+Sales participants receive a **bonus deposit amount (DCR) based on their individual target profit multiplier (EPB)**. This takes effect when calculating each person's share of the rewards, allowing them to **receive 'n' times more interest compared to their actual staked amount**.
 
 :::note
-이번 주기의 총 보상이 100 KASH 일 때, 총 세명의 사용자가 예치중이라면 각자의 보상은 다음과 같이 분배됩니다.
+If the total reward for this cycle is 100 KASH, and three users are staking, their rewards are distributed as follows:
 
-| 사용자 | 예치액 | EPB | DCR로 인한 보너스 예치액 | 합계 | 지분율 | 보상 |
+| User | Staked Amount | EPB | Bonus Deposit from DCR | Total | Share % | Reward |
 | --- | --- | --- | --- | --- | --- | --- |
 | A | 500 KASH | 6x | +2500 KASH | 3000 KASH | 30% | +30 KASH |
 | B | 1000 KASH | 1x | +0 KASH | 1000 KASH | 10% | +10 KASH |
 | C | 1000 KASH | 6x | +5000 KASH | 6000 KASH | 60% | +60 KASH |
-| 합계 | 2500 KASH | - | 7500 KASH | 10000 KASH | 100% | +100 KASH |
+| Total | 2500 KASH | - | 7500 KASH | 10000 KASH | 100% | +100 KASH |
 :::
 
 :::tip
-즉 연이율과 같은 개념이 존재하여 내가 예치한 금액에 비례하여 **n% 만큼의 고정된 이자를 받는 것이 아니라**, 더 많은 금액을 예치할 수록 전체 예치액에서 내 예치액이 차지하는 비중(**지분**)이 높아지고, **총 보상에서 나눠가지는 몫이 많아지는 구조**입니다. 수익률은 이 결과에 따라 예치액 대비 보상량으로 사후 계산되는 것입니다. 다만 아래 섹션에서 설명하는 것처럼, **최대 예치 규모가 제한되어 있어 최소한의 수익을 계산하여 구체적인 연수익률로 환산** 할 수 있습니다.
+In other words, it's not a system where you receive a **fixed interest of n%** based on your deposit, like a conventional APY. Instead, the more you stake, the higher your proportion (**share**) of the total staked amount becomes, and the **larger your slice of the total reward pie**. The return rate is calculated retroactively based on the rewards received relative to the amount staked. However, as explained in the next section, because the **maximum stake size is limited, a minimum return can be calculated and converted into a specific annual yield**.
 :::
 
-KASH는 프로토콜이 목표하는 금 수량에 맞추어, 1기의 vRWA와 KASH 총량을 미리 결정하고 발행 하였습니다. 그리고 KASH 총 발행량의 50%에 해당하는 50m개의 KASH가 이 초기 리스크 보상을 위해 할당되어 있습니다.
+KASH has predetermined and pre-issued its total Phase 1 vRWA and KASH supply to match the protocol's target gold quantity. 50 million KASH, corresponding to 50% of the total KASH supply, have been allocated for these initial risk rewards.
 
-이는 비록 KASH의 가치에 불확실성을 내포하는 구조이지만, **계속적인 발행(인플레이션)으로 토큰의 가치를 무한정 희석시키지 않으며**, 향후 유통될 토큰 수량이나 사용자가 받을 수 있는 **총 보상량을 예측 가능**하게하는 구조입니다. 지속적인 후속 투자자의 참여가 필요하거나 막연한 프로토콜의 성장을 가정하고, 주조 차익으로써 무분별한 스테이킹 이자를 지급하는 구조와 다른 점입니다. 
+Although this structure introduces uncertainty into KASH's value, it is a system that **does not infinitely dilute the token's value through continuous issuance (inflation)**, and it makes the **future circulating supply and the total rewards a user can receive predictable**. This is different from structures that require continuous participation from new investors or assume vague protocol growth to pay out indiscriminate staking interest as seigniorage. 
 
 :::warning
-단, 근본적으로 이러한 KASH의 발행과 가치 지지가 가능한 것은 금광 사업의 수익에 기반합니다. 금광 개발이 진척되고 발생한 수익을 담보로 환원하면서, 발행된 KASH들의 가치가 점차 견고히 다져지게 됩니다.
+Fundamentally, however, the issuance and value backing of KASH are based on the profits of the gold mining business. As the gold mine develops and profits are converted into collateral, the value of the issued KASH will be gradually solidified.
 :::
 
 ---
 
-### 확정적인 수익 보장
+### Guaranteed Profit
 
-**스테이킹 풀에 예치 가능한 총액은 제한**되어 있습니다. 이는 개인의 규모 제한이 아니라 전체 참여자의 참여액 합계를 의미합니다. 이로 인해 개인의 예치액이 총 예치액에서 차지하는 비율(지분율)이 일정 수준 이하로 희석되지 않습니다. 또한 스테이킹을 통한 총 보상 및 각 주기별 보상이 미리 결정되어 있습니다. 따라서 사용자들은 **구매 시점 (혹은 예치 시점) 에 앞으로 받게 될 최소한의 이자 총량을 확정**할 수 있습니다.  
-
-:::note
-정확히는 **지분 단위로 최대 스테이킹 규모가 제한**되지만, 여기에서는 지분에 대한 설명을 피하기 위해 예치액으로 표현하였습니다. 추후에는 동일한 지분 확보를 위해 더 많은 금액이 필요하기 때문에, 총 예치액 기준으로는 제한이 조금씩 늘어나게 됩니다. 그러나 여전히 **미리 확보한 사용자의 지분 가치는 일정 이상 희석되지 않기 때문**에 앞선 내용은 유효합니다. 더 자세한 내용은 [스테이킹 문서](/tech/staking/intro)를 통해 알아볼 수 있습니다.
-:::
-
-KASH는 특히 세일즈 참여자를 대상으로 이를 예측하기 쉽도록, "세일즈 판매량과 보너스 예치액(DCR) 총 발행량의 합계를 총 보상량과 일치"하도록 수치를 조절했습니다. 따라서 모든 보상이 분배되었을 때 **1 KASH의 예치액은 3년간 1 KASH 이상의 누적 총 이자를 보장**받게 되며, 보너스 예치액(DCR) 발행 비율을 결정하는 **EPB가 곧 수익률과 일치**하게 됩니다.
+The **total amount that can be staked in the staking pool is limited**. This is not an individual limit but a limit on the sum of all participants' stakes. This prevents an individual's stake from being diluted below a certain level of the total. Additionally, the total rewards from staking and the rewards for each cycle are predetermined. Therefore, users can **be certain of the minimum total interest they will receive from the moment of purchase (or staking)**.  
 
 :::note
-1 KASH의 예치액이 1 KASH "이상"의 총 이자를 보장한다는 것은, 다른 참여자가 이탈하여 예치액의 총량이 줄어드는 경우, 동일한 예치액이 비교적 더 큰 비중을 차지하게 되어 당월에 예상보다 많은 이자를 받게 되는 경우가 존재한다는 의미입니다.
+To be precise, the **maximum staking capacity is limited on a share basis**, but it is expressed here in terms of the staked amount to avoid explaining shares. In the future, more KASH will be needed to secure the same number of shares, so the limit in terms of the total staked amount will gradually increase. However, the preceding statement remains valid because the **value of a user's pre-secured shares will not be diluted below a certain point**. You can learn more details in the [Staking Document](/tech/staking/intro).
 :::
 
-세일즈 참여자의 최종 자산 및 수익은 다음과 같은 요소로 이루어 집니다.
-+ 세일즈 정보
-    + 구매 수량 : 세일즈를 통해 구매한 KASH 수량입니다. 이것이 "원금"이 됩니다.
-    + 목표 수익 배율 : 구매 시기에 따라 발급받은 평균 EPB입니다. "EPB"라고 하겠습니다.
-+ 예치액
-    + 예치 원금 : 구매하여 예치한 KASH = 원금의 1배
-    + 보너스 예치액 : 세일즈 시 EPB에 의해 발행받은 DCR = 원금의 EPB-1배
-+ 예치에 대한 3년간의 이자
-    + 원금에 대한 이자 : 원금을 예치함으로써 얻은 이자 = 원금의 1배
-    + 보너스에 의한 이자 : 보너스 예치액에 대해 발생한 이자 = DCR의 1배 = 원금의 EPB-1배
-    + 합계 : **이자 수익 합계는 원금의 EPB배**
+KASH has adjusted the numbers to make this easy for sales participants to predict, specifically by "matching the sum of the sales volume and the total issuance of the bonus deposit amount (DCR) with the total reward amount." Therefore, when all rewards are distributed, **1 KASH staked is guaranteed to receive a cumulative total interest of at least 1 KASH over 3 years**, and the **EPB**, which determines the issuance ratio of the bonus deposit amount (DCR), will **directly correspond to the rate of return**.
 
-인출 할 수 없는 가상의 자산인 보너스 예치액(DCR)을 제외하고, 원금을 다시 회수하면 **최종 자산은 원금의 EPB+1배**가 됩니다.
+:::note
+The statement that 1 KASH staked guarantees a total interest of "at least" 1 KASH means that if other participants leave and the total staked amount decreases, your same stake will represent a relatively larger share, and you may receive more interest than expected in that month.
+:::
+
+A sales participant's final assets and profit are composed of the following elements:
++ **Sales Information**
+    + Purchase Amount: The amount of KASH purchased through the sale. This becomes the "principal."
+    + Target Profit Multiplier: The average EPB received based on the purchase timing. We'll call this "EPB."
++ **Staked Amount**
+    + Staked Principal: KASH purchased and staked = 1x the principal
+    + Bonus Deposit Amount: DCR issued based on EPB during the sale = (EPB-1)x the principal
++ **Interest over 3 years on the Stake**
+    + Interest on Principal: Interest earned by staking the principal = 1x the principal
+    + Interest from Bonus: Interest generated from the bonus deposit amount = 1x the DCR = (EPB-1)x the principal
+    + Total: **The total interest profit is EPB times the principal.**
+
+Excluding the non-withdrawable virtual asset, the bonus deposit amount (DCR), and after recovering your principal, your **final assets will be (EPB+1) times your principal**.
 
 :::tip
-+ 100 KASH 구매 * EPB 20 
-    + 100 KASH + 1900 DCR = 총 2000 KASH 규모 예치액
-    + (3년후) 100(원금) + 100(원금에 대한 이자) + 1900(DCR에 대한 이자) = 2100 KASH (+2000%)
++ 100 KASH purchase * EPB 20
+    + 100 KASH + 1900 DCR = Total stake size of 2000 KASH
+    + (After 3 years) 100 (principal) + 100 (interest on principal) + 1900 (interest on DCR) = 2100 KASH (+2000%)
 
-+ 200 KASH 구매 * EPB 5
-    + 200 KASH + 800 DCR  = 총 1000 KASH 규모 예치액
-    + (3년후) 200(원금) + 200(원금에 대한 이자) + 800(DCR에 대한 이자) = 1200 KASH (+500%)
++ 200 KASH purchase * EPB 5
+    + 200 KASH + 800 DCR  = Total stake size of 1000 KASH
+    + (After 3 years) 200 (principal) + 200 (interest on principal) + 800 (interest on DCR) = 1200 KASH (+500%)
 :::
 
 ---
 
-### EPB / DCR 그래프 해석
+### EPB / DCR Graph Interpretation
 
-아래는 스테이킹 페이지에서 확인할 수 있는 EPB 그래프입니다. 이 그래프는 직관적인 파악 및 대략적인 추정치 가늠 등을 위한 것입니다.
+Below is the EPB graph you can find on the staking page. This graph is for intuitive understanding and rough estimation.
 
 :::info
-정확한 개인의 EPB, DCR 및 기간별 수익은 그래프로 파악하기 어렵습니다. [보상 계산기](https://kash-rwa.io/calculator)를 통해 쉽게 계산해 볼 수 있고, [스테이킹 문서](/tech/staking/intro)를 통해 구체적인 설계 및 수식을 알아볼 수 있습니다.
+It is difficult to determine your precise individual EPB, DCR, and periodic returns from the graph. You can easily calculate them using the [Reward Calculator](https://kash-rwa.io/calculator), and you can find the specific design and formulas in the [Staking Document](/tech/staking/intro).
 :::
 
 ![KASH EPB Graph](/img/kash_staking_epb.png)
 
-:::tip 그래프 해석
-    + x축 (가로) : 100만 KASH 판매량(q)입니다. 즉 이 그래프는 판매량 0 ~ 5,000,000 KASH 에 대한 것입니다.
-    + y축 (세로) : 각 함수의 결과값입니다.
-        + 파란 그래프 (EPB) : 사용자에게 부여하는 목표 수익 배율입니다. 세일즈 시기(판매량)에 따라 결정됩니다.
-        + 붉은 그래프 (DCR) : 누적 보너스 예치액입니다. 100만을 곱하여 0 ~ 25m KASH 범위로 해석해야 합니다.
+:::tip Graph Interpretation
+    + **x-axis (horizontal):** KASH sales volume (q) in millions. So this graph covers sales from 0 to 5,000,000 KASH.
+    + **y-axis (vertical):** The result of each function.
+        + **Blue Graph (EPB):** The target profit multiplier given to the user. It is determined by the sales timing (sales volume).
+        + **Red Graph (DCR):** The cumulative bonus deposit amount. This should be interpreted in the range of 0 to 25m KASH by multiplying by one million.
 :::
-:::tip 특정 시점의 EPB (목표 수익 배율) 값은 얼마인가?
-        + 파란 EPB 그래프는 25에서 시작하여 판매량이 누적 될 수록 줄어들어 최종적으로 4에 수렴합니다.
-        + 이 중 특정 시점, 예를 들어 2m KASH가 판매된 시점의 EPB값은 q가 2일 때, 약 5정도임을 알 수 있습니다.
+:::tip What is the EPB (target profit multiplier) at a specific point in time?
+        + The blue EPB graph starts at 25 and decreases as sales accumulate, eventually converging to 4.
+        + At a specific point, for example, when 2m KASH have been sold (q=2), you can see that the EPB value is around 5.
 :::
-:::tip 특정 시점에 참여하는 사용자의 EPB는 얼마인가?
-        + 사용자의 최종 EPB 평균을 계산하려면 구매량에 의해 증가한 q를 감안하여야 합니다.
-        + 2m 시점에 총 1m KASH를 구매한다면, q=2일 때와 q=3일 때 사이(약 4.xx)에 위치할 것입니다.
-        + 보다 정확히는 **EPB 곡선의 "판매량 가중 평균", 혹은 "적분 평균"이 사용자의 평균 EPB**가 됩니다.
-        + 일반적으로는 영향(변동)이 적지만 판매 초기일수록, 구매 규모가 클수록 영향이 높아집니다.
+:::tip What is the EPB for a user participating at a specific time?
+        + To calculate a user's final average EPB, you must consider the increase in q caused by their purchase amount.
+        + If you buy 1m KASH at the 2m mark, your average EPB will be somewhere between the value at q=2 and q=3 (around 4.xx).
+        + More precisely, the **"sales volume-weighted average" or "integral average" of the EPB curve becomes the user's average EPB**.
+        + While the impact is generally small, it is greater the earlier you are in the sale and the larger your purchase size.
 :::
-:::tip 특정 시점에 참여한 사용자의 보너스 예치액은 얼마인가?
-        + 사용자에게 발행되는 DCR은 (EPB 평균 - 1) * 구매 수량입니다. 
-        + **이는 EPB-1 곡선 아래 면적**(**정적분**)에 해당합니다.
-        + 혹은 **붉은색 누적 DCR 그래프의 차이**를 이용해 가늠할 수 있습니다.
+:::tip What is the bonus deposit amount for a user participating at a specific time?
+        + The DCR issued to a user is (Average EPB - 1) * Purchase Amount.
+        + **This corresponds to the area under the EPB-1 curve (a definite integral).**
+        + Alternatively, you can estimate it using the **difference in the red cumulative DCR graph**.
 :::
 
 ---
 
-### Epoch별 보상 그래프
+### Per-Epoch Reward Graph
 
-보상이 분배되는 주기는 30일에 1회, 총 36회로 전체 기간은 3년보다 약간 짧습니다. 이 분배의 주기를 Epoch라고 부릅니다. 
+The reward distribution cycle is once every 30 days, for a total of 36 times, making the total period slightly shorter than 3 years. This distribution cycle is called an Epoch. 
 
-Epoch별 보상은 매회 1.05배로 증가하는 형태를 취하고 있습니다. 이로 인해 프로젝트 초기 Epoch의 보상은 후기 보상보다 적습니다. 여기에서 각 Epoch 별로 총 보상량이 어떻게 변화하는지 파악할 수 있습니다.
+The per-Epoch reward increases by a factor of 1.05 each time. Because of this, the rewards in the early Epochs are smaller than in the later ones. Here you can see how the total reward amount changes for each Epoch.
 
 :::info
-정확한 Epoch별 나의 보상량은 그래프로 파악하기 어렵습니다. [보상 계산기](https://kash-rwa.io/calculator)를 통해 쉽게 계산해 볼 수 있고, [스테이킹 문서](/tech/staking/intro)를 통해 구체적인 설계 및 수식을 알아볼 수 있습니다.
+It is difficult to determine your exact per-Epoch reward from the graph. You can easily calculate it using the [Reward Calculator](https://kash-rwa.io/calculator), and you can find the specific design and formulas in the [Staking Document](/tech/staking/intro).
 :::
 
 ![KASH Epoch Reward Graph](/img/kash_epoch_rewards.png)
 
-:::tip 그래프 해석
-+ x축 (가로) : Epoch 회차입니다. 3년에 해당하는 0~36 Epoch 범위입니다.
-+ y축 (세로) : 각 함수의 결과값입니다. KASH 단위입니다.
-    + 파란 그래프 (총 보상) : 해당 Epoch에 분배되는 총 보상량입니다.
-    + 붉은 그래프 (수익률) : 원금 및 해당 Epoch까지 누적된 이자 대비 보상량, 즉 수익률입니다.
+:::tip Graph Interpretation
++ **x-axis (horizontal):** Epoch number. The range is 0-36 Epochs, corresponding to 3 years.
++ **y-axis (vertical):** The result of each function, in KASH units.
+    + **Blue Graph (Total Reward):** The total reward amount distributed in that Epoch.
+    + **Red Graph (Yield):** The reward amount relative to the principal and accumulated interest up to that Epoch, i.e., the yield.
 :::
-:::tip 시간에 따른 보상량과 수익률
-+ Epoch별 보상량(단리)의 경우 초기에는 전체(총량)의 1% 정도로 낮고, 이후 점점 증가하여 최종적으로는 5%를 넘게 됩니다.
-+ Epoch별 수익률(복리)의 경우 분모에 이자가 쌓이면서 보상량보다는 완만하게 증가하여 최종적으로 3%가량이 됩니다.
-+ 수익률의 경우 부채를 구분하지 않은 예치액 대비 수익률로, 실제 예치액 대비 수익률은 DCR에 따라 달라집니다.
-+ 세일즈시 예치한 이후 추가 예치나 인출 등이 없었다면, 개인의 수익률은 DCR을 포함하여 이 수익률의 EPB배가 됩니다.
+:::tip Reward Amount and Yield Over Time
++ The per-Epoch reward amount (simple interest) starts low at about 1% of the total and gradually increases to over 5% by the end.
++ The per-Epoch yield (compound interest) increases more gently than the reward amount because the denominator (the stake) grows with interest, eventually reaching around 3%.
++ This yield is calculated against the total stake including debt; the actual yield against your staked principal will vary depending on your DCR.
++ If there are no additional deposits or withdrawals after your initial sales stake, an individual's return will be their EPB times this yield rate, including the DCR.
 :::
 
 :::warning
-전체 Epoch 길이 (1080일) 및 보상의 증가률 (1.05배) 은 설계 변경 가능성이 있으며, 세일즈 시작 시점에 확정됩니다. Epoch 주기 (30일) 역시 추후 변경 가능성이 있으나 전체 길이에는 영향을 주지 않으며, 보상의 증가률은 기존과 동일한 기간에 동일한 증가율을 보이도록 스케일링 됩니다.
+The total Epoch length (1080 days) and the reward growth rate (1.05x) are subject to change and will be finalized at the start of the sale. The Epoch duration (30 days) may also change in the future but will not affect the total length, and the reward growth rate will be scaled to show the same growth rate over the same period as originally planned.
 :::
-
-<!-- 이러한 오프체인을 활용하는 지점에 대한 신뢰 뿐 아니라, 일반적인 블록체인 프로젝트가 내포하는 문제, 나아가 모든 프로젝트에 필연적으로 발생하는 문제, 프로젝트 및 재단 자체에 대한 신뢰 문제 등에 대해 [리스크 고지] 문서에 이를 방지 혹은 완화하기 위해 팀이 최선을 다한 내용이 담겨 있습니다. -->

@@ -5,73 +5,87 @@ sidebar_position: 1
 
 # Initial Configuration
 
-프로젝트 초기에 설정될 예정인 파라미터를 사용되는 컨트랙트별로 안내합니다.
+This guide lists the parameters planned for the initial project setup, organized by the smart contract where they are used.
 
 ---
 
 ### Index
 
-+ 컨트랙트 명칭
-    + 기술 백서 등에서 사용하는 컨트랙트 명칭입니다.
-    + 소괄호로 둘러싼 (내용)이 존재하는 경우 해당하는 종류의 컨트랙트가 목적별로 여러벌이며, 그중 "내용"에 해당하는 컨트랙트의 값임을 의미합니다.
++ **Contract Name**
+    + The name of the contract used in technical whitepapers and other documents.
+    + If there is `(content)` enclosed in parentheses, it means that multiple contracts of that type are deployed for different purposes, and the value shown corresponds to the contract for the specified 'content'.
 
-+ 변수명
-    + 스마트 컨트랙트에 각 값이 저장된 변수명입니다.
-    + 매핑이나 배열의 경우 먼저 변수명과 설명이 주어지고, 이어지는 행의 변수명란에 각 key를 -[key]와 같이 표기합니다.
-    + 매핑에 스마트 컨트랙트의 주소가 사용되는 경우 해당 컨트랙트의 식별자를 대신 사용합니다. -[Early]는 Early Staking Pool의 address를 key로 한 값입니다.
++ **Variable Name**
+    + The name of the variable where each value is stored in the smart contract.
+    + For mappings or arrays, the variable name and description are given first. In the subsequent rows under the 'Variable Name' column, each key is indicated as `-[key]`.
+    + When a smart contract address is used as a key in a mapping, the identifier for that contract is used instead. For example, `-[Early]` represents the value for the key that is the address of the Early Staking Pool.
 
-+ 명목값
-    + 의도를 인지하기 쉽도록 조정한 값입니다.
-    + 소수점인 경우 단위를 곱하기 전의 값입니다.
-    + 타임스탬프의 경우 이해하기 쉬운 날짜나 시간으로 표기한 값입니다.
++ **Nominal Value**
+    + A value adjusted for easier understanding of its intent.
+    + For decimal values, this is the value before being multiplied by its unit precision.
+    + For timestamps, this is a value represented as an easy-to-understand date or time.
 
-+ 비고
-    + 일반적으로 변수에 대한 간단한 설명입니다.
-    + 식별자가 사용된 매핑의 경우 식별자에 대한 설명입니다.
++ **Remarks**
+    + Generally, a brief description of the variable.
+    + For mappings using an identifier, this is a description of the identifier.
 
-+ 단위
-    + 값의 단위를 나타냅니다.
-    + 소수의 경우 고정 소수점 형태로 변환하기 위한 정밀도를 표기합니다.
++ **Unit**
+    + Indicates the unit of the value.
+    + For decimals, this indicates the precision for converting to a fixed-point number.
 
-+ 실제값
-    + 실제로 컨트랙트에 저장되는 raw 값입니다.
++ **Actual Value**
+    + The raw value that is actually stored in the contract.
 
 ---
 
-+ KASH Token
+### KASH Token
 
-|변수명|명목값|비고|단위|실제값|
+|Variable Name|Nominal Value|Remarks|Unit|Actual Value|
 |---|---|---|---|---|
-| SMART_CONTRACT_VERSION | 1.0 | 스마트 컨트랙트 버전 | 10**2 | 100 |
-| decimals | 18 | 토큰의 소수점 단위 |  | 18 |
+| SMART_CONTRACT_VERSION | 1.0 | Smart contract version | 10**2 | 100 |
+| decimals | 18 | The decimal precision of the token |  | 18 |
+| totalSupply | 100m | Total supply of KASH tokens | 10**18 | 100000000000000000000000000 |
 
-+ DCR Strategy (Early)
+### DCR Strategy (Early)
 
-|변수명|명목값|비고|단위|실제값|
+|Variable Name|Nominal Value|Remarks|Unit|Actual Value|
 |---|---|---|---|---|
-| EPB_CONTANTS_K | 0.5409.. | DCR 계산시 사용되는 k값 | 10**18 | 540906246443305252 |
-| EPB_CONTANTS_A | 6.1603.. | DCR 계산시 사용되는 A값 | 10**18 | 6160392620707085906 |
-| EPB_CONTANTS_C | 3.9445.. | DCR 계산시 사용되는 C값 | 10**18 | 3944556263515440025 |
+| DCR_K | 0.5409.. | k value used in DCR calculation | 10**18 | 540906246443305252 |
+| DCR_A | 6.1603.. | A value used in DCR calculation | 10**18 | 6160392620707085906 |
+| DCR_C | 3.9445.. | C value used in DCR calculation | 10**18 | 3944556263515440025 |
 
-+ Staking Reward Distributor
+### Staking Reward Distributor
 
-|변수명|명목값|비고|단위|실제값|
+|Variable Name|Nominal Value|Remarks|Unit|Actual Value|
 |---|---|---|---|---|
-| POOL_TOTAL_REWARD |  | 각 스테이킹 풀에 분배된 토큰 총량 | 10**18 |  |
-| -[Early] | 30m | - Early Staking Pool |  | 30,000,000,000,000,000,000,000,000 |
+| POOL_TOTAL_REWARD |  | Total tokens to be distributed to each staking pool (Total 50m for Phase 1) | 10**18 |  |
+| -[Early] | 30m | - Early Staking Pool (Phase 1 reward pool) |  | 30000000000000000000000000 |
 
-+ Staking Reward Strategy (Early)
+### Staking Reward Strategy (Early)
 
-|변수명|명목값|비고|단위|실제값|
+|Variable Name|Nominal Value|Remarks|Unit|Actual Value|
 |---|---|---|---|---|
-| STAKING_EPOCH_START |  | 첫 에포크가 시작되는 시점 | Timestamp |  |
-| STAKING_EPOCH_DURATION | 30 days | 한 에포크의 기간 | Second | 2592000 |
-| STAKING_TOTAL_DURATION |  | 보상 분배가 이루어지는 전체 기간 | Second |  |
-| EPOCH_REWARD_BASE |  | 첫 에포크의 보상량 | KASH |  |
+| STAKING_EPOCH_START | | Start time of the first epoch | Timestamp | TBD |
+| STAKING_EPOCH_DURATION | 30 days | Duration of one epoch | Second | 2592000 |
+| STAKING_TOTAL_DURATION | 36 Epochs | Total period during which rewards are distributed | Second | 93312000 |
+| STAKING_REWARD_GROWTH | 0.05 | Per-epoch reward growth rate (g) | 10**18 | 50000000000000000 |
+| EPOCH_REWARD_BASE | ~313,034 | Reward amount for the first epoch | 10**18 | 313034351368942330000000 |
 
-+ Staking Pool (Early)
+### Staking Pool (Early)
 
-|변수명|명목값|비고|단위|실제값|
+|Variable Name|Nominal Value|Remarks|Unit|Actual Value|
 |---|---|---|---|---|
-| STAKING_OPEN |  | 에치가 가능해지는 시점 |  |  |
-| SHARE_LIMIT | 30m | 발행 가능한 가중 지분 총량 |  | 30,000,000,000,000,000,000,000,000 |
+| STAKING_POOL_OPEN | | Time when deposits become available | Timestamp | TBD |
+| SHARE_LIMIT | 30m | Total issuable amount of weighted shares | 10**18 | 30000000000000000000000000 |
+
+### Parameter Store
+
+|Variable Name|Nominal Value|Remarks|Unit|Actual Value|
+|---|---|---|---|---|
+| RISK_FREE_RATE | 0.03 | Risk-free annual interest rate (for DF_T calculation) | 10**18 | 30000000000000000 |
+| BASE_TRUST | 0.2 | Minimum project trust level (for DF_R calculation) | 10**18 | 200000000000000000 |
+| SENSITIVITY_P | 1.0 | Risk discount factor sensitivity (p) (for DF_R calculation) | 10**18 | 1000000000000000000 |
+| MARGIN_LOWER_WALL | 0.05 | Lower Wall (LW) price margin rate | 10**18 | 50000000000000000 |
+| MARGIN_UPPER_WALL | 0.05 | Upper Wall (UW) price margin rate | 10**18 | 50000000000000000 |
+| SENSITIVITY_QLC | 1.0 | Lower Cushion (LC) sensitivity coefficient | 10**18 | 1000000000000000000 |
+| SENSITIVITY_QUC | 1.0 | Upper Cushion (UC) sensitivity coefficient | 10**18 | 1000000000000000000 |

@@ -5,95 +5,95 @@ sidebar_position: 3
 
 # Bond Market
 
-RBS의 시장 개입은 주로 채권(Bond) 발행이라는 간접적인 방식을 통해 이루어집니다. 프로토콜은 앞서 정의된 가격 방어선(Wall) 및 완충 지대(Cushion)에 따라 시장 개입 필요성이 판단될 경우, 특정 조건으로 채권 시장을 개설하여 KASH의 수요와 공급을 조절합니다.
+RBS's market intervention is primarily conducted through the indirect method of issuing bonds. When the protocol determines a need for intervention based on the predefined price Walls and Cushions, it opens a bond market under specific conditions to regulate the supply and demand of KASH.
 
-초기에는 프로토콜 관리 주체에 의해 채권 시장이 운영될 수 있으며, 향후 커뮤니티 거버넌스 및 자동화된 시스템으로의 전환을 목표로 합니다.
+Initially, the bond market may be operated by the protocol's managing entity, with the goal of transitioning to community governance and an automated system in the future.
 
 ---
 
 ### Bond Issuance
 
-직접적인 시장 매매(Market Making) 대신 채권 발행 방식을 사용하는 이유는 다음과 같은 특징 및 이점을 고려하기 때문입니다.
+The reason for using bond issuance instead of direct market making is to leverage the following features and benefits:
 
-+ 점진적 시장 영향:
-    채권은 정해진 조건(가격, 수량, 기간 등) 하에 발행되므로, 시장에 급격한 충격을 주기보다는 점진적으로 영향을 미칩니다. 이는 시장 참여자들에게 적응 시간을 제공하여 변동성을 완화하고 안정적인 가격 조정을 유도하는 데 도움이 될 수 있습니다.
++ **Gradual Market Impact**:
+    Since bonds are issued under set conditions (price, quantity, duration, etc.), they affect the market gradually rather than causing a sudden shock. This can provide market participants with time to adapt, mitigating volatility and encouraging stable price adjustments.
 
-+ 프로토콜 자산 관리 및 PoL(Protocol Owned Liquidity) 확보:
-    + KASH 가격 하락 시 (KASH 매수 채권): 프로토콜은 볼트 내 유동성 자산을 사용하여 KASH를 매수하는 채권을 발행합니다. 이는 KASH 가격 지지 효과와 함께, 시장 유통 KASH를 프로토콜이 흡수하여 PoL을 강화하고 향후 시장 안정화 자원으로 활용할 기반을 마련합니다.
-    + KASH 가격 상승 시 (KASH 판매 채권): 프로토콜은 보유 KASH를 판매하는 채권을 발행하여 시장 공급을 조절합니다. 이 과정에서 스테이블코인 등 다른 자산을 확보하여 볼트 자산 구성을 다변화하고 재정적 안정성을 높일 수 있습니다.
++ **Protocol Asset Management and Securing PoL (Protocol Owned Liquidity)**:
+    + **When KASH price falls (KASH purchase bonds)**: The protocol issues bonds to buy KASH using liquid assets from the vault. This not only supports the KASH price but also allows the protocol to absorb circulating KASH, strengthening its PoL and building a foundation for future market stabilization resources.
+    + **When KASH price rises (KASH sale bonds)**: The protocol issues bonds to sell its KASH holdings, thereby regulating market supply. In this process, it can acquire other assets like stablecoins, diversifying the vault's asset composition and increasing its financial stability.
 
-+ 참여자 인센티브 및 시장 참여 유도:
-    시장 상황에 따라 조정된 가격의 채권은 참여자들에게 합리적인 거래 기회를 제공할 수 있으며, 이는 시장 안정화 과정에 커뮤니티의 자발적 참여를 유도하는 요소로 작용할 수 있습니다.
++ **Participant Incentives and Market Participation**:
+    Bonds with prices adjusted according to market conditions can offer reasonable trading opportunities to participants, which can act as a factor to encourage voluntary community participation in the market stabilization process.
 
-+ 베스팅(Vesting)을 통한 장기적 효과:
-    채권을 통해 교환된 자산에 베스팅(Vesting, 일정 기간 분할 지급) 조건을 적용하여 단기 투기 목적의 거래를 줄이고, 장기적인 프로토콜 참여 및 가격 안정 효과를 도모할 수 있습니다.
++ **Long-term Effects through Vesting**:
+    By applying vesting conditions (distributing assets over a period) to assets exchanged through bonds, the protocol can reduce short-term speculative trading and promote long-term protocol participation and price stability.
 
 ---
 
 ### Market Conditions
 
-프로토콜은 KASH 시장 가격($P_{market}$)과 RBS 가격 지표들을 비교하여 다음과 같이 채권 시장 운영 여부 및 조건을 결정합니다.
+The protocol determines whether to operate the bond market and under what conditions by comparing the KASH market price ($P_{market}$) with the RBS price metrics as follows:
 
-1.  $P_{market} < Price_{LW}$ (하방 가격 방어선 하회)
-    + 개입 강도 : 적극적 개입
-    + 채권 종류: KASH 매수 채권 (프로토콜이 KASH 매수)
-    + 교환 대상 (사용자 제공): KASH
-    + 교환 자산 (프로토콜 지급): 볼트 내 유동성 자산 (예: USDT, USDC)
-    + 교환 가격: $Price_{LW}$
-    + 지급 기간 : 즉시
-    + 발행 한도: 볼트 내 가용 유동성 자산의 일정 비율($N_{LW}$%) 내에서 결정
+1.  **$P_{market} < Price_{LW}$ (Below the Lower Wall)**
+    + **Intervention Intensity**: Active Intervention
+    + **Bond Type**: KASH Purchase Bond (protocol buys KASH)
+    + **Asset for Exchange (provided by user)**: KASH
+    + **Asset Paid (provided by protocol)**: Liquid assets from the vault (e.g., USDT, USDC)
+    + **Exchange Price**: $Price_{LW}$
+    + **Vesting Period**: Immediate
+    + **Issuance Limit**: Determined within a certain percentage ($N_{LW}$%) of the available liquid assets in the vault.
 
-2.  $Price_{LW} \le P_{market} < Price_{LC}$ (하방 완충 지대 진입)
-    + 개입 강도 : 소극적 개입
-    + 채권 종류: KASH 매수 채권
-    + 교환 대상 (사용자 제공): KASH
-    + 교환 자산 (프로토콜 지급): 볼트 내 유동성 자산
-    + 교환 가격: $Price_{LW} \rightarrow Price_{LC}$ (시간에 따라 점차)
-    + 지급 기간: 분할 지급
-    + 발행 한도: 볼트 내 가용 유동성 자산의 일정 비율($N_{LC}$%, $N_{LC} < N_{LW}$) 내에서 제한적으로 운영
+2.  **$Price_{LW} \le P_{market} < Price_{LC}$ (Entering the Lower Cushion)**
+    + **Intervention Intensity**: Passive Intervention
+    + **Bond Type**: KASH Purchase Bond
+    + **Asset for Exchange (provided by user)**: KASH
+    + **Asset Paid (provided by protocol)**: Liquid assets from the vault
+    + **Exchange Price**: Gradually moves from $Price_{LW} \rightarrow Price_{LC}$ over time
+    + **Vesting Period**: Vested (split over time)
+    + **Issuance Limit**: Operated on a limited basis within a certain percentage ($N_{LC}$%, where $N_{LC} < N_{LW}$) of available liquid assets in the vault.
 
-3.  $Price_{UC} < P_{market} \le Price_{UW}$ (상방 완충 지대 진입)
-    + 개입 강도 : 소극적 개입
-    + 채권 종류: KASH 판매 채권 (프로토콜이 KASH 판매)
-    + 교환 대상 (사용자 제공): 일반적으로 KASH를 포함하는 LP토큰 혹은 유동성 자산
-    + 교환 자산 (프로토콜 지급): 유동성 풀의 KASH
-    + 교환 가격: $Price_{UW}  \rightarrow  Price_{UC}$ (시간에 따라 점차)
-    + 지급 기간: 분할 지급
-    + 발행 한도: 유동성 풀의 KASH 중 일정 비율($N_{UC}$%) 내에서 제한적으로 운영
+3.  **$Price_{UC} < P_{market} \le Price_{UW}$ (Entering the Upper Cushion)**
+    + **Intervention Intensity**: Passive Intervention
+    + **Bond Type**: KASH Sale Bond (protocol sells KASH)
+    + **Asset for Exchange (provided by user)**: Typically LP tokens containing KASH or other liquid assets
+    + **Asset Paid (provided by protocol)**: KASH from the liquidity pool/treasury
+    + **Exchange Price**: Gradually moves from $Price_{UW} \rightarrow Price_{UC}$ over time
+    + **Vesting Period**: Vested (split over time)
+    + **Issuance Limit**: Operated on a limited basis within a certain percentage ($N_{UC}$%) of the KASH in the liquidity pool/treasury.
 
-4.  $P_{market} > Price_{UW}$ (상방 가격 방어선 상회)
-    + 개입 강도 : 적극적 개입
-    + 채권 종류: KASH 판매 채권
-    + 교환 대상 (사용자 제공): 일반적으로 KASH를 포함하는 LP토큰 혹은 유동성 자산
-    + 교환 자산 (프로토콜 지급): 유동성 풀의 KASH
-    + 교환 가격: $Price_{UW}$
-    + 지급 기간: 즉시
-    + 발행 한도: 유동성 풀의 KASH 중 일정 비율($N_{UW}$%, $N_{UW} > N_{UC}$) 내에서 결정
+4.  **$P_{market} > Price_{UW}$ (Above the Upper Wall)**
+    + **Intervention Intensity**: Active Intervention
+    + **Bond Type**: KASH Sale Bond
+    + **Asset for Exchange (provided by user)**: Typically LP tokens containing KASH or other liquid assets
+    + **Asset Paid (provided by protocol)**: KASH from the liquidity pool/treasury
+    + **Exchange Price**: $Price_{UW}$
+    + **Vesting Period**: Immediate
+    + **Issuance Limit**: Determined within a certain percentage ($N_{UW}$%, where $N_{UW} > N_{UC}$) of the KASH in the liquidity pool/treasury.
 
 ---
 
 ### Operating Resources
 
-RBS 메커니즘, 특히 채권 시장의 효과적인 운영을 위해서는 프로토콜이 활용할 수 있는 자원이 필요합니다. 추후에는 RBS가 독자적인 계정을 가질 수 있지만, 1기에서 KASH의 채권 시장은 매수와 매도 목적에 따라 다음과 같이 구분된 자금원을 비대칭적으로 사용합니다.
+The effective operation of the RBS mechanism, especially the bond market, requires resources that the protocol can utilize. While the RBS may have its own dedicated account in the future, in Phase 1, KASH's bond market asymmetrically uses different funding sources depending on whether it's buying or selling.
 
-+ KASH 매수 채권 발행 시
-    + 채권 시장이 개설될 때, 채권 한도까지 매수할 수 있을 만큼 리저브 볼트로부터 자금을 한번에 빌려옵니다.
-    + 프로젝트 초기 등 리저브 볼트에 자산이 부족한 동안은 매수 시장은 열리지 않습니다.
-    + 빌려온 자금은 임시 보관소(RBS Escrow Instnace)에 보관되며, 매수한 KASH도 이 곳에 보관됩니다.
-    + 채권 시장이 종료되면 매수한 KASH는 일괄 소각하고 남은 유동성 자산은 볼트로 반환합니다.
++ **When Issuing KASH Purchase Bonds**:
+    + When a bond market is opened, it borrows the necessary funds from the Reserve Vault at once, up to the bond limit.
+    + During the early stages of the project when the Reserve Vault has insufficient assets, no buy-side markets will be opened.
+    + The borrowed funds are held in a temporary repository (RBS Escrow Instance), and the purchased KASH is also stored there.
+    + When the bond market closes, the purchased KASH is burned in a batch, and any remaining liquid assets are returned to the vault.
 
-+ KASH 매도 채권 발행 시
-    + 초기 유통량이 공급될 때, 유동성 트레져리에 전체의 10%에 해당하는 KASH가 할당됩니다.
-    + 매도 시장의 자금원은 이 트레져리의 KASH를 매도하고, 받은 자산(주로 LP토큰)도 트레져리에 보관합니다.
-    + 결과적으로 1기에서는 할당된 KASH가 소진되면 더이상 매도 시장이 열리지 않습니다.
++ **When Issuing KASH Sale Bonds**:
+    + When the initial supply is distributed, the Liquidity Treasury is allocated KASH equivalent to 10% of the total.
+    + The funding source for the sell-side market is the KASH in this treasury. It sells the KASH, and the received assets (mainly LP tokens) are also stored in the treasury.
+    + Consequently, in Phase 1, once the allocated KASH is depleted, no more sell-side markets will be opened.
 
 ---
 
 ### RBS Escrow
 
-KASH의 매수 채권 시장 개설시에는 RBS Escrow라는 시스템을 이용하여 볼트의 자산을 차용합니다. 이는 RBS에 직접적으로 볼트의 자산을 활용할 수 있는 과도한 권한을 부여하지 않고도 볼트의 자금을 활용하며 투명한 회계 처리를 하기 위한 장치로, 매 시장마다 별도의 컨트랙트 인스턴스를 생성하여 자산을 격리하며, 최초 필요한 만큼의 자산을 이곳에 미리 차용하고 시장 종료시에 결과 자산을 일시 상환합니다.
+When opening a KASH purchase bond market, the system utilizes an "RBS Escrow" to borrow assets from the vault. This is a mechanism to use the vault's funds for transparent accounting without granting the RBS module itself excessive power to utilize vault assets directly. For each market, a separate contract instance is created to isolate the assets. The required amount is borrowed in advance, and the resulting assets are repaid in a lump sum when the market closes.
 
-+ Escrow Amount : 시장 개설시 볼트로부터 차용할 금액입니다. 가장 나쁜 가격 기준으로, 소모될 수 있는 자산의 최대치로 책정합니다.
++ **Escrow Amount**: The amount to be borrowed from the vault when the market opens. It is set to the maximum amount of assets that could be spent, based on the worst-case price.
     $$
     Amount_{Escrow} = 
     \begin{cases}
@@ -102,33 +102,33 @@ KASH의 매수 채권 시장 개설시에는 RBS Escrow라는 시스템을 이�
     \end{cases}
     $$
 
-+ Return Rate : 시장 종료시에 차용한 자산이 최초 의도한 대로 적절히 상환 되었는지 측정하는 지표입니다.
++ **Return Rate**: A metric to measure whether the borrowed assets were appropriately repaid as initially intended when the market closes.
     $$
     Rate_{return} = \frac{KASH_{bought}}{MarketCap} + \frac{Asset_{repay}}{Amount_{Escrow}}
     $$
-    + $KASH_{bought}$ : 채권 시장을 통해 매수한 KASH 수량입니다.
-    + $Asset_{repay}$ : 차용한 자산 중 매수에 사용되고 남은 자산입니다.
+    + $KASH_{bought}$: The amount of KASH purchased through the bond market.
+    + $Asset_{repay}$: The remaining portion of the borrowed assets not used for purchases.
 
 :::note
-Return Rate는 시장이 얼마나 성공적이었는지나, 효율적이었는지 등을 나타내는 지표가 아니며, 볼트 자금이 예상 범주 내에서 사용되었음을 이 값이 1 이상인 경우로 확인하기 위한 용도의 값입니다.
+The Return Rate is not a metric of how successful or efficient the market was. It is a value used for verification, confirming that vault funds were used within the expected scope if the value is 1 or greater.
 :::
 
 ---
 
 ### Formula Modification
 
-1기에서는 이 RBS의 Escrow를 활용한 동작 방식으로 인해 볼트 자산 및 담보율에 일시적인 괴리가 생길 수 있습니다. 이에 따라 다음과 같이 가치 지표의 수식이 RBS로 인한 내용을 반영하도록 변경합니다.
+In Phase 1, the operation of the RBS using this Escrow system can cause temporary discrepancies in the vault assets and collateralization ratio. Accordingly, the formulas for the value metrics are modified to reflect the impact of the RBS as follows:
 
-+ $EVV$ (Expected Vault Value) : 예상 볼트 가치
++ **$EVV$ (Expected Vault Value)**:
     $$
     \text{EVV}_t = (CVV_t + \sum{EIV}_t) + Gold_{F,t} \times Price_{gold, t}
     $$
-    + $EIV$ (Escrow Instance Value) : 개별 에스크로 인스턴스 내에 존재하는 자산의 가치입니다. 잠시 리저브 볼트를 떠났지만, 여전히 KASH 가치를 지지하기 위한 용도의 자산입니다.
+    + $EIV$ (Escrow Instance Value): The value of assets held within an individual escrow instance. Although temporarily outside the Reserve Vault, these are still assets intended to support the value of KASH.
 
-+ $FV$ (Face Value) : 액면가
++ **$FV$ (Face Value)**:
     $$
     FV_t = \frac{EVV_t}{Supply_{total,t} - \sum{Balance_{instance,t}}}
     $$
-    + $Balance_{instance}$ : 개별 Escrow Instance가 매수 채권을 통해 보유하게된 KASH 수량입니다. 시장이 종료되는 즉시 소각할 예정이므로 공급량에서 제외합니다.
+    + $Balance_{instance}$: The amount of KASH held by an individual Escrow Instance through purchase bonds. It is excluded from the supply as it is scheduled to be burned immediately upon market closure.
 
-이를 통해 채권 시장의 거래로 인한 프로토콜의 자산 변동이 각 지표에 즉시 반영되어 보다 정확한 판단 기준이 될 수 있으며, 특히 매수 시장 개설시 볼트 자산이 감소하면서 오히려 가치 지표가 일시적으로 더 하락하면서 야기하는 문제를 방지할 수 있습니다.
+This ensures that asset fluctuations in the protocol due to bond market transactions are immediately reflected in each metric, providing a more accurate basis for judgment. In particular, it helps prevent the problem where opening a buy-side market could cause a temporary drop in value metrics (due to the decrease in vault assets), which might otherwise trigger further issues.
