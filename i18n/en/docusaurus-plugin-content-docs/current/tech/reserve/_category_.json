@@ -1,0 +1,8 @@
+{
+  "label": "🏛️ Reserve",
+  "position": 12,
+  "link": {
+    "type": "generated-index",
+    "slug" : "/reserve"
+  }
+}
