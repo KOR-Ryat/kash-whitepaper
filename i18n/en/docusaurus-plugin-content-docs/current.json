@@ -1,0 +1,142 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Whitepaper": {
+    "message": "Whitepaper",
+    "description": "The label for category Whitepaper in sidebar tutorialSidebar"
+  },  
+  "sidebar.tutorialSidebar.category.📘 서문": {
+    "message": "📘 Introduction",
+    "description": "The label for category 📘 서문 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📘 서문.link.generated-index.title": {
+    "message": "📘 Introduction",
+    "description": "The generated-index page title for category 📘 서문 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📘 서문.link.generated-index.description": {
+    "message": "The KASH Project tokenizes real-world assets (RWA) based on the Buru gold mine in Indonesia, building a new digital financial infrastructure that combines stability and liquidity.",
+    "description": "The generated-index page description for category 📘 서문 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🏦 실물 자산 시장과 디지털 전환의 필요성": {
+    "message": "🏦 Physical Asset Markets and the Need for Digital Transformation",
+    "description": "The label for category 🏦 실물 자산 시장과 디지털 전환의 필요성 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🏦 실물 자산 시장과 디지털 전환의 필요성.link.generated-index.title": {
+    "message": "🏦 Physical Asset Markets and the Need for Digital Transformation",
+    "description": "The generated-index page title for category 🏦 실물 자산 시장과 디지털 전환의 필요성 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🏦 실물 자산 시장과 디지털 전환의 필요성.link.generated-index.description": {
+    "message": "Gold has been a representative physical store of value trusted by humanity for thousands of years, but precisely because it is physical, it has many limitations as a financial instrument. To overcome these limitations, a phased digital transformation is necessary.",
+    "description": "The generated-index page description for category 🏦 실물 자산 시장과 디지털 전환의 필요성 in sidebar tutorialSidebar"
+  },  
+  "sidebar.tutorialSidebar.category.🏗️ KASH 토큰 구조 및 기능": {
+    "message": "🏗️ KASH Token Structure and Functions",
+    "description": "The label for category 🏗️ KASH 토큰 구조 및 기능 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🏗️ KASH 토큰 구조 및 기능.link.generated-index.title": {
+    "message": "🏗️ KASH Token Structure and Functions",
+    "description": "The generated-index page title for category 🏗️ KASH 토큰 구조 및 기능 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🏗️ KASH 토큰 구조 및 기능.link.generated-index.description": {
+    "message": "KASH is a digital reserve token designed based on real-world backed collateral assets. This chapter explains the structure of the KASH token, its value determination method, and its relationship with the collateral asset structure. This serves as the essential foundation for understanding the staking and distribution structures that follow.",
+    "description": "The generated-index page description for category 🏗️ KASH 토큰 구조 및 기능 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.⛏️ 금광 개발 정보 및 실물 기반 확보 전략": {
+    "message": "⛏️ Gold Mining Information and Physical Basis Securing Strategy",
+    "description": "The label for category ⛏️ 금광 개발 정보 및 실물 기반 확보 전략 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.⛏️ 금광 개발 정보 및 실물 기반 확보 전략.link.generated-index.title": {
+    "message": "⛏️ Indonesia Buru Gold Mine and Physical Foundation Structure",
+    "description": "The generated-index page title for category ⛏️ 금광 개발 정보 및 실물 기반 확보 전략 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.⛏️ 금광 개발 정보 및 실물 기반 확보 전략.link.generated-index.description": {
+    "message": "The underlying asset of vRWA is based on the Indonesia Buru gold mining business. The business viability of this gold mining operation and the execution capability of the KASH Foundation form the backbone of the KASH project.",
+    "description": "The generated-index page description for category ⛏️ 금광 개발 정보 및 실물 기반 확보 전략 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🪙 RWA 토큰 구조": {
+    "message": "🪙 RWA Token Structure",
+    "description": "The label for category 🪙 RWA 토큰 구조 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🪙 RWA 토큰 구조.link.generated-index.title": {
+    "message": "KASH Project RWA Token Structure",
+    "description": "The generated-index page title for category 🪙 RWA 토큰 구조 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🪙 RWA 토큰 구조.link.generated-index.description": {
+    "message": "Summarizes the design philosophy, implementation method, and liquidation stability mechanisms of RWA(Gold) and vRWA(Gold), which form the core collateral structure of the KASH project.",
+    "description": "The generated-index page description for category 🪙 RWA 토큰 구조 in sidebar tutorialSidebar"
+  },  
+  "sidebar.tutorialSidebar.category.💰 KASH의 발행, 보상 및 안정화 메커니즘": {
+    "message": "💰 KASH Issuance, Reward, and Stabilization Mechanism",
+    "description": "The label for category 💰 KASH의 발행, 보상 및 안정화 메커니즘 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.💰 KASH의 발행, 보상 및 안정화 메커니즘.link.generated-index.title": {
+    "message": "💰 KASH Issuance, Reward, and Stabilization Mechanism",
+    "description": "The generated-index page title for category 💰 KASH의 발행, 보상 및 안정화 메커니즘 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.💰 KASH의 발행, 보상 및 안정화 메커니즘.link.generated-index.description": {
+    "message": "KASH is a reserve token issued with real asset-based RWA (vRWA or RWA(Gold)) as collateral and has mechanisms to maintain its intrinsic value based on early risk rewards and collateral.",
+    "description": "The generated-index page description for category 💰 KASH의 발행, 보상 및 안정화 메커니즘 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📊 토크노믹스": {
+    "message": "📊 Tokenomics",
+    "description": "The label for category 📊 토크노믹스 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📊 토크노믹스.link.generated-index.title": {
+    "message": "Tokenomics and Distribution Structure",
+    "description": "The generated-index page title for category 📊 토크노믹스 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📊 토크노믹스.link.generated-index.description": {
+    "message": "Clearly explains issuance volume, distribution plans, investment schedule, and staking reward allocations based on Phase 1.",
+    "description": "The generated-index page description for category 📊 토크노믹스 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Yellowpaper": {
+    "message": "Yellowpaper",
+    "description": "The label for category Yellowpaper in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🏛️ Reserve": {
+    "message": "🏛️ Reserve",
+    "description": "The label for category 🏛️ Reserve in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🥩 Staking": {
+    "message": "🥩 Staking",
+    "description": "The label for category 🥩 Staking in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Early Staking Pool": {
+    "message": "Early Staking Pool",
+    "description": "The label for category Early Staking Pool in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.⚖️ Range Bound System": {
+    "message": "⚖️ Range Bound System",
+    "description": "The label for category ⚖️ Range Bound System in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.⚙️ Smart Contract": {
+    "message": "⚙️ Smart Contract",
+    "description": "The label for category ⚙️ Smart Contract in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Token Group": {
+    "message": "Token Group",
+    "description": "The label for category Token Group in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📦 Deployments": {
+    "message": "📦 Deployments",
+    "description": "The label for category 📦 Deployments in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🛡️ Security": {
+    "message": "🛡️ Security",
+    "description": "The label for category 🛡️ Security in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📑 Appendix": {
+    "message": "📑 Appendix",
+    "description": "The label for category 📑 Appendix in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🔗 External Links": {
+    "message": "🔗 External Links",
+    "description": "The label for category 🔗 External Links in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.link.Staking Calculator": {
+    "message": "Staking Calculator",
+    "description": "The label for link Staking Calculator in sidebar tutorialSidebar, linking to https://kash-rwa.io/calculator"
+  }
+}

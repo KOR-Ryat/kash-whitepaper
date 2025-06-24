@@ -1,5 +1,94 @@
 ---
 id: geometry
+title: 2. Geological Characteristics and Reserve Overview
+description: Gold Mining Potential and Economic Viability of Buru Mine
+sidebar_position: 2
+---
+
+The area is located along the extension of the existing Gold Belt, and drilling and sample analysis have confirmed multiple **high-grade oxide ores** near the surface.
+
+- Expected grade: Gold content exceeding 3 g/t (above cutoff criteria)
+- Mining target zone: Open-pit minable area 0-50m from topsoil
+- Formation: Structural fracture zone, joint network structure
+
+These characteristics serve as advantages that **enable early production with relatively low CAPEX** and provide a foundation for phased production expansion.
+
+### Geological Features and Gold Mining Potential of Buru Island
+
+#### ✅ Geological Structure
+
+Buru Island in Indonesia's Maluku archipelago is located in the non-volcanic Banda Arc and is presumed to be a micro-continental geological body that separated from the Australian continent.
+
+The basement rocks forming the western and central parts of the island are the Paleozoic Wahlua Metamorphic Complex (Pzw), consisting of metamorphic rocks such as mica schist and gneiss. Buru Island's gold mineralization zone is closely associated with this metamorphic zone, and according to geological surveys, gold is mainly contained in hydrothermal quartz veins with low sulfide content.
+
+Indonesian geological experts assess that Buru Island's gold deposits show characteristics of low-sulfidation hydrothermal gold veins or orogenic gold deposits, and evaluate them as **generally closer to orogenic gold deposits**.
+
+In fact, in Gunung Botak and Gogorea areas, which are representative gold sites of Buru Island and **where this project's mine is located**, multiple quartz veins occur within an alteration zone 100m wide and 1km long, with confirmed orogenic gold mineralization accompanied by argillic alteration, pyrite, and arsenic minerals.
+
+#### ✅ Past Gold Exploration Cases
+
+The discovery of large-scale gold in Buru Island is relatively recent. After a resident accidentally discovered a gold nugget at Mount Gunung Botak in late 2011, a large-scale small mining rush (known as the **gold rush**) began in 2012.
+
+At its peak, it was reported that over **130,000 miners** flocked to the area, making Buru Island comparable to the 1880s gold rushes in the US and Australia, with the entire mountain covered in tunnels and mining pits.
+
+Indonesian geological authorities have also conducted surveys of the area. The **2000 Indonesian Geological Agency (Badan Geologi)** survey of South Buru region's metallic deposits confirmed signs of mineralization including copper, tin, zinc, silver, gold, iron, and arsenic.
+
+Particularly, **gold content of 199ppm (approximately 199 g/t)** was detected in stream sediments and placer gold samples, indicating significant **hydrothermal mineralization** in the area.
+
+#### ✅ Gold Grade (g/t) and Resource Potential
+
+According to local surveys published in Indonesian geological research journals, 11 out of 15 rock samples collected from the Wamsait area of Buru Island showed gold content exceeding **1.00 g/t**, and 6 of these samples exceeded **3.00 g/t**.
+
+:::tip[2 Academic Papers]
+- Idrus, Arifudin, et al. "Some key features and possible origin of the metamorphic rock-hosted gold mineralization in Buru island, Indonesia." Indonesian Journal on Geoscience 1.1 (2014): 9-19.
+- Idrus, Arifudin, et al. "Metamorphic rock-hosted orogenic gold deposit style at Bombana (Southeast Sulawesi) and Buru Island (Maluku): Their key features and significances for gold exploration in Eastern Indonesia." Journal of Geoscience, Engineering, Environment, and Technology 2.2 (2017): 124-132.
+:::
+
+High-grade samples particularly showed gold concentration in limonitic parts, along with high concentrations of indicator elements such as arsenic (As max 991ppm), antimony (Sb max 885ppm), and mercury (Hg max 75ppm). This suggests the possibility of **supergene gold enrichment** due to surface oxidation and secondary weathering.
+
+Meanwhile, a 2016 regional study analyzed gold content as high as **38.7 g/t** in quartz vein samples within the Wahlua metamorphic zone, though this likely represents a very localized high-grade section. These figures indicate the possible existence of **"bonanza" grade (very high-grade)** gold locally near the surface of Buru Island.
+
+**Potential massive reserves** have also been mentioned through media reports. For example, Asia Times in 2018 cited undisclosed preliminary survey results reporting that Gunung Botak (Gold Mountain) may have **gold resources exceeding 20 million ounces (approximately 620 tons) below 50m from the surface**. This is comparable to world-class massive gold mines (e.g., Papua's Grasberg scale).
+
+:::tip[KASH's Own Exploration]
+KASH's mining developer JH Energy directly collected ore samples in 2012 and conducted surface sampling tests with Korea Resources Corporation and Shandong Province 6th Geological and Mining Exploration Institute, reporting average grades exceeding 100g/t.
+:::
+
+| Testing Institution | Gold | Silver |
+| --- | --- | --- |
+| Korea Resources Corporation | 123g/ton | 6.17g/ton |
+| Shandong Province 6th Geological and Mining Exploration Institute | 114.65g/ton | 6.17g/ton |
+
+<img src="/img/gold_pre_study.jpg" alt="Brue Gold Pre Study" width="1000"/>
+
+### Economic Viability of Buru Gold Mine
+
+#### ✅ Gold Grade and Profitability
+
+A gold mine's economic viability is determined by **gold content per ton (g/t)**, recovery rate, gold price, and mining/refining costs. Generally, **several grams of gold per ton** of ore has commercial value.
+
+In the industry, approximately **above 5 g/t is classified as high-grade gold mine**, while **below 1 g/t is considered low-grade**.
+
+For **open-pit mines**, due to lower mining costs, even the same grade has higher economic viability, so typically **an average of 1-2 g/t** is considered quite favorable.
+
+As real examples, Canada's **Fire Creek** underground mine has produced gold at a very high grade averaging 44 g/t, while Indonesia's Grasberg open-pit mine operated on a massive scale even with gold around 1 g/t in its initial stages.
+
+Buru Island, as an open-pit mine with minimum 1 g/t and expected average exceeding 3 g/t, along with potentially ultra-high-grade ore bodies in some areas, is expected to have high profitability.
+
+#### ✅ Cut-off Grade
+
+When developing a gold mine, a minimum profitable grade is set, called the **cut-off grade**. Cut-off grade is **the minimum gold content needed to cover mining costs per ton**, which varies with gold price and costs.
+
+For example, with gold at 1,500 USD per ounce (about 48 USD per gram), if total mining and processing costs per ton are 24 USD, the cut-off grade would be about 0.5 g/t (0.5g * 48USD ≈ 24USD). Higher costs require higher content.
+
+In fact, in a 2020 economic assessment of a Brazilian open-pit gold project (Posse), they set **0.37 g/t as the cut-off grade based on a gold price of 1,400 USD/oz**, resulting in an average of about 1.18 g/t being calculated as **economically minable (reserve)**.
+
+Thus, modern gold mines can be profitable even with grades below 1g/t through large-scale alluvial mining and efficient refining. However, underground tunnel mines may require 2-3 g/t as cut-off grade due to higher per-ton operating costs. **Output form** must also be considered - if gold is not produced independently but **as part of polymetallic ore (with silver, copper, etc.)**, the value of secondary metals is included in economic assessment. Development feasibility is calculated using indicators such as **NPV (Net Present Value)** and **IRR (Internal Rate of Return)**, reflecting all these factors as standard procedure for gold mine business evaluation.
+
+In the case of Buru gold mine, with current **gold price at 3,200 USD/oz, we can set approximately 0.2 g/t as the cut-off grade**, and with expected average grades exceeding 3 g/t, it can have high economic mining potential.
+
+<!-- ---
+id: geometry
 title: 2. 지질 특성과 매장량 개요
 description: 부루 광산의 금광 잠재력 및 경제성
 sidebar_position: 2
@@ -60,7 +149,6 @@ KASH 금광 개발사인 JH Energy는 2012년 광석을 직접 채취하여 한�
 | 한국 광물자원공사 | 123g/ton | 6.17g/ton |
 | 중국 산동성 제6지질광산탐사원 | 114.65g/ton | 6.17g/ton |
 
-<!-- #### KASH Reserve Token Structure -->
 <img src="/img/gold_pre_study.jpg" alt="Brue Gold Pre Study" width="1000"/>
 
 ### 부루 금광의 경제성
@@ -86,4 +174,4 @@ KASH 금광 개발사인 JH Energy는 2012년 광석을 직접 채취하여 한�
 
 이처럼 현대 금광은 1g/t 미만 저등급이라도 대규모 토류형 채광과 효율적인 제련을 통해 수익을 낼 수 있습니다. 반면 지하갱도 광산의 경우 톤당 채산비용이 높아 2~3 g/t가 절단품위가 되기도 합니다. **산출물의 형태**도 고려해야 하는데, 금이 단독으로 산출되지 않고 **다른 금속(은, 구리 등)과 함께 산출되는 광종**이라면 부차 금속의 가치까지 포함해 경제성을 평가합니다. 이러한 요소를 모두 반영하여 **NPV(순현재가치)**, **IRR(내부수익률)** 등의 지표로 개발 타당성을 계산하는 것이 금광 사업성 평가의 표준 절차입니다.
 
-부루 금광의 경우 현재 **금 가격 3,200 USD/oz 기준으로 대략 0.2 g/t를 절단품위**로 삼을 수 있고 평균 3 g/t 이상의 품위를 예상하고 있기에 높은 경제적 채굴 가능성을 가질 수 있습니다.
+부루 금광의 경우 현재 **금 가격 3,200 USD/oz 기준으로 대략 0.2 g/t를 절단품위**로 삼을 수 있고 평균 3 g/t 이상의 품위를 예상하고 있기에 높은 경제적 채굴 가능성을 가질 수 있습니다. -->

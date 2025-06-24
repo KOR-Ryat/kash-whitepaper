@@ -1,5 +1,65 @@
 ---
 id: mining-overview
+title: 1. Mining Business Overview and Relationship with KASH Foundation
+description: Buru Mine Location, Administrative Permit Status, and KASH Foundation's Role
+sidebar_position: 1
+---
+
+### Mine Location and Administrative Permit Status
+
+Phase 1 vRWA(Gold) of the KASH project is based on the development of a **high-grade gold mine** located on Buru Island, Maluku Province, Indonesia.
+
+The mine holds an Exploration Permit covering a total mining area of **approximately 1,770ha**, and Indonesian local corporation **PT. JH ENERGY**, having completed legal/administrative procedures, holds the exploration permit (IUP Eksplorasi) and is in the process of obtaining production permission (Producsi).
+
+- Location: **Gunung Botak**, Buru Island, Maluku Province, Indonesia
+- Mining Rights Holder: PT. JH ENERGY (Indonesian Corporation)
+- Mining Area: Approximately 150 ha trial production followed by 1,770 ha main production
+- Held Rights: Exploration License (IUP Eksplorasi), including mining conversion plan
+- Affiliated Partner: Junheung Energy (Korean Corporation)
+
+PT. JH ENERGY has completed permit procedures through consultation with relevant ministries and local government, and plans to convert to mining operations based on drilling and exploration reports after a detailed Feasibility Study.
+
+```
+[2012.04] Submitted Letter of Intent for IUP Eksplorasi TO BURU District
+↓
+[2012.05] PT.JH ENERGY Establishment
+↓
+[2012.05] Exploration rights for entire BURU Island area granted to PT.JH ENERGY BY BURU District Head
+↓
+[2012.10] Applied for IUP 1,770ha exploration rights
+↓
+[2013.01] Obtained IUP exploration rights (Eksplorasi)/BURU District
+↓
+[2013.01] Obtained Environmental Impact Assessment (Amdal)
+↓
+[2013.03] Obtained Production Permission (Operasi)
+↓
+[2018.10] Central exploration rights zone confirmation scheduled TO Central Energy Ministry
+```
+
+### Relationship with KASH Foundation and vRWA Integration Structure
+
+:::info
+KASH Foundation prioritizes 35% of gold produced by JH ENERGY for vRWA liquidation.
+::: 
+
+```mermaid
+graph TD
+    A[PT. JH ENERGY] -- AMC Contract(Responsible for mining to mineral processing management) --> B[KASH Foundation];
+    B -- Responsible for gold sales, distribution, and business management --> A;
+    A -- Gold Purchase Contract --> C[Gold Purchasing Company, International Bank in Indonesia];
+    C -- Gold Storage Certificate or Legal Tender --> B;
+    B -- RWA or Additional Assets --> D[KASH Reserve Vault];
+```
+
+- **KASH Foundation** manages the operation of gold produced by PT. JH ENERGY and the digitalization of the KASH project, proceeding with vRWA(Gold) liquidation based on confirmed gold production schedules and quantities from PT. JH ENERGY.
+
+- vRWA is a **forward rights-based asset** tokenized before gold production, structured to supply promised gold in the future.
+
+- After physical gold is produced, a fixed amount of vRWA is liquidated monthly as **assets of equal value to physical gold**, and will later be converted to RWA(Gold) reserves.
+
+<!-- ---
+id: mining-overview
 title: 1. 광산 사업 개요와 KASH 재단과의 관계
 description: 부루 광산 위치, 행정 인허가 상태 및 KASH 재단의 역할
 sidebar_position: 1
@@ -47,11 +107,6 @@ KASH 재단은 AMC 계약을 통해 JH ENERGY가 생산한 금의 35%를 우선�
 
 ~~~mermaid
 graph TD
-    A[PT. JH ENERGY] -- AMC 계약(금의 채굴부터 선광까지의 선광관리 담당)  --> B[KASH 재단];
-    B -- 금의 판매 및 유통을 포함한 경영관리 담당 --> A;
-    A -- 금 매입 계약 --> C[금 매입 회사, 인도네시아 소재 국제은행];
-    C -- 금 보관증서 or 법정화폐 --> B;
-    B -- RWA or 가산자산 --> D[KASH Reserve Vault];
 ~~~
 
 - **KASH 재단**은 PT. JH ENERGY 가 생산한 금에 대한 운영과 KASH 프로젝트의 디지털 자산화를 담당하며,
@@ -61,4 +116,4 @@ graph TD
     약속된 금을 미래에 공급하는 구조입니다.
     
 - 실물 금이 생산된 이후, 매월 일정량의 vRWA가 **실물 금과 동일 가치의 자산**으로 청산되며,
-    추후 RWA(Gold)로 리저브 전환됩니다.
+    추후 RWA(Gold)로 리저브 전환됩니다. -->

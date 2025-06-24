@@ -1,5 +1,71 @@
 ---
 id: rwa-problem
+title: 2. Structural Limitations of RWA
+description: Current structural limitations of physical asset-based RWA
+sidebar_position: 2
+---
+
+:::info
+As an attempt to solve these physical asset market problems, **gold-based RWA (Gold)** has emerged.
+
+In other words, it is a **structure that tokenizes physical gold as on-chain assets as collateral**.
+
+However, gold RWA to date has **failed to expand in the market** due to several structural limitations:
+
+- **Trust and legal barriers**
+- **Liquidity gaps**
+- **Incentive mismatches**
+
+Due to limitations in dealing with areas that cannot be solved by technology alone (off-chain reality), **RWA has not been able to function properly in DeFi** until now.
+:::
+
+### Structural Causes of Failed Connection Between Physical Assets and DeFi
+
+**Physical assets (RWA)** have **inherent structural difficulties** when connecting to on-chain DeFi. The main causes can be summarized as follows:
+
+#### ✅ Off-chain Asset Trust and Management Issues
+
+Blockchain only guarantees **on-chain data integrity** and **cannot directly verify the existence and status of real-world assets**. Ultimately, tokens backed by **physical assets** need **oracles and trusted entities** to prove that the assets actually exist and are valid.
+
+Token holders must **trust that the issuer holds sufficient physical assets**, which involves **credit risk** that deviates from a fully decentralized structure.
+
+For example, with gold tokens, even if the issuer claims to hold 100% gold backing, this needs continuous **auditing/verification**, and if fraud occurs, on-chain mechanisms alone cannot prevent it.
+
+#### ✅ Legal, Regulatory, and KYC Issues
+
+As mentioned earlier, RWA tokens may involve **legal ownership** or face **securities-related disputes**, subjecting them to regulations in various countries. This leads to **restrictions on token holding and transfer (limited to authorized investors, KYC requirements, etc.)**.
+
+These **regulatory requirements conflict with open DeFi protocols**, limiting the **scope of RWA token utilization** on public blockchains. When **qualification restrictions are built into smart contracts** to comply with regulations, tokens **cannot move freely between protocols and lose interoperability**.
+
+In short, **inefficiencies arising from transplanting traditional financial regulatory frameworks to on-chain** hinder connectivity.
+
+#### ✅ Liquidity and Redemption Limitations
+
+Physical asset-based assets have **slower liquidation speeds and higher transaction costs compared to on-chain assets**. While DeFi's strength lies in the ability to immediately dispose of collateral assets and secure liquidity, RWA cannot do this. **When tokens become distressed during crises, time and procedures are needed to liquidate the underlying assets off-chain for cash**.
+
+For example, when MakerDAO accepts gold tokens or real estate as loan collateral, unlike regular crypto assets that can be **automatically liquidated through smart contract auctions** during price crashes, **immediate liquidation is impossible**. **Off-chain assets can take days to months to sell**, and during this period, there is a risk that **liquidity crisis could spread to the entire protocol**.
+
+Without a **lender of last resort (backstop)** like central banks, there are **systemic risks from RWA integration**. In other words, the **inherent illiquidity of underlying physical assets** transfers to DeFi, leading to connection failures or limitations.
+
+#### ✅ Yield and Incentive Deficiency
+
+Physical assets, especially commodities (like gold), **generate no cashflow from holding**, so there is limited borrowing demand that can **pay sufficient interest** when used as DeFi collateral. This is a **structural cause that reduces the utility of RWA collateral in decentralized lending markets**.
+
+For instance, when lending DAI against gold tokens as collateral, gold token holders gain limited benefits while borrowers bear interest burden.
+
+While **stablecoins** have high demand due to many use cases, there is limited demand for borrowing **gold or art tokens**. Such **supply-demand imbalance** prevents active formation of RWA collateral markets.
+
+#### ✅ Lack of Standardization and Technical Integration
+
+Methods for **tokenizing RWA vary**, and legal right structures differ case by case, leading to an absence of **standardized protocols**. Since collateral valuation and liquidation conditions also vary by asset, it creates a structure that's **difficult to easily plug into DeFi**. Additionally, if RWA token issuance managers face **bankruptcy** or make **technical mistakes**, this directly affects token value, and such **operational risks cannot be completely eliminated by smart contracts**. Ultimately, connection remains problematic as **systemic differences between off-chain and on-chain** cannot be perfectly bridged.
+
+:::note
+- [Blockchain establishes consensus not truth and this has implications for the management of Asset Tokenization Risks](https://www.kcl.ac.uk/news/comment-blockchain-establishes-consensus-not-truth-and-this-has-implications-for-the-management-of-asset-tokenization-risks)
+- [Unlocking a Trillion-Dollar Market: The Problems and Potential of Real World Asset (RWA) Coins](https://www.anchain.ai/blog/real-world-asset-rwa-coins)
+:::
+
+<!-- ---
+id: rwa-problem
 title: 2. RWA의 구조적 한계
 description: 현단계에서의 실물 기반 RWA 구조적 한계
 sidebar_position: 2
@@ -61,4 +127,4 @@ RWA를 **토큰화하는 방식이 제각각**이고, 법적권리 구조도 케
 
 :::note
 - [Blockchain establishes consensus not truth and this has implications for the management of Asset Tokenization Risks](https://www.kcl.ac.uk/news/comment-blockchain-establishes-consensus-not-truth-and-this-has-implications-for-the-management-of-asset-tokenization-risks)
-- [Unlocking a Trillion-Dollar Market: The Problems and Potential of Real World Asset (RWA) Coins](https://www.anchain.ai/blog/real-world-asset-rwa-coins)
+- [Unlocking a Trillion-Dollar Market: The Problems and Potential of Real World Asset (RWA) Coins](https://www.anchain.ai/blog/real-world-asset-rwa-coins) -->

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "KASH",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "KASH Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Website": {
+    "message": "Website",
+    "description": "Navbar item with label Website"
+  }
+}

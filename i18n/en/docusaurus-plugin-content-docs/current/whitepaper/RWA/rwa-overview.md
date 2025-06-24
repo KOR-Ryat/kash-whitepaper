@@ -1,5 +1,101 @@
 ---
 id: rwa-overview
+title: 1. KASH Project RWA Overview
+description: RWA & vRWA Overview and Comparison
+sidebar_position: 1
+---
+
+### RWA Overview
+
+**RWA (Real World Asset)** is a tangible or intangible asset that exists outside the digital realm but is transferred to the blockchain through a process called **tokenization**. At its core, RWA serves to bridge **the gap between Traditional Finance (TradFi) and Decentralized Finance (DeFi)**.
+
+:::tip[What is RWA (Real World Asset)?]
+**RWA** can be broadly classified as follows:
+
+- Tangible Assets:
+    - Real Estate: Residential properties, commercial buildings, land
+    - Commodities: **Gold, silver, oil**, agricultural products
+    - Collectibles: Art pieces, luxury goods, rare wines, classic cars
+    - Infrastructure: Solar power plants, telecommunication towers
+- Intangible Assets (Financial and Legal):
+    - Bonds: Government bonds (e.g., U.S. Treasury bonds), corporate bonds
+    - Stocks: Listed or unlisted company shares
+    - Credit: Private credit, loans
+    - Intellectual Property Rights: Patents, copyrights, trademarks
+    - Carbon Credits: Environmental assets representing carbon emission reductions
+:::
+
+### KASH Project RWA Structure
+
+The KASH project primarily utilizes **RWA(Gold)**, which tokenizes physical gold, and **vRWA(Gold)**, which tokenizes future claims to gold.
+
+Both **RWA(Gold)** and **vRWA(Gold)** are designed to comply with **RWA's standard technical specification (ERC-3643)**.
+
+:::tip[Phase 1 RWA Strategy]
+While **vRWA** is designed to comply with the **ERC-3643 standard as an RWA**, it faces fewer restrictions. This is because **in Phase 1, it is only used as collateral for KASH tokens** and is not directly exposed to investors, meaning no transfers occur between investors.
+:::
+
+```mermaid
+classDiagram
+    RWA <|-- RWA-Gold
+    RWA <|-- vRWA-Gold
+    RWA : ERC-3643(RWA Standard)
+    RWA : Permissioned Transfers
+    RWA : Regulatory Compliance
+    RWA : Identity Management
+    RWA-Gold : Exchange right for physical gold
+    RWA-Gold : Timing(Late Phase 1 or after Phase 2)
+    vRWA-Gold : Claim right for future gold
+    vRWA-Gold : Timing(Phase 1 and additional issuance as needed)
+```
+
+The core principles of the RWA standard technical specification ERC-3643 are as follows:
+
+- **Permissioned Transfers**: This is the most crucial feature. ERC-3643 tokens can only be held and transferred by pre-approved and verified wallets. This "permission" ensures that only qualified investors or entities can participate in the token ecosystem.
+- **Compliance-First Design**: It is designed with regulatory compliance in mind from the start. This means that legal and regulatory requirements are enforced at the protocol level rather than being external considerations.
+- **On-chain Identity Management - ONCHAINID**: ERC-3643 integrates a decentralized identity framework often called ONCHAINID.
+
+:::tip[On-chain Identity Management]
+Each user has a unique and globally accessible identity on the blockchain.
+
+This identity is linked to "claims" or "verifiable credentials" issued by trusted entities (claim issuers). These claims verify specific user attributes such as KYC/AML verification status, accredited investor status, or residence in specific jurisdictions.
+
+When a token transfer is initiated, the ERC-3643 smart contract verifies the ONCHAINID status of both sender and receiver to ensure they meet predefined eligibility and compliance rules.
+
+Sensitive personal data is typically stored off-chain, with only cryptographic hashes or signatures stored on-chain to maintain privacy while allowing verification.
+:::
+
+### Comparison between vRWA and RWA
+
+vRWA is **directly deposited into the KASH Reserve Pool and used as collateral for KASH issuance**,
+and as liquidation progresses, this collateral is gradually replaced with **virtual assets or physical RWA(Gold)**.
+
+Consequently, the asset composition within the reserve pool transitions from **vRWA → stablecoin/gold RWA** over time,
+and vRWA **completely liquidates and disappears from the reserve pool by maturity (3 years after liquidation)**.
+
+| **Item** | **vRWA (Phase 1)** | **RWA(Gold) (Phase 2 and beyond)** |
+| --- | --- | --- |
+| **Physical Asset Linkage** | Claim right form, future realization expected | Based on direct physical gold holdings |
+| **Collateral Nature** | Promised exchange right (physical RWA or equivalent value in virtual assets) | Direct collateral based on physical assets |
+| **KASH Reserve Pool Integration** | ✅ **vRWA directly deposited and functions as KASH issuance collateral** | ✅ RWA(Gold) directly deposited and serves as KASH collateral |
+| **Asset Conversion Structure** | Converts to virtual assets or RWA through liquidation → Reserve pool asset composition change | Continuous holding and manageable according to foundation policy |
+| **Distribution Method** | Limited period, maturity-based liquidation structure | Continuous circulation, expandable based on PoR |
+
+vRWA is a **transitional RWA that serves as a bridge toward gold RWA**.
+
+Through this, the KASH project can **secure time to establish physical asset-based value** while stably designing initial liquidity and participant rewards.
+
+:::tip[Technical Specifications and Transparency Assurance]
+
+- **ERC-3643 based RWA Standard Usage**
+    - Token standard capable of permission management and AML/KYC compliance
+    - Includes transfer restriction and identification structure for regulatory compliance
+- **Smart Contract Liquidation Logic Implementation**
+    - Automatic execution structure for vRWA maturity management and partial liquidation
+:::
+
+<!-- ---
+id: rwa-overview
 title: 1. KASH 프로젝트 RWA 개요
 description: RWA & vRWA 개요 및 비교
 sidebar_position: 1
@@ -67,13 +163,6 @@ RWA 표준 기술 스펙인 ERC-3643의 핵심 원칙은 다음과 같습니다.
 민감한 개인 데이터는 일반적으로 오프체인에 저장되며, 개인 정보 보호를 유지하면서 검증을 허용하기 위해 암호화 해시 또는 서명만 온체인에 저장됩니다.
 :::
 
-<!-- 모듈식 아키텍처 (Modular Architecture): ERC-3643은 신원 관리, 규정 준수 규칙 및 토큰 로직을 별개의 스마트 계약으로 분리하는 모듈식 설계를 통해 작동합니다. 이를 통해 다양한 규제 요구 사항 및 사용 사례를 충족하도록 유연성과 맞춤화가 가능합니다.
-
-ERC-20과의 상호 운용성 (Interoperability with ERC-20): 고급 기능에도 불구하고 ERC-3643은 기존 ERC-20 인프라와 호환되도록 설계되었습니다. 즉, ERC-20 토큰용으로 구축된 플랫폼 및 도구는 최소한의 조정으로 ERC-3643 토큰과 상호 작용할 수 있어 채택이 더 용이합니다.
-
-업그레이드 가능성 (Upgradability): 이 표준은 업그레이드 가능한 스마트 계약을 지원하여 발행자가 토큰을 재발행할 필요 없이 진화하는 규제 환경에 적응하거나 새로운 기능을 도입할 수 있도록 합니다. -->
-
-
 ### vRWA와 RWA의 비교
 
 vRWA는 **KASH 리저브풀에 직접 예치되어 KASH 발행의 담보로 사용되며**,
@@ -94,8 +183,6 @@ vRWA는 **금 RWA를 향한 가교 역할을 수행하는 전환형 RWA**입니�
 
 이를 통해 KASH 프로젝트는 **실물 기반 가치 정립을 위한 시간을 확보하면서도**, 초기 유동성과 참여자 보상을 안정적으로 설계할 수 있습니다.
 
-<!-- ## 기술 사양 및 투명성 확보 -->
-
 :::tip[기술 사양 및 투명성 확보]
 - **ERC-3643 기반 RWA 표준 사용**
     - 권한 관리 및 AML/KYC 대응 가능한 토큰 표준
@@ -104,4 +191,4 @@ vRWA는 **금 RWA를 향한 가교 역할을 수행하는 전환형 RWA**입니�
 - **스마트컨트랙트 청산 로직 탑재**
     - vRWA의 만기 관리 및 분할 청산 자동 실행 구조
 :::
-
+ -->

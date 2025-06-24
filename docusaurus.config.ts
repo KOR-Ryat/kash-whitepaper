@@ -95,6 +95,10 @@ const config: Config = {
         // },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://kash-rwa.io',
           label: 'Website',
           position: 'right',
@@ -102,10 +106,6 @@ const config: Config = {
         // {
         //   href: 'https://github.com/kor-ryat/kash-whitepaper',
         //   label: 'GitHub',
-        //   position: 'right',
-        // },
-        // {
-        //   type: 'localeDropdown',
         //   position: 'right',
         // },
       ],
