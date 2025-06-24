@@ -6,89 +6,89 @@
   "sidebar.tutorialSidebar.category.Whitepaper": {
     "message": "Whitepaper",
     "description": "The label for category Whitepaper in sidebar tutorialSidebar"
-  },
+  },  
   "sidebar.tutorialSidebar.category.📘 서문": {
-    "message": "📘 서문",
+    "message": "📘 Introduction",
     "description": "The label for category 📘 서문 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.📘 서문.link.generated-index.title": {
-    "message": "📘 서문",
+    "message": "📘 Introduction",
     "description": "The generated-index page title for category 📘 서문 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.📘 서문.link.generated-index.description": {
-    "message": "KASH 프로젝트는 인도네시아 부루 금광 기반의 실물 자산을 토큰화(RWA)하여, 안정성과 유동성을 겸비한 새로운 디지털 금융 인프라를 구축합니다.",
+    "message": "The KASH Project tokenizes real-world assets (RWA) based on the Buru gold mine in Indonesia, building a new digital financial infrastructure that combines stability and liquidity.",
     "description": "The generated-index page description for category 📘 서문 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🏦 실물 자산 시장과 디지털 전환의 필요성": {
-    "message": "🏦 실물 자산 시장과 디지털 전환의 필요성",
+    "message": "🏦 Physical Asset Markets and the Need for Digital Transformation",
     "description": "The label for category 🏦 실물 자산 시장과 디지털 전환의 필요성 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🏦 실물 자산 시장과 디지털 전환의 필요성.link.generated-index.title": {
-    "message": "🏦 실물 자산 시장과 디지털 전환의 필요성",
+    "message": "🏦 Physical Asset Markets and the Need for Digital Transformation",
     "description": "The generated-index page title for category 🏦 실물 자산 시장과 디지털 전환의 필요성 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🏦 실물 자산 시장과 디지털 전환의 필요성.link.generated-index.description": {
-    "message": "금은 수천 년간 인류가 신뢰해온 대표적인 실물 가치 저장 수단이지만, 오히려 실물이기에 금융 수단으로써 많은 한계를 가지고 있습니다. 이를 극복하기 위해 단계적 디지털 전환이 필요합니다.",
+    "message": "Gold has been a representative physical store of value trusted by humanity for thousands of years, but precisely because it is physical, it has many limitations as a financial instrument. To overcome these limitations, a phased digital transformation is necessary.",
     "description": "The generated-index page description for category 🏦 실물 자산 시장과 디지털 전환의 필요성 in sidebar tutorialSidebar"
-  },
+  },  
   "sidebar.tutorialSidebar.category.🏗️ KASH 토큰 구조 및 기능": {
-    "message": "🏗️ KASH 토큰 구조 및 기능",
+    "message": "🏗️ KASH Token Structure and Functions",
     "description": "The label for category 🏗️ KASH 토큰 구조 및 기능 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🏗️ KASH 토큰 구조 및 기능.link.generated-index.title": {
-    "message": "🏗️ KASH 토큰 구조 및 기능",
+    "message": "🏗️ KASH Token Structure and Functions",
     "description": "The generated-index page title for category 🏗️ KASH 토큰 구조 및 기능 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🏗️ KASH 토큰 구조 및 기능.link.generated-index.description": {
-    "message": "KASH는 실물 기반 담보 자산을 바탕으로 설계된 디지털 리저브 토큰입니다. 본 장에서는 KASH 토큰의 구조, 가치 결정 방식, 담보 자산 구조와의 관계를 설명합니다. 이는 이후에 이어질 스테이킹 및 분배 구조 이해의 핵심 기초가 됩니다.",
+    "message": "KASH is a digital reserve token designed based on real-world backed collateral assets. This chapter explains the structure of the KASH token, its value determination method, and its relationship with the collateral asset structure. This serves as the essential foundation for understanding the staking and distribution structures that follow.",
     "description": "The generated-index page description for category 🏗️ KASH 토큰 구조 및 기능 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.⛏️ 금광 개발 정보 및 실물 기반 확보 전략": {
-    "message": "⛏️ 금광 개발 정보 및 실물 기반 확보 전략",
+    "message": "⛏️ Gold Mining Information and Physical Basis Securing Strategy",
     "description": "The label for category ⛏️ 금광 개발 정보 및 실물 기반 확보 전략 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.⛏️ 금광 개발 정보 및 실물 기반 확보 전략.link.generated-index.title": {
-    "message": "⛏️ 인도네시아 부루 금광과 실물 기반 구조",
+    "message": "⛏️ Indonesia Buru Gold Mine and Physical Foundation Structure",
     "description": "The generated-index page title for category ⛏️ 금광 개발 정보 및 실물 기반 확보 전략 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.⛏️ 금광 개발 정보 및 실물 기반 확보 전략.link.generated-index.description": {
-    "message": "vRWA의 기초 자산은 인도네시아 부루 금광 사업에 기반합니다. 해당 금광 사업에 대한 사업성과 KASH 재단의 실행력은 KASH 프로젝트의 근간입니다.",
+    "message": "The underlying asset of vRWA is based on the Indonesia Buru gold mining business. The business viability of this gold mining operation and the execution capability of the KASH Foundation form the backbone of the KASH project.",
     "description": "The generated-index page description for category ⛏️ 금광 개발 정보 및 실물 기반 확보 전략 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🪙 RWA 토큰 구조": {
-    "message": "🪙 RWA 토큰 구조",
+    "message": "🪙 RWA Token Structure",
     "description": "The label for category 🪙 RWA 토큰 구조 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🪙 RWA 토큰 구조.link.generated-index.title": {
-    "message": "KASH 프로젝트 RWA 토큰 구조",
+    "message": "KASH Project RWA Token Structure",
     "description": "The generated-index page title for category 🪙 RWA 토큰 구조 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🪙 RWA 토큰 구조.link.generated-index.description": {
-    "message": "KASH 프로젝트의 핵심 담보 구조인 RWA(Gold) 및 vRWA(Gold)의 설계 철학과 구현 방식, 청산 안정 메커니즘을 요약합니다.",
+    "message": "Summarizes the design philosophy, implementation method, and liquidation stability mechanisms of RWA(Gold) and vRWA(Gold), which form the core collateral structure of the KASH project.",
     "description": "The generated-index page description for category 🪙 RWA 토큰 구조 in sidebar tutorialSidebar"
-  },
+  },  
   "sidebar.tutorialSidebar.category.💰 KASH의 발행, 보상 및 안정화 메커니즘": {
-    "message": "💰 KASH의 발행, 보상 및 안정화 메커니즘",
+    "message": "💰 KASH Issuance, Reward, and Stabilization Mechanism",
     "description": "The label for category 💰 KASH의 발행, 보상 및 안정화 메커니즘 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.💰 KASH의 발행, 보상 및 안정화 메커니즘.link.generated-index.title": {
-    "message": "💰 KASH의 발행, 보상 및 안정화 메커니즘",
+    "message": "💰 KASH Issuance, Reward, and Stabilization Mechanism",
     "description": "The generated-index page title for category 💰 KASH의 발행, 보상 및 안정화 메커니즘 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.💰 KASH의 발행, 보상 및 안정화 메커니즘.link.generated-index.description": {
-    "message": "KASH는 실물 자산 기반 RWA(vRWA 또는 RWA(Gold))를 담보로 발행되는 리저브 토큰이며 초기 리스크 보상과 담보에 기반한 내재가치를 유지하는 메커니즘을 가지고 있습니다.",
+    "message": "KASH is a reserve token issued with real asset-based RWA (vRWA or RWA(Gold)) as collateral and has mechanisms to maintain its intrinsic value based on early risk rewards and collateral.",
     "description": "The generated-index page description for category 💰 KASH의 발행, 보상 및 안정화 메커니즘 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.📊 토크노믹스": {
-    "message": "📊 토크노믹스",
+    "message": "📊 Tokenomics",
     "description": "The label for category 📊 토크노믹스 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.📊 토크노믹스.link.generated-index.title": {
-    "message": "토크노믹스 및 분배 구조",
+    "message": "Tokenomics and Distribution Structure",
     "description": "The generated-index page title for category 📊 토크노믹스 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.📊 토크노믹스.link.generated-index.description": {
-    "message": "1기 기준 발행량, 분배 계획, 투자 일정, 스테이킹 보상 할당 등에 대해 명확히 설명합니다.",
+    "message": "Clearly explains issuance volume, distribution plans, investment schedule, and staking reward allocations based on Phase 1.",
     "description": "The generated-index page description for category 📊 토크노믹스 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Yellowpaper": {
