@@ -84,7 +84,7 @@ const config: Config = {
       logo: {
         href: "/intro",
         alt: 'KASH Logo',
-        src: 'img/logo.svg',
+        src: 'img/favicon.ico',
       },
       items: [
         // {
