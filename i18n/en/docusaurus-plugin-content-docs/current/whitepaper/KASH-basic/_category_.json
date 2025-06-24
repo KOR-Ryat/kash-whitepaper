@@ -1,9 +1,0 @@
-{
-  "label": "🏗️ KASH Token Structure and Functions",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "title": "🏗️ KASH Token Structure and Functions",
-    "description": "KASH is a digital reserve token designed based on real-world backed collateral assets. This chapter explains the structure of the KASH token, its value determination method, and its relationship with the collateral asset structure. This serves as the essential foundation for understanding the staking and distribution structures that follow." 
-  }
-}
