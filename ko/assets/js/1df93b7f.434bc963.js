@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkash_whitepaper=self.webpackChunkkash_whitepaper||[]).push([[4583],{6107:(e,r,t)=>{t.r(r),t.d(r,{default:()=>h});t(6540);var a=t(6347),s=t(4848);function h(){return(0,s.jsx)(a.rd,{to:"/intro"})}}}]);
