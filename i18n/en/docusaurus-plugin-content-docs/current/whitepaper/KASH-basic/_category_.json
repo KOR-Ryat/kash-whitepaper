@@ -1,9 +1,9 @@
 {
-  "label": "🏗️ KASH 토큰 구조 및 기능",
+  "label": "🏗️ KASH Token Structure and Functions",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "title": "🏗️ KASH 토큰 구조 및 기능",
-    "description": "KASH는 실물 기반 담보 자산을 바탕으로 설계된 디지털 리저브 토큰입니다. 본 장에서는 KASH 토큰의 구조, 가치 결정 방식, 담보 자산 구조와의 관계를 설명합니다. 이는 이후에 이어질 스테이킹 및 분배 구조 이해의 핵심 기초가 됩니다." 
+    "title": "🏗️ KASH Token Structure and Functions",
+    "description": "KASH is a digital reserve token designed based on real-world backed collateral assets. This chapter explains the structure of the KASH token, its value determination method, and its relationship with the collateral asset structure. This serves as the essential foundation for understanding the staking and distribution structures that follow." 
   }
 }

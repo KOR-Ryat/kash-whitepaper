@@ -1,5 +1,35 @@
 ---
 id: kash-function
+title: 3. Functional Roles
+description: KASH Functional Roles and Evolution Potential
+sidebar_position: 3
+---
+
+### Summary of Functional Roles
+
+KASH performs the following structural roles within the project:
+
+| **Function** | **Description** |
+| :---: | :--- |
+| 🛠 Collateral-Based Issuance | Issued upon deposit of vRWA(Gold) or RWA(Gold) as reserve |
+| 💵 Funding Mechanism | Mine development funding through Phase 1 investor sales |
+| 📈 Reward-Linked Asset | Provides staking interest (risk compensation, holding period incentives) |
+| 🔄 Liquidity Provision | DEX liquidity supply and POL structure application |
+| 🔐 Price Stability Mechanism | Utilization of RBS (Range Bound Stability) strategy through discount/purchase bonds |
+| 🌉 Structural Scalability | Replicable structure for future RWA projects (vRWA reissuance) |
+
+### Evolution Potential
+
+KASH is designed to expand beyond a short-term funding token to become
+**a reserve currency for RWA-based physical collateral systems**:
+
+- ✅ Physical Gold → RWA(Gold) → Reserve Asset → KASH → Staking/Liquidity/DeFi Utility
+- ✅ Through future vRWA issuance for new mineral projects such as silver and copper
+    → KASH issuance, reward pool reactivation, reserve expansion possible
+- ✅ This means that KASH can evolve into **a financial system unit beyond a single asset structure**
+
+<!-- ---
+id: kash-function
 title: 3. 기능적 역할
 description: KASH 기능적 역할 및 진화 가능성
 sidebar_position: 3
@@ -26,4 +56,4 @@ KASH는 단기 펀딩 토큰에 그치지 않고,
 - ✅ 실물 금 → RWA(Gold) → 리저브 자산 → KASH → 스테이킹/유동성/DeFi 유틸리티
 - ✅ 이후 은, 구리 등 신규 광물 프로젝트의 vRWA 발행을 통해
     → KASH 발행, 리워드 풀 재활성화, 리저브 확장 가능
-- ✅ 이는 KASH가 **하나의 자산 구조를 넘는 금융 시스템 단위**로 진화할 수 있다는 것을 의미합니다
+- ✅ 이는 KASH가 **하나의 자산 구조를 넘는 금융 시스템 단위**로 진화할 수 있다는 것을 의미합니다 -->

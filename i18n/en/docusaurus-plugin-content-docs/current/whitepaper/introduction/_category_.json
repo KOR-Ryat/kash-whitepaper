@@ -1,9 +1,9 @@
 {
-  "label": "📘 서문",
+  "label": "📘 Introduction",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "title": "📘 서문",
-    "description": "KASH 프로젝트는 인도네시아 부루 금광 기반의 실물 자산을 토큰화(RWA)하여, 안정성과 유동성을 겸비한 새로운 디지털 금융 인프라를 구축합니다." 
+    "title": "📘 Introduction",
+    "description": "The KASH Project tokenizes real-world assets (RWA) based on the Buru gold mine in Indonesia, building a new digital financial infrastructure that combines stability and liquidity." 
   }
 }

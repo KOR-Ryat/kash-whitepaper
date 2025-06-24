@@ -1,5 +1,92 @@
 ---
 id: legacy-market
+title: 1. Limitations of Physical Asset Markets and the Rise of RWAs
+description: Limitations of Gold as a Physical Asset and the Emergence of Gold RWAs 
+sidebar_position: 1
+---
+
+:::info
+**Gold has been humanity's most trusted physical store of value for thousands of years**.
+However, as a physical asset, gold has the following **financial limitations**.
+:::
+
+### Key Structural Limitations of the Gold Market (From Investor and Market Structure Perspectives)
+
+#### ✅ Distribution and Accessibility Constraints
+
+Traditional physical gold investment has high barriers to entry. Purchasing gold directly requires transactions through banks or dealers in bullion or coin units, and generally must be traded in minimum units of 10g~1kg, making small investments difficult.
+
+For example, in Korea, physical gold transactions incur approximately 10% VAT plus trading fees, and it is practically difficult to purchase standard gold bars with small amounts.
+
+Thus, the gold market's distribution structure has **geographical and procedural constraints that make it difficult for small investors to participate easily**.
+
+#### ✅ Storage and Management Costs
+
+Owning physical gold requires secure storage, leading to additional costs and management efforts for safe deposit boxes and insurance. Individual gold holders must risk theft or loss, and thus **holding physical gold comes with ongoing costs and inconveniences**.
+
+These storage issues create a physical burden for investors and discourage entry into gold investment.
+
+#### ✅ Lack of Liquidity
+
+While gold is an asset with large global market size, **converting physical gold to cash may not be quick or easy**. Selling gold coins or converting bullion to cash requires **finding suitable buyers or dealing through traders**, requiring time and procedures, making immediate disposal difficult.
+
+Particularly from retail investors' perspective, **physical gold trading has wide bid-ask spreads and high transaction costs**, limiting liquidity. This is structurally due to physical gold trading being primarily conducted in over-the-counter markets or limited platforms (LBMA, exchanges, etc.), preventing immediate liquidity provision.
+
+#### ✅ Financial System Disconnection
+
+Traditional gold holdings have limitations in smoothly connecting with modern financial systems.
+
+Gold **cannot be directly used for bank transfers or commercial payments like cash**, and requires separate procedures and valuations to be used as collateral, limiting its use as a financial product. In other words, **gold is an asset isolated from digital financial infrastructure**, making it difficult to create liquidity or combine with other financial transactions even when held.
+
+Due to this disconnection, investors cannot quickly utilize funds in emergencies even when holding gold, creating a structural problem where **gold's value cannot be efficiently utilized within the existing financial ecosystem**.
+
+:::note
+- [For Tax-Efficient Investment, Real-Time Gold Trading on Korea Exchange through ETF](https://www.mk.co.kr/news/economy/10965498)
+- [Complete Guide to Gold Investment Methods (Stocks, ETF, Standard Gold Custody Rights, Physical Gold)](https://sorbonne.tistory.com/entry/%EA%B8%88%EC%97%90-%ED%88%AC%EC%9E%90%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%B4%9D%EC%A0%95%EB%A6%AC-%EC%A3%BC%EC%8B%9D-ETF-%EA%B8%B0%EC%A4%80%EA%B3%A8%EB%93%9C-%EB%B3%B4%EA%B4%80%EA%B6%8C-%EC%8B%A4%EB%AC%BC%EA%B8%88)
+- [Physical Gold Investment vs Gold ETF: Which is Better?](https://growmoneysecret.tistory.com/entry/%EA%B8%88-%EC%8B%A4%EB%AC%BC-%ED%88%AC%EC%9E%90-vs-%EA%B8%88-ETF-%EC%96%B4%EB%96%A4-%EA%B2%83%EC%9D%B4-%EB%8D%94-%EC%A2%8B%EC%9D%84%EA%B9%8C)
+:::
+
+### The Emergence and Expected Effects of Gold-Based RWAs
+
+#### ✅ Enhanced Investment Access and Reduced Entry Barriers
+
+Gold-based RWA (Tokenized Gold) has **opened the door for anyone worldwide to invest in gold with small amounts** by issuing digital tokens linked 1:1 with physical gold on blockchain.
+
+**Fractional ownership** is possible down to units like 0.001 ounces without deposit requirements or minimum unit restrictions, significantly lowering the high unit barriers of traditional gold trading. Additionally, gold tokens can be purchased from anywhere with internet connection, improving **geographical and procedural accessibility** and enabling broader investor participation in gold assets.
+
+#### ✅ Enhanced Liquidity and Trading Convenience
+
+Gold RWA tokens can be traded in **24-hour global markets**, providing **higher liquidity and convenience** than traditional gold markets. Blockchain-based gold tokens can be traded in real-time on both centralized and decentralized exchanges (DEX), allowing investors to trade gold even during weekends or after-hours.
+
+Additionally, **gold trading through token transfers enables instant settlement without physical gold delivery or authentication procedures**, speeding up trade settlement and reducing friction costs. This **improvement in liquidity and transaction speed** is an important effect that increases the utility of gold assets for investors.
+
+#### ✅ Reduced Storage and Transaction Costs
+
+Gold-based tokenization **greatly reduces storage costs and burdens** as individual investors don't need to store gold directly. The issuer safely stores and manages gold at scale, while investors hold claim rights in digital token form, eliminating the need for separate safe deposit boxes or insurance.
+
+**Blockchain transaction fees are cheaper than physical gold logistics or traditional trading fees**, leading to **lower transfer costs**. This cost efficiency reduces **total gold investment costs** and ensures economic viability even for small transactions.
+
+#### ✅ Enhanced Transparency and Reliability
+
+In the RWA structure, **all transaction records are recorded on the blockchain ledger, increasing transparency**, and authorized third-party audits can verify that the amount of gold corresponding to issued tokens is actually stored. For example, through **Proof of Reserve** on-chain audit systems, investors can verify that **physical gold backing their tokens is safely deposited**.
+
+While traditional gold trading made it difficult for retail investors to verify gold's existence or ownership in real-time, tokenized gold enhances **reliability through real-time traceable transparency** and regular **financial statement audits**. This aspect brings **positive effects in reducing information asymmetry and increasing investor trust** from a market structure perspective.
+
+#### ✅ Financial System Integration and Enhanced Utility
+
+Gold RWA tokens serve as a **bridge to emerging financial ecosystems** like DeFi. Tokenized gold can be **used as collateral in smart contracts** for stablecoin loans, or earn interest through **liquidity provision and deposits in decentralized finance**, enabling **previously impossible gold asset utilization**. For example, scenarios like earning yields by depositing gold-linked tokens in liquidity pools or using tokens directly for P2P payments are becoming reality.
+
+This **strengthened financial connectivity** shows that gold is no longer an isolated asset but can be **incorporated as a component of digital finance**, demonstrating potential to structurally enhance the liquidity and efficiency of the gold asset market.
+
+:::note
+- [Gold Tokenization Explained - All You Need to Know! Updated 2025](https://www.dailyforex.com/forex-articles/gold-tokenization/228364)
+- [Asset Tokenization: Bringing Real-World Value to the Blockchain](https://blog.chain.link/asset-tokenization-bringing-real-world-value-to-the-blockchain-korean/)
+- [tokenized precious metal explained](https://www.investax.io/blog/tokenized-precious-metal-explained)
+- [Asset Tokenization Leading Global Financial Innovation... "Could Become Multi-Trillion Won Market"](https://www.blockmedia.co.kr/archives/888590)
+:::
+
+<!-- ---
+id: legacy-market
 title: 1. 실물 자산 시장의 제약과 RWA의 등장
 description: 실물 자산으로써 금의 한계와 금 RWA의 등장
 sidebar_position: 1
@@ -82,4 +169,4 @@ RWA 구조에서는 **블록체인 원장에 모든 거래 내역이 기록되�
 - [Gold Tokenization Explained - All You Need to Know! Updated 2025](https://www.dailyforex.com/forex-articles/gold-tokenization/228364)
 - [자산 토큰화: 실제 세계 자산의 가치를 온체인으로](https://blog.chain.link/asset-tokenization-bringing-real-world-value-to-the-blockchain-korean/)
 - [tokenized precious metal explained](https://www.investax.io/blog/tokenized-precious-metal-explained)
-- [실물 자산 토큰화, 글로벌 금융 혁신 주도… “수십조원 시장 될 수 있다”](https://www.blockmedia.co.kr/archives/888590)
+- [실물 자산 토큰화, 글로벌 금융 혁신 주도… “수십조원 시장 될 수 있다”](https://www.blockmedia.co.kr/archives/888590) -->
