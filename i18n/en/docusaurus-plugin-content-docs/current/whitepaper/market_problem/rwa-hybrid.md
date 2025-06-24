@@ -1,5 +1,64 @@
 ---
 id: rwa-hybrid
+title: 3. Hybrid Alternatives
+description: Alternatives for gradually overcoming RWA's structural limitations
+sidebar_position: 3
+---
+
+:::info
+Various hybrid models are being tested to overcome RWA's structural limitations.
+
+A **hybrid RWA structure** refers to methods that link to real asset values through **derivative or combined means** rather than directly tokenizing physical assets at a 1:1 ratio.
+
+Here are the main cases being attempted:
+:::
+
+#### ✅ Forward RWA Tokens
+
+This is a method of raising current funds by tokenizing **rights to future delivery of physical assets**.
+
+For example, there have been cases where **gold mining companies** issued tokens in the form of **forward contracts at discounted prices** for gold they will produce in the future. A gold mine in Alaska launched the **Tagiuk Gold** project, issuing **forward contract tokens (TGLD) for delivery of 1 oz of gold**, using smart contracts to establish agreements between buyers and miners for **mining fundraising**. Buyers can receive gold delivery at a future date, and until then, the tokens function as **tradeable claims**.
+
+While this approach of handling RWA as **digital claims** doesn't provide immediate physical delivery, it has the advantage of achieving **value linkage**. However, challenges remain such as securing legal enforcement for contract fulfillment, and cases of active secondary trading of such forward tokens are still limited.
+
+#### ✅ Partially-Backed Stablecoins and Mixed Collateral Models
+
+Instead of full fiat currency backing or single-asset collateral, there are attempts to issue tokens by **creating collateral pools with multiple assets**. For instance, combining physical assets (RWA) with **digital assets (reserve currencies)** as collateral can compensate for the weaknesses of each type of collateral.
+
+As a **historical example**, the **gold standard currency** was backed by a certain ratio of gold while the rest operated on credit. In the crypto sphere, algorithmic stablecoins have utilized **partial collateral** (e.g., **FRAX** with partial USDC backing), and incorporating RWA is being discussed for the future. For example, the idea is that designing **hybrid stablecoins** that include a certain ratio of **US Treasury tokens** or **real estate collateral tokens** could achieve **value stability against fiat currency** while providing **dollar-diversification effects**. Since 2023, MakerDAO has been experimenting with **improving DAI stablecoin's stability and profitability** by **operating nearly half of its DAO reserves in RWAs like government bonds**.
+
+These mixed collateral models are gaining attention as an approach that balances the dual goals of **increased stability through RWA incorporation** and **securing on-chain liquidity**.
+
+#### ✅ DeFi Protocol and Traditional Asset Connection Platforms
+
+The collaboration between **Centrifuge** and **MakerDAO** is considered a successful case of utilizing **digital claims**. Centrifuge is a **tokenization platform for physical asset-backed lending**, which issues **investment rights (Tokenized Securities)** by pooling assets with cash flows like real estate mortgages and accounts receivable. **MakerDAO lends DAI by acquiring these tokens**, connecting DeFi liquidity with traditional assets.
+
+In 2022, French bank **Société Générale** also received approval from MakerDAO for **bond-backed tokens** to obtain DAI. In this structure, **digital DROP tokens** serve as **legal claims** to the asset pool, while **smart contracts manage the collateral**. Centrifuge recently launched **Centrifuge Prime** service for institutional investors, providing an environment where investors can **structure credit portfolios according to legal and technical requirements**.
+
+This represents a hybrid model that connects DeFi liquidity by **issuing customized RWA digital securities**.
+
+#### ✅ Other Asset Tokenization Platforms
+
+Security token issuers like **Securitize, tZERO, and Polygon** are attempting **STOs to put traditional financial assets (stocks, fund shares, etc.) on blockchain**.
+
+Though focused more on **private networks for institutional investors** rather than public DeFi, there have been cases of securing **partial exchange liquidity** by issuing **stock tokens** or **real estate revenue right tokens**. For example, some real estate tokens enabled **small investors to trade real estate shares** - while trading volume remains low, it's considered a case demonstrating the **possibility of asset liquidation**.
+
+:::info
+Overall, **RWA's on-chain integration is being explored through not only fully-backed models but also through various hybrid approaches**.
+
+The surge in **RWA protocol TVL (Total Value Locked)** from under $4B to over $11B during 2024-2025 results from increased **DeFi incorporation of yield-generating RWA tokens** like government bond tokens.
+
+The industry identifies **physical asset tokenization and stablecoins** as **areas with the greatest potential** going forward, suggesting various structural **attempts and experiments will continue**.
+:::
+
+:::note
+- [tagiuk gold token whitepaper](http://tagiukgold.com/tagiuk_gold_token_whitepaper.pdf)
+- [RWA(Real-World Assets) 시장의 현황 및 시사점](https://www.kcmi.re.kr/publications/pub_detail_view?syear=2024&zcd=002001016&zno=1764&cno=6259)
+- [RWA Protocols Hit $11B in TVL, with Analysts Saying Growth Is Just Getting Started](https://cryptorank.io/news/feed/98529-rwa-protocols-hit-11b-in-tvl-with-analysts-saying-growth-is-just-getting-started)
+:::
+
+<!-- ---
+id: rwa-hybrid
 title: 3. 하이브리드 대안
 description: RWA 구조적 한계를 단계적으로 극복하기 위한 대안들
 sidebar_position: 3
@@ -55,4 +114,4 @@ RWA의 구조적 한계점을 극복하기 위해 **여러 혼합형 모델**이
 - [tagiuk gold token whitepaper](http://tagiukgold.com/tagiuk_gold_token_whitepaper.pdf)
 - [RWA(Real-World Assets) 시장의 현황 및 시사점](https://www.kcmi.re.kr/publications/pub_detail_view?syear=2024&zcd=002001016&zno=1764&cno=6259)
 - [RWA Protocols Hit $11B in TVL, with Analysts Saying Growth Is Just Getting Started](https://cryptorank.io/news/feed/98529-rwa-protocols-hit-11b-in-tvl-with-analysts-saying-growth-is-just-getting-started)
-:::
+::: -->

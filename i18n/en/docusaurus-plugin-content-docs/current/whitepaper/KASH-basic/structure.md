@@ -1,5 +1,81 @@
 ---
 id: kash-structure
+title: 1. KASH Reserve Token Structure
+description: KASH Definition and Structure
+sidebar_position: 1
+---
+
+### KASH Overview and Issuance Background
+
+**KASH** is a **reserve-backed utility token** designed initially for project funding and risk premium provision for the Buru gold mine development in Indonesia. In later phases, it expands into a **DeFi reserve asset** providing price stability and reliability through a **physical RWA-based mixed collateral reserve pool**.
+
+- **Phase 1 Role**: Buru mine development funding + vRWA liquidation rewards (risk premium)
+- **Mid to Long-term Role**: Securing stability and trust as a digital currency through a physical RWA-based reserve system
+
+:::tip[KASH from an Investor's Perspective]
+In the initial KASH project, **neither RWA nor vRWA (which is a claim right to future RWA) are direct investment targets.**
+
+In the initial KASH project, **the investment target is the KASH token**, and the **risk premium for vRWA** is provided as **staking interest** on KASH tokens.
+
+Based on vRWA issuance volume, only **10%** of the total KASH issuance is sold directly to investors, while **50%** is provided as interest.
+
+This represents a higher yield than existing RWA projects that sell future gold claim rights at discounted prices.
+:::
+
+### Structural Position
+
+KASH serves as a **core currency** based on value stability through the following asset flow structure:
+
+~~~mermaid
+graph TD
+    A[Physical Gold] -- Tokenization of Gold Exchange Rights --> B[Gold RWA];
+    C[Physical Gold; Future Production] -- Tokenization of Future Gold Claims --> D[Gold vRWA];
+    A -- Periodic Liquidation --> D;
+    D -- Conversion through Liquidation --> B;
+    D -- Conversion through Liquidation --> G[Virtual Assets];
+    G -- Collateral Deposit --> E[KASH Reserve Vault];
+    B -- Collateral Deposit --> E;
+    D -- Collateral Deposit --> E;
+    E -- Reserve Token Issuance Based on Collateral --> F[KASH];
+~~~
+
+- **vRWA** serves as a **bridge asset** deposited in the reserve pool instead of physical gold in Phase 1
+- **KASH** is issued against vRWA collateral, later transitioning to physical RWA(Gold) reserves
+
+#### KASH Reserve Token Structure
+<img src="/img/3_tokens.png" alt="KASH Reserve Token Structure" width="500"/>
+
+:::tip[Key Features of KASH]
+- **Reserve-Based Value**: Stable intrinsic value based on physical collateral
+- **Risk Premium**: Staking returns for participants who accept vRWA risk
+- **Liquidity**: POL-based **DEX liquidity providing free cash conversion means**
+- **DeFi Utility**: Used for collateralized loans, liquidity pools, community governance, etc.
+- **Price Stabilization Mechanism**: Maintains stable value through RBS(Range Bound Stability)
+- **Natural Demand Growth with Project Development**: Mineral expansion, ecosystem partner connections, etc.
+
+KASH evolves from **a simple reward token into a physical asset-backed decentralized digital currency**,
+equipped with all four elements: **collateral backing, yield structure, liquidity, and stability**
+:::
+:::tip[RBS]
+KASH price stability is guaranteed through **buy bonds when price falls** and **discount bonds when price rises**,
+ensuring **upper and lower price stability**.
+
+**RBS(Range Bound Stability)** as a price stabilization mechanism is detailed in the chapter below.
+:::
+
+### Phase 1 Structure Preview
+
+- **Total Supply**: 100,000,000 KASH
+- **Collateral**: 1 ton gold → 32,000 oz → 32,000 vRWA → 3,125 KASH/oz
+- **Funding Pool**: 10%
+- **Staking Reward Pool**: 50% (30% + 20%)
+- **Insurance Pool**: 10%
+- **Team/Marketing/Liquidity etc**: 30%
+
+→ This structure is explained in detail in the chapters below.
+
+<!-- ---
+id: kash-structure
 title: 1. KASH 리저브토큰 구조
 description: KASH 정의 및 구조
 sidebar_position: 1
@@ -26,33 +102,13 @@ vRWA 발행량에 근거해 KASH가 발행되어 총 발행량의 **10%** 만이
 
 KASH는 아래의 자산 흐름 구조를 통한 가치 안정성을 기반으로 **핵심 통화 역할**을 수행합니다:
 
-<!-- ```
-실물 금 (미래 생산 예정)
-↓
-vRWA(Gold): 미래 실물에 대한 청구권 토큰
-↓
-리저브풀에 예치
-↓
-KASH: 담보형 리저브 토큰 발행
-``` -->
-
 ~~~mermaid
 graph TD
-    A[실물 금] -- 금에 대한 교환권 토큰화 --> B[금 RWA];
-    C[실물 금; 미래 생산 예정] -- 미래 금에 대한 청구권 토큰화 --> D[금 vRWA];
-    A -- 주기적 청산 --> D;
-    D -- 청산을 통한 치환 --> B;
-    D -- 청산을 통한 치환 --> G[가상 자산];
-    G -- 담보 예치 --> E[KASH Reserve Vault];
-    B -- 담보 예치 --> E;
-    D -- 담보 예치 --> E;
-    E -- 담보 기반 리저브 토큰 발행 --> F[KASH];
 ~~~
 
 - **vRWA**는 1기에서 실물 금 대신 리저브풀에 예치되는 **가교 자산**
 - **KASH**는 vRWA를 담보로 발행되며, 이후 실물 RWA(Gold)로 리저브 전환이 일어남
 
-<!-- ![KASH Reserve Token Structure](/img/3_tokens.png) -->
 #### KASH Reserve Token Structure
 <img src="/img/3_tokens.png" alt="KASH Reserve Token Structure" width="500"/>
 
@@ -83,4 +139,4 @@ KASH 가격은 **가격 하락 시 매입 채권**, **가격 상승 시 할인 �
 - **보험 풀**: 10%
 - **팀/마케팅/유동성 등 기타**: 30%
 
-→ 이 구조는 아래장들에서 상세히 설명됩니다.
+→ 이 구조는 아래장들에서 상세히 설명됩니다. -->

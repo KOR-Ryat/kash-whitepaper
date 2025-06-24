@@ -1,5 +1,58 @@
 ---
 id: tokenomics
+title: 1. KASH Tokenomics
+description: Summary of KASH/RWA issuance and distribution structure
+sidebar_position: 1
+---
+
+KASH is issued by depositing vRWA(Gold) or RWA(Gold) as collateral in the reserve pool,
+
+and its issuance volume is **strictly limited according to the value of the underlying assets**.
+
+This chapter clearly explains the **Phase 1 issuance volume**, **distribution plan**, **investment schedule**, and **staking reward allocation**.
+
+### Underlying Assets and KASH Issuance Volume
+
+| **Item** | **Value** |
+| --- | --- |
+| **Underlying Asset** | Gold 1 ton (1,000 kg) |
+| **1 oz Base Unit** | 1 oz = approx. 31.1035g → Total **32,150 oz** |
+| **Reference Gold Price** | 3,200 USD/oz (issuance base price) |
+| **KASH Issuance Exchange Rate** | 1 KASH = 1 USD |
+| **vRWA(Gold) : RWA(Gold) Issuance Ratio** | 1 vRWA(Gold) = 1 RWA(Gold) = 1 oz gold |
+| **vRWA(Gold) : KASH Issuance Ratio** | **1 vRWA(Gold) =** **1 oz gold = 3,125 KASH** |
+| **Total vRWA Issuance** | **32,000 vRWA(Gold)** (based on 1 ton of gold) |
+| **Total KASH Issuance** | **100,000,000 KASH** |
+
+💡 1 vRWA corresponds to 1 oz of gold, and KASH is issued at 3,125 per unit based on this
+
+### Distribution Structure Summary
+
+| **Category** | **Ratio** | **Amount** | **Main Purpose** |
+| --- | --- | --- | --- |
+| Investor Sales (1st & 2nd) | 10% | 10,000,000 | Fundraising |
+| Staking Rewards (2 pools) | 50% | 50,000,000 | vRWA holder rewards |
+| Liquidity Provision (POL) | 10% | 10,000,000 | DEX liquidity, bond stabilization |
+| Insurance (Liquidation Guarantee) | 10% | 10,000,000 | Alternative liquidation for vRWA in case of delay |
+| Team and Contributors | 10% | 10,000,000 | Conditional lockup and burn structure |
+| Partners/Marketing | 10% | 10,000,000 | Ecosystem expansion |
+
+~~~mermaid
+pie title KASH Tokenomics
+    "Funding" : 10
+    "Reward" : 50
+    "Liquidity" : 10
+    "Insurance" : 10
+    "Team" : 10
+    "Others" : 10
+~~~
+
+> KASH is not just a reserve token, but a **physical asset-backed trust asset**,
+> with a **transparent risk-reward mechanism**, **upper and lower price stabilization strategy**,
+> and a **flexible governance-based distribution model including conditional burn insurance/team structure**.
+
+<!-- ---
+id: tokenomics
 title: 1. KASH 토크노믹스
 description: KASH/RWA 발행량 및 분배구조 요약
 sidebar_position: 1
@@ -51,4 +104,4 @@ pie title KASH Tokenomics
 > **투명한 위험 보상 메커니즘**, **상·하단 가격 안정화 전략**,
 > 그리고 **조건부 소각형 보험/팀 구조를 포함한 유연한 거버넌스형 분배 모델**을 갖추고 있습니다.
 >
-
+ -->

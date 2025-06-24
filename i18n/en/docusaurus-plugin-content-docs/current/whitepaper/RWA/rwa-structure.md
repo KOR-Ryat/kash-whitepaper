@@ -1,8 +1,113 @@
 ---
 id: rwa-structure
+title: 2. KASH Project RWA Structure
+description: RWA & vRWA Structure and Significance
+sidebar_position: 2
+---
+
+### Definition and Structure of Gold RWA
+
+**RWA(Gold)** is a **physical asset-backed RWA token** issued against gold that has been produced and is in storage.
+
+It will be fully launched from Phase 2, and will be directly incorporated as a **collateral asset in the KASH Reserve Pool** to support KASH token's value stability. Subsequently, it can be utilized in various DeFi products or used for direct investment purposes.
+
+#### Key Properties
+
+| **Item** | **Description** |
+| --- | --- |
+| **Issuance Timing** | After physical gold production and refining completion (Phase 2 onwards) |
+| **Collateral Base** | Physical gold (linked to on-chain PoR) |
+| **Deposit Location** | ①**RWA(Gold) tokens for KASH collateral are deposited in the on-chain smart contract-based KASH Reserve Pool**, |
+|  | ② The corresponding**physical gold is physically stored through third-party vaults, warehouses, or trust institutions**. |
+|  | ③ These physical holdings are**periodically linked to on-chain through the PoR(Proof of Reserve)**system. |
+| **Purpose** | KASH issuance collateral, future foundation asset for expandable financial structures such as lending |
+| **Standard** | ERC-3643 permission-based RWA token standard |
+
+:::tip[Implementation of PoR (Proof of Reserve) System]
+- Physical gold holdings are regularly verified through external institutions or on-chain oracles
+- RWA issuance volume and reserve pool status are linked based on PoR data
+- Planning to connect with vaults, warehouses, and guarantee institutions
+:::
+
+### Definition and Structure of Gold vRWA (Voucher RWA)
+
+**vRWA (Voucher RWA)** is an **RWA token in the form of a claim right** to either **physical asset-backed RWA** or **virtual assets** of equivalent value (e.g., stablecoins, ETH, or network tokens like KAIA). It represents a future claim right rather than a current one, and is settled through periodic liquidation points until maturity.
+
+In Phase 1, **vRWA(Gold)** based on **gold** will be issued, which will be **partially liquidated at regular intervals after gold production begins**, and must be **fully settled** by the maturity point of 3 years after gold production.
+
+:::danger[vRWA Liquidation Plan]    
+The vRWA(Gold) liquidation plan is based on the Indonesia Buru gold mine development plan, and 35% of production will be prioritized for allocation periodically after development begins.
+For detailed liquidation plans, please refer to the [Mining Plan](../gold_mining/mining-economy.md) section.
+:::
+
+#### Key Properties
+
+| **Item** | **Description** |
+| --- | --- |
+| **Issuance Timing** | Before physical gold production (early Phase 1) |
+| **Underlying Asset** | Future gold production or virtual assets of equivalent value |
+| **Liquidation Start** | After gold production begins (expected: about 1 year after Phase 1 start) |
+| **Liquidation Method** | During Phase 1, liquidation through virtual assets without using gold RWA |
+| **Maturity** | Yes (full liquidation within 3 years after liquidation begins) |
+| **Purpose** | KASH Reserve Pool value formation, initial fundraising and rewards |
+| **Standard** | ERC-3643 based permission management token |
+| **Traceability** | Full transparency of on-chain liquidation records and settlement details |
+
+### **📌 Risk and Reward Structure**
+
+vRWA is structured as a **forward claim right on physical gold to be produced**,
+and inherently carries **incomplete collateral risk** as the underlying asset has not yet been realized when value is formed.
+
+While **KASH issued on this structure uses vRWA as collateral, it does not have complete intrinsic value before physical holdings are secured**.
+
+Consequently, KASH holders and staking participants are provided with **high interest rate rewards**,
+which functions as a **premium reward mechanism** in return for structurally bearing vRWA risk.
+
+:::note
+This reward structure is explained in detail in the [Early Investor Rewards](../KASH-mechanism/staking-&-reward.md) section.
+:::
+
+### **🛡️ Liquidation Guarantee and Insurance Mechanism**
+
+vRWA must be converted to physical gold (RWA) or virtual assets of equal value in the KASH Reserve Pool according to the set liquidation cycle. However, in the early stages of the project, liquidation may become impossible due to **delays in gold production schedules, logistics disruptions, or regulatory factors**.
+
+To address such situations, **10% of total KASH issuance is secured as an 'Insurance' pool** in advance, which operates as follows:
+
+- If physical or virtual asset payments become impossible at a specific liquidation point,
+  **liquidation is substituted by simultaneously burning equivalent amounts of vRWA and KASH from the insurance pool**.
+- Although this results in **assets within the reserve pool decreasing by the liquidation amount**,
+  **the collateral ratio (LTV) is maintained as KASH is burned simultaneously**.
+- This serves as a mechanism to **preserve system value balance and maintain investor trust even in liquidation delay situations**.
+- The insurance volume **provides flexibility to the project schedule** and acts as a safety mechanism buying time for physical asset securing.
+- **If delays persist even after the insurance pool is fully depleted**,
+  **team allocation (10%) will also be burned additionally to guarantee vRWA liquidation until the end**.
+
+:::note
+This structure is a crucial complementary mechanism to **buffer execution risks inherently accompanying the time-based liquidation model** of vRWA,
+and maintain the system's overall **reliability and sustainability**.
+:::
+
+### Strategic Significance of vRWA and RWA Expandability
+
+- **vRWA serves as a strategic bridge role enhancing structural flexibility and feasibility**→ Enables liquidity and ecosystem reward design while securing physical asset-based trust
+- **RWA(Gold) transitions into a regular constituent asset of the reserve pool** and subsequently functions as a core component for expanding the physical asset-based DeFi ecosystem
+- The vRWA structure can be similarly expanded to **other physical assets (RWA-Silver, RWA-Copper, etc.)** in the future
+
+:::tip[Summary]
+**vRWA** = Future claim right-based RWA for physical asset-based RWA or virtual assets of equivalent value
+
+**RWA(Gold)** = Physical asset-based RWA issued against physical gold, core asset of KASH Reserve Pool
+
+KASH issued based on vRWA starts from an **incomplete collateral structure**, supported by design where **risk premium is reflected in staking yields**.
+
+This dual structure is KASH project's practical strategy to **simultaneously secure initial liquidity and physical asset-based reliability**,
+functioning as a **phased evolution model** for the RWA token ecosystem.
+:::
+
+<!-- ---
+id: rwa-structure
 title: 2. KASH 프로젝트 RWA 구조
 description: RWA & vRWA 구조 및 의의
-# draft: true
 sidebar_position: 2
 ---
 
@@ -30,7 +135,6 @@ sidebar_position: 2
 - 금고·창고·보증기관 연계 예정
 :::
 
-<!-- ## vRWA (Voucher RWA); 미래 실물에 대한 청구권 토큰 -->
 ### Gold vRWA (Voucher RWA) 정의 및 구조
 
 **vRWA (Voucher RWA)** 는 **실물 기반 RWA** 또는 그에 상응하는 가치의 **가상자산**(예: 스테이블코인, ETH 혹은 KAIA 같은 네트워크토큰)에 대한 **청구권 형태의 RWA 토큰**입니다. 현재가 아닌 미래 시점 청구권이며 만기까지 주기적 청산 시점에 정산이 실행되어 치환됩니다.
@@ -112,4 +216,4 @@ vRWA 기반으로 발행되는 KASH는 **불완전 담보 구조**에서 시작
 
 이 이중 구조는 KASH 프로젝트가 **초기 유동성과 실물 기반 신뢰성을 동시에 확보**하기 위한 실천적 전략이며,
 RWA 토큰 생태계의 **단계별 진화 모델**로서 기능합니다.
-:::
+::: -->

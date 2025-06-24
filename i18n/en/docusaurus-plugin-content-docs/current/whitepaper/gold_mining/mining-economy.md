@@ -1,9 +1,142 @@
 ---
 id: minig-economy
+title: 3. Buru Gold Mine Mining Plan and Economic Evaluation
+description: KASH Project Business Feasibility Based on Buru Mine Mining Plan
+sidebar_position: 3
+---
+
+### Mining Plan
+
+:::info
+The KASH project aims to develop a processing plant with a capacity of over **10,000 tons per day** at the Buru gold mine.
+Based on this production infrastructure, we aim to produce **hundreds of thousands to tens of thousands of oz of gold annually**, but our Phase 1 mining plan assumptions are set much more conservatively than the target to minimize risk.
+:::
+
+:::info
+As a basic assumption, we set the gold grade at **3 g/t**. This is a very conservative assumption for minimum daily mining volume, considering that we plan to initially develop areas identified through exploration where gold grades exceed 3 g/t, based on verified data.
+:::
+
+#### 📆 Mining Roadmap
+
+- 2025: 1st Funding (5M KASH)
+- H1 2026: Detailed Exploration
+- H2 2026: 2nd Funding (5M KASH)
+- H2 2026: Mining Facility Construction
+- 2027 ~: Mining and Monthly vRWA Settlement
+
+#### 📌 Basic Assumptions
+
+- Equipment input: 1 unit
+- Production: 1,500 t/unit
+- Daily gold ore mining volume: 1,500 t
+- Monthly operating days: 25 days
+- First year mining volume (2027): 50%
+- Gold grade: **3 g/t**
+- Recovery rate: 88%
+- Daily gold production: 3.96 Kg
+- vRWA settlement allocation: **35% (35% of produced gold prioritized for vRWA settlement)**
+
+|  | 2027 | 2028 | 2029 | Total |
+| :---: | :---: | :---: | :---: | :---: |
+| Annual gold production (kg) | 594 | 1,188 | 1,188 | 2,970 |
+| vRWA allocation (Kg) | 208 | 416 | 416 | **1,040 ( > 1 ton)** |
+| vRWA allocation (oz) | 6,684 | 13,368 | 13,368 | **33,421 ( > 32,000)** |
+
+- vRWA settlement volume recovery period: 46 months after 1st funding completion (**30 months** after mining start)
+- Funding volume(10%) recovery period: 18 months after 1st funding completion (**6 months** after mining start)
+- Funding(10%) + reward volume(50%) recovery period: 35 months after 1st funding completion (**27 months** after mining start)
+
+:::warning
+The total vRWA allocation figures represent using 35% of total gold production, but in practice only 32,000 oz will be used for settlement.
+:::
+
+Under conservative assumptions, we can confirm that **daily mining volume of 1,500 t and grade of 3 g/t** is the **break-even condition (minimum requirement for contract fulfillment)** to exceed 1 ton in total KASH Foundation allocation after 3 years of mining.
+
+If we can identify veins with grades of 3 g/t through minimal facilities and detailed exploration, the KASH project has a very high probability of success.
+
+### KASH Project Economic Evaluation
+
+:::info
+While the KASH project aims to develop a processing plant with over 10,000 tons daily capacity at the Buru gold mine, we plan to initially focus on areas identified through exploration as having gold grades above 3 g/t.
+
+Depending on detailed exploration results, we can proceed from the conservative assumption of 1,500 tons/day up to an aggressive 5,000 tons/day or more. Additionally, more aggressive production is possible for partially high-grade veins. We will evaluate the KASH project's economics according to each scenario.
+:::
+
+:::warning
+For conservative evaluation, we assume the final purity of produced gold is 90% and thus value it at 90% of market price.
+:::
+
+As mentioned above, the **break-even condition** for executing vRWA settlement is the conservatively set grade of 3 g/t and daily mining volume of 1,500 tons.
+
+The current KASH project execution plan is set to these conditions with a vRWA settlement period of 4 years after funding completion (Phase 1 period), and KASH staking period of 3 years after funding completion. Additionally, investors who participate in funding and staking will have their principal returned without interest loss after 18 months.
+
+Below, we will evaluate the KASH project's economics not only under minimum execution conditions but also under more neutral and aggressive scenarios, based on detailed exploration results.
+
+Additionally, with the current high dollar volatility in the international situation, the project's economics are improving as high gold prices are expected to maintain and potentially rise significantly in the medium/long term.
+
+:::note
+[JP Morgan: "Gold price to reach $6,000 per ounce by 2029"](https://youtube.com/watch?v=QbRgFpJoujg&si=TyjmqkE8G_5o2y0Z)
+:::
+
+##### ✅ Conservative Scenario
+
+- Equipment input: 1 unit
+- Production: 1,500 t/unit
+- Daily gold ore mining volume: 1,500 t
+
+|  | 2027 | 2028 | 2029 | Total |
+| :---: | :---: | :---: | :---: | :---: |
+| Annual gold production (kg) | 594 | 1,188 | 1,188 | 2,970 |
+| vRWA allocation (Kg) | 208 | 416 | 416 | **1,040 ( > 1 ton)** |
+| vRWA allocation (oz) | 6,684 | 13,368 | 13,368 | **33,421 ( > 32,000)** |
+| KASH Foundation allocation (3,500 USD/oz) | $21,055,011 | $42,110,022 | $42,110,022 | $105,275,056 |
+| KASH Foundation allocation (4,000 USD/oz) | $24,062,870 | $48,125,740 | $48,125,740 | $120,314,350 |
+| KASH Foundation allocation (5,000 USD/oz) | $30,078,587 | $60,157,175 | $60,157,175 | $150,392,937 |
+
+- vRWA settlement volume recovery period: 46 months after 1st funding completion (**30 months** after mining start)
+- Funding volume(10%) recovery period: 18 months after 1st funding completion (**6 months** after mining start)
+- Funding(10%) + reward volume(50%) recovery period: 35 months after 1st funding completion (**27 months** after mining start)
+
+#### ✅ Neutral Scenario
+
+- Equipment input: 2 units
+- Production: 1,500 t/unit
+- Daily gold ore mining volume: 3,000 t
+
+|  | 2027 | 2028 | 2029 | Total |
+| :---: | :---: | :---: | :---: | :---: |
+| Annual gold production (kg) |   1,188 |   2,376 |   2,376 |   5,940 |
+| vRWA allocation (Kg) |   416  |   832  |   832  |   **2,079 ( > 1 ton)** |
+| vRWA allocation (oz) |   13,368  |   26,737  |   26,737  |   **66,841 ( > 32,000)** |
+| KASH Foundation allocation (3,500 USD/oz) | $42,110,022 | $84,220,045 | $84,220,045 | $210,550,112 |
+| KASH Foundation allocation (4,000 USD/oz) | $48,125,740 | $96,251,480 | $96,251,480 | $240,628,699 |
+| KASH Foundation allocation (5,000 USD/oz) | $60,157,175 | $120,314,350 | $120,314,350 | $300,785,874 |
+- vRWA settlement volume recovery period: 29 months after 1st funding completion (**17 months** after mining start)
+- Funding volume(10%) recovery period: 15 months after 1st funding completion (**3 months** after mining start)
+- Funding(10%) + reward volume(50%) recovery period: 23 months after 1st funding completion (**11 months** after mining start)
+
+#### ✅ Aggressive Scenario
+
+- Equipment input: 4 units
+- Production: 1,500 t/unit
+- Daily gold ore mining volume: 6,000 t
+
+|  | 2027 | 2028 | 2029 | Total |
+| :---: | :---: | :---: | :---: | :---: |
+| Annual gold production (kg) |   2,376 |   4,752 |   4,752 |   11,880 |
+| vRWA allocation (Kg) |   832  |   1,663  |   1,663  |   **4,158 ( > 1 ton)** |
+| vRWA allocation (oz) |   26,737  |   53,473  |   53,473  |   **133,683 ( > 32,000)** |
+| KASH Foundation allocation (3,500 USD/oz) | $84,220,045 | $168,440,089 | $168,440,089 | $421,100,223 |
+| KASH Foundation allocation (4,000 USD/oz) | $96,251,480 | $192,502,959 | $192,502,959 | $481,257,398 |
+| KASH Foundation allocation (5,000 USD/oz) | $120,314,350 | $240,628,699 | $240,628,699 | $601,571,748 |
+- vRWA settlement volume recovery period: 21 months after 1st funding completion (**9 months** after mining start)
+- Funding volume(10%) recovery period: 13 months after 1st funding completion (**1 month** after mining start)
+- Funding(10%) + reward volume(50%) recovery period: 18 months after 1st funding completion (**6 months** after mining start)
+
+<!-- ---
+id: minig-economy
 title: 3. 부루 금광 채광 계획 및 경제성 평가
 description: 부루 광산 채광 계획을 기반으로 한 KASH 프로젝트 사업성
-# title: 3. 경제성 조건 - 품위, 규모, 수익성
-# description: 부루 광산 경제성을 기반으로 한 KASH 프로젝트 사업성
 sidebar_position: 3
 ---
 
@@ -36,7 +169,6 @@ KASH 프로젝트는 부루 금광 **일일 10,000톤** 이상 처리량의 선�
 - 금 품위: **3 g/t**
 - 회수율: 88%
 - 일일 금 생산량: 3.96 Kg
-<!-- - 가격: 시장 가격 * 최종 광석 순도 (90%) -->
 - vRWA 청산 할당량: **35% (생산된 금의 35%를 vRWA 청산에 우선적으로 사용)**
 
 |  | 2027 | 2028 | 2029 | Total |
@@ -134,4 +266,4 @@ KASH 프로젝트는 부루 금광 일일 10,000톤 이상 처리량의 선광 �
 | KASH 재단 할당량 (5,000 USD/oz) | $120,314,350 | $240,628,699 | $240,628,699 | $601,571,748 |
 - vRWA 청산물량 회수기간: 1차 펀딩 종료 후 21개월 (채굴 시작 후 **9개월**)
 - 펀딩 물량(10%) 회수기간: 1차 펀딩 종료 후 13개월 (채굴 시작 후 **1개월**)
-- 펀딩(10%) + 리워드 물량(50%) 회수기간: 1차 펀딩 종료 후 18개월 (채굴 시작 후 6**개월**)
+- 펀딩(10%) + 리워드 물량(50%) 회수기간: 1차 펀딩 종료 후 18개월 (채굴 시작 후 6**개월**) -->

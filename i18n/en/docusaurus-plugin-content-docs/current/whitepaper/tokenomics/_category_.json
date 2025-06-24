@@ -1,9 +1,9 @@
 {
-  "label": "📊 토크노믹스",
+  "label": "📊 Tokenomics",
   "position": 7,
   "link": {
     "type": "generated-index",
-    "title": "토크노믹스 및 분배 구조",
-    "description": "1기 기준 발행량, 분배 계획, 투자 일정, 스테이킹 보상 할당 등에 대해 명확히 설명합니다." 
+    "title": "Tokenomics and Distribution Structure",
+    "description": "Clearly explains issuance volume, distribution plans, investment schedule, and staking reward allocations based on Phase 1."
   }
 }
