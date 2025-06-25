@@ -43,7 +43,7 @@ graph TD
 - **KASH** is issued against vRWA collateral, later transitioning to physical RWA(Gold) reserves
 
 #### KASH Reserve Token Structure
-<img src="/img/3_tokens.png" alt="KASH Reserve Token Structure" width="500"/>
+<img src="/img/3_tokens_eng.png" alt="KASH Reserve Token Structure" width="700"/>
 
 :::tip[Key Features of KASH]
 - **Reserve-Based Value**: Stable intrinsic value based on physical collateral
