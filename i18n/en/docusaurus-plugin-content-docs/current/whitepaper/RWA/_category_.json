@@ -1,9 +1,0 @@
-{
-  "label": "🪙 RWA Token Structure",
-  "position": 5,
-  "link": {
-    "type": "generated-index",
-    "title": "KASH Project RWA Token Structure",
-    "description": "Summarizes the design philosophy, implementation method, and liquidation stability mechanisms of RWA(Gold) and vRWA(Gold), which form the core collateral structure of the KASH project." 
-  }
-}
