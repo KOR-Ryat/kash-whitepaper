@@ -11,14 +11,6 @@
     "message": "📘 Introduction",
     "description": "The label for category 📘 서문 in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.📘 서문.link.generated-index.title": {
-    "message": "📘 Introduction",
-    "description": "The generated-index page title for category 📘 서문 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.📘 서문.link.generated-index.description": {
-    "message": "The KASH Project tokenizes real-world assets (RWA) based on the Buru gold mine in Indonesia, building a new digital financial infrastructure that combines stability and liquidity.",
-    "description": "The generated-index page description for category 📘 서문 in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.🏦 실물 자산 시장과 디지털 전환의 필요성": {
     "message": "🏦 Physical Asset Markets and the Need for Digital Transformation",
     "description": "The label for category 🏦 실물 자산 시장과 디지털 전환의 필요성 in sidebar tutorialSidebar"
